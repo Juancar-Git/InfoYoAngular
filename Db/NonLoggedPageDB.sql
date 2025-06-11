@@ -28,7 +28,7 @@ GO
 CREATE TABLE [dbo].[NonLoggedHeader](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Title] [varchar](50) NOT NULL,
-	[HeadBackgroundImagePath] [varchar](MAX) NOT NULL, -- Nombres de los tabas en navbar - Lista separada por ;
+	[HeadBackgroundImagePath] [varchar](MAX) NOT NULL,
 	[CompanyAccessButton] [varchar](50) NOT NULL,
 	[CompanyAccessButtonUrl] [varchar](MAX) NOT NULL,
 	[CandidateAccessButton] [varchar](50) NOT NULL,
@@ -53,20 +53,6 @@ CREATE TABLE [dbo].[NonLoggedNavBarLinks](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
 	[LinkUrl] [varchar](300) NOT NULL,
- CONSTRAINT [PK_NonLoggedNavBarLinks] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-------------------------------------------------------
--- 			Non Logged Publicity Section TABLE
-------------------------------------------------------
-CREATE TABLE [dbo].[NonLoggedPublicitySection](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[PublicityBackgroundImagePath] [varchar](MAX) NOT NULL,
-	[LinkUrl] [varchar](50) NOT NULL,
  CONSTRAINT [PK_NonLoggedNavBarLinks] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

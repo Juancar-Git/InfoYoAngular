@@ -3,6 +3,50 @@
 ------------------------------------------------------
 -- Componentes de la web de uso común. Estas tienen el mismo formato en toda la web
 
+
+------------------------------------------------------
+-- 			Logged Header TABLE
+------------------------------------------------------
+CREATE TABLE [dbo].[LoggedHeader](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Icon] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_LoggedHeader] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+------------------------------------------------------
+-- 			Logged NavBar Links TABLE
+------------------------------------------------------
+CREATE TABLE [dbo].[LoggedNavBarLinks](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[LinkUrl] [varchar](300) NOT NULL,
+ CONSTRAINT [PK_LoggedNavBarLinks] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+------------------------------------------------------
+-- 			Logged NavBar Links TABLE
+------------------------------------------------------
+CREATE TABLE [dbo].[LoggedDropDownMenuLinks](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[LinkUrl] [varchar](300) NOT NULL,
+ CONSTRAINT [PK_LoggedDropDownMenuLinks] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
 ------------------------------------------------------
 -- 			Footer Links Section Columns TABLE
 ------------------------------------------------------

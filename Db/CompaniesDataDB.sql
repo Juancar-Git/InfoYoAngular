@@ -7,15 +7,19 @@
 -- Voy a recopilar datos necesarios para estó, en principio desarrollaré la web enfocada al usuario cliente.
 --!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+------------------------------------------------------
+-- 			Companies TABLE
+------------------------------------------------------
 CREATE TABLE [dbo].[Companies](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[CompanyName] [varchar](150) NOT NULL,
 	[RegisteredCompanyName] [varchar](300) NOT NULL,
 	[UrlInternalCompany] [varchar](MAX) NOT NULL,
-	[ThumbnailIconImagePath] [varchar](500) NOT NULL,
-	[ThumbnailImagePath] [varchar](500) NOT NULL,
-	[ThumbnailText] [varchar](150) NOT NULL,
-	[CompanyBackgroundImagePath] [varchar](50) NOT NULL,
+	[MiniIconImgPath] [varchar](500) NOT NULL,
+	[MiniImgPath] [varchar](500) NOT NULL,
+	[MiniText] [varchar](150) NOT NULL,
+	[CompanyBackgroundImgPath] [varchar](50) NOT NULL,
 	-- Completar mas adelante
 	-- Completar mas adelante
  CONSTRAINT [PK_Companies] PRIMARY KEY CLUSTERED 
@@ -25,6 +29,9 @@ CREATE TABLE [dbo].[Companies](
 ) ON [PRIMARY]
 GO
 
+------------------------------------------------------
+-- 			CompanyJobOffers TABLE
+------------------------------------------------------
 CREATE TABLE [dbo].[CompanyJobOffers](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Title] [varchar](300) NOT NULL,

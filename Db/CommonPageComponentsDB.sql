@@ -7,10 +7,10 @@
 ------------------------------------------------------
 -- 			Logged Header TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[LoggedHeader](
+CREATE TABLE [dbo].[LogHeader](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Icon] [varchar](50) NOT NULL,
- CONSTRAINT [PK_LoggedHeader] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_LogHeader] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -21,7 +21,7 @@ GO
 ------------------------------------------------------
 -- 			Logged NavBar Links TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[LoggedNavBarLinks](
+CREATE TABLE [dbo].[LogNavBarLinks](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
 	[LinkUrl] [varchar](300) NOT NULL,
@@ -35,11 +35,11 @@ GO
 ------------------------------------------------------
 -- 			Logged NavBar Links TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[LoggedDropDownMenuLinks](
+CREATE TABLE [dbo].[LogDropDownMenuLinks](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
 	[LinkUrl] [varchar](300) NOT NULL,
- CONSTRAINT [PK_LoggedDropDownMenuLinks] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_LogDropDownMenuLinks] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -50,10 +50,10 @@ GO
 ------------------------------------------------------
 -- 			Footer Links Section Columns TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[FooterLinksSectionColumns](
+CREATE TABLE [dbo].[FtrLinksSectionCols](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Title] [varchar](50) NOT NULL,
- CONSTRAINT [PK_FooterLinksSectionColumns] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_FtrLinksSectionCols] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -63,34 +63,34 @@ GO
 ------------------------------------------------------
 -- 			Footer Links Section Columns Items TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[FooterLinksSectionColumnsItems](
+CREATE TABLE [dbo].[FtrLinksSectionColsItems](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Title] [varchar](50) NOT NULL,
-	[TitleHoverDescription] [varchar](100) NOT NULL,
+	[TitleHoverDesc] [varchar](100) NOT NULL,
 	[ItemPath] [varchar](MAX) NOT NULL,
-	[FooterLinksSectionColumnsId] [bigint] NOT NULL,
- CONSTRAINT [PK_FooterLinksSectionColumnsItems] PRIMARY KEY CLUSTERED 
+	[FtrLinksSectionColsId] [bigint] NOT NULL,
+ CONSTRAINT [PK_FtrLinksSectionColsItems] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[FooterLinksSectionColumnsItems]  WITH CHECK ADD  CONSTRAINT [FK_FooterLinksSectionColumnsItems_FooterLinksSectionColumns] FOREIGN KEY([FooterLinksSectionColumnsId])
-REFERENCES [dbo].[FooterLinksSectionColumns] ([Id])
+ALTER TABLE [dbo].[FtrLinksSectionColsItems]  WITH CHECK ADD  CONSTRAINT [FK_FtrLinksSectionColsItems_FtrLinksSectionCols] FOREIGN KEY([FtrLinksSectionColsId])
+REFERENCES [dbo].[FtrLinksSectionCols] ([Id])
 GO
 
-ALTER TABLE [dbo].[FooterLinksSectionColumnsItems] CHECK CONSTRAINT [FK_FooterLinksSectionColumnsItems_FooterLinksSectionColumns]
+ALTER TABLE [dbo].[FtrLinksSectionColsItems] CHECK CONSTRAINT [FK_FtrLinksSectionColsItems_FtrLinksSectionCols]
 GO
 
 
 ------------------------------------------------------
 -- 			Footer Social Media Section TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[FooterSocialMediaSection](
+CREATE TABLE [dbo].[FtrSocialMediaSection](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Title] [varchar](50) NOT NULL,
- CONSTRAINT [PK_FooterSocialMediaSection] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_FtrSocialMediaSection] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -100,13 +100,13 @@ GO
 ------------------------------------------------------
 -- 			Footer Social Media Section Items TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[FooterSocialMediaSectionItems](
+CREATE TABLE [dbo].[FtrSocialMediaSectionItems](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
-	[TitleHoverDescription] [varchar](100) NOT NULL,
+	[TitleHoverDesc] [varchar](100) NOT NULL,
 	[IconItem] [varchar](500) NOT NULL,
 	[ItemUrl] [varchar](MAX) NOT NULL,
- CONSTRAINT [PK_FooterSocialMediaSectionItems] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_FtrSocialMediaSectionItems] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -116,13 +116,13 @@ GO
 ------------------------------------------------------
 -- 			Footer App Dowload Link Items TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[FooterAppDowloadLinkItems](
+CREATE TABLE [dbo].[FtrAppDowloadLinkItems](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
-	[TitleHoverDescription] [varchar](100) NOT NULL,
-	[ItemBackgroundImagePath] [varchar](500) NOT NULL,
+	[TitleHoverDesc] [varchar](100) NOT NULL,
+	[ItemBgImgPath] [varchar](500) NOT NULL,
 	[ItemUrl] [varchar](MAX) NOT NULL,
- CONSTRAINT [PK_FooterAppDowloadLinkItems] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_FtrAppDowloadLinkItems] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -132,11 +132,11 @@ GO
 ------------------------------------------------------
 -- 			Footer Partners Section TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[FooterPartnersSection](
+CREATE TABLE [dbo].[FtrPartnersSection](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Title] [varchar](50) NOT NULL,
 	[CopyrightText] [varchar](100) NOT NULL,
- CONSTRAINT [PK_FooterPartnersSection] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_FtrPartnersSection] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -146,11 +146,11 @@ GO
 ------------------------------------------------------
 -- 			Footer Partners Section Items TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[FooterPartnersSectionItems](
+CREATE TABLE [dbo].[FtrPartnersSectionItems](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
 	[ItemUrl] [varchar](MAX) NOT NULL,
- CONSTRAINT [PK_FooterPartnersSectionItems] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_FtrPartnersSectionItems] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]

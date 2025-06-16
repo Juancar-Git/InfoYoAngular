@@ -3,7 +3,7 @@
 ------------------------------------------------------
 CREATE TABLE [dbo].[PublicityData](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[PublicityBackgroundImagePath] [varchar](MAX) NOT NULL,
+	[PublicityBgImgPath] [varchar](MAX) NOT NULL,
 	[LinkUrl] [varchar](50) NOT NULL,
 	-- Completar mas adelante
 	-- Completar mas adelante

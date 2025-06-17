@@ -7,26 +7,27 @@
 -- 			Jobs Page No Filters TABLE
 ------------------------------------------------------
 CREATE TABLE [dbo].[JobsPageNoFilters](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Title] [varchar](100) NOT NULL,
-	[VoidSearchTextField] [varchar](100) NOT NULL,
-	[VoidLocationField] [varchar](100) NOT NULL,
-	[SearchBtn] [varchar](50) NOT NULL,
-	[OffersTitle] [varchar](100) NOT NULL,
-	[OffersBaseUrl] [varchar](MAX) NOT NULL,
-	[candidacyTitle] [varchar](100) NOT NULL,
-	[candidacyComment] [varchar](100) NOT NULL,
-	[candidacyLinkText] [varchar](100) NOT NULL,
-	[candidacyLinkUrl] [varchar](MAX) NOT NULL,
-	[preferencesTitle] [varchar](100) NOT NULL,
-	[prefBtn] [varchar](50) NOT NULL,
-	[prefBtnUrl] [varchar](100) NOT NULL,
-	[prefBtn] [varchar](50) NOT NULL,
-	[prefEditBtnUrl] [varchar](MAX) NOT NULL,
-	[prefMoreBtn] [varchar](50) NOT NULL,
-	[prefMoreBtnUrl] [varchar](MAX) NOT NULL,
-	[YourOffersTitle] [varchar](100) NOT NULL,
-	[YourOffersSubTitle] [varchar](100) NOT NULL,
+	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[Title] [VARCHAR](100) NOT NULL,
+	[VoidSearchTextField] [VARCHAR](100) NOT NULL,
+	[VoidLocationField] [VARCHAR](100) NOT NULL,
+	[SearchBtn] [VARCHAR](50) NOT NULL,
+	[OffersTitle] [VARCHAR](100) NOT NULL,
+	[OffersBaseUrl] [VARCHAR](MAX) NOT NULL,
+	[candidacyTitle] [VARCHAR](100) NOT NULL,
+	[candidacyComment] [VARCHAR](100) NOT NULL,
+	[candidacyLinkText] [VARCHAR](100) NOT NULL,
+	[candidacyLinkUrl] [VARCHAR](MAX) NOT NULL,
+	[preferencesTitle] [VARCHAR](100) NOT NULL,
+	[prefBtn] [VARCHAR](50) NOT NULL,
+	[prefBtnUrl] [VARCHAR](100) NOT NULL,
+	[prefBtn] [VARCHAR](50) NOT NULL,
+	[prefEditBtnUrl] [VARCHAR](MAX) NOT NULL,
+	[prefMoreBtn] [VARCHAR](50) NOT NULL,
+	[prefMoreBtnUrl] [VARCHAR](MAX) NOT NULL,
+	[SaveItemIcon] [VARCHAR](100) NOT NULL,
+	[YourOffersTitle] [VARCHAR](100) NOT NULL,
+	[YourOffersSubTitle] [VARCHAR](100) NOT NULL,
  CONSTRAINT [PK_JobsPageNoFilters] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -39,19 +40,19 @@ GO
 -- 			Jobs Page With Filters TABLE
 ------------------------------------------------------
 CREATE TABLE [dbo].[JobsPageWithFilters](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[TitleSearchTextField] [varchar](50) NOT NULL,
-	[VoidSearchTextField] [varchar](100) NOT NULL,
-	[TitleLocationField] [varchar](50) NOT NULL,
-	[VoidLocationField] [varchar](100) NOT NULL,
-	[NonVariableOffersQtyText] [varchar](50) NOT NULL,
-	[OrderByOffersText] [varchar](50) NOT NULL,
-	[OrderByOffersInfoText] [varchar](300) NOT NULL,
-	[NextBtn] [varchar](50) NOT NULL,
-	[PreviousBtn] [varchar](50) NOT NULL,
-	[NewSearchBtn] [varchar](50) NOT NULL,
-	[RelationOffersTxt] [varchar](300) NOT NULL,
-	[RelationCompaniesTxt] [varchar](300) NOT NULL,
+	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[TitleSearchTextField] [VARCHAR](50) NOT NULL,
+	[VoidSearchTextField] [VARCHAR](100) NOT NULL,
+	[TitleLocationField] [VARCHAR](50) NOT NULL,
+	[VoidLocationField] [VARCHAR](100) NOT NULL,
+	[NonVariableOffersQtyText] [VARCHAR](50) NOT NULL,
+	[OrderByOffersText] [VARCHAR](50) NOT NULL,
+	[OrderByOffersInfoText] [VARCHAR](300) NOT NULL,
+	[NextBtn] [VARCHAR](50) NOT NULL,
+	[PreviousBtn] [VARCHAR](50) NOT NULL,
+	[NewSearchBtn] [VARCHAR](50) NOT NULL,
+	[RelationOffersTxt] [VARCHAR](300) NOT NULL,
+	[RelationCompaniesTxt] [VARCHAR](300) NOT NULL,
  CONSTRAINT [PK_JobsPageWithFilters] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -63,8 +64,8 @@ GO
 -- 			OrdeBy Offers Items TABLE
 ------------------------------------------------------
 CREATE TABLE [dbo].[OrdeByOffersItems](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](50) NOT NULL,
+	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[Name] [VARCHAR](50) NOT NULL,
  CONSTRAINT [PK_OrdeByOffersItems] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -76,10 +77,10 @@ GO
 -- 			Side Filter Types TABLE
 ------------------------------------------------------
 CREATE TABLE [dbo].[SideFilterTypes](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[FilterKey] [varchar](50) NOT NULL,
-	[Title] [varchar](100) NOT NULL,
-	[ShowMoreTitle] [varchar](100) NOT NULL,
+	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[FilterKey] [VARCHAR](50) NOT NULL,
+	[Title] [VARCHAR](100) NOT NULL,
+	[ShowMoreTitle] [VARCHAR](100) NOT NULL,
  CONSTRAINT [PK_SideFilterTypes] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -91,10 +92,10 @@ GO
 -- 			Footer Links Section Columns Items TABLE
 ------------------------------------------------------
 CREATE TABLE [dbo].[SideFilterItems](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[ItemValue] [varchar](150) NOT NULL,
-	[ItemLabel] [varchar](100) NOT NULL,
-	[SideFilterTypesId] [bigint] NOT NULL,
+	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[ItemValue] [VARCHAR](150) NOT NULL,
+	[ItemLabel] [VARCHAR](100) NOT NULL,
+	[SideFilterTypesId] [BIGINT] NOT NULL,
  CONSTRAINT [PK_SideFilterItems] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

@@ -5,10 +5,10 @@
 ------------------------------------------------------
 CREATE TABLE [org].[CvVisits](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[VisitType] [varchar](15) NOT NULL,
-	[Description] [varchar](MAX) NOT NULL,
-	[SearchText] [varchar](MAX) NOT NULL,
-	[Birthdate] [DATETIME] DEFAUL GETDATE(),
+	[VisitType] [VARCHAR](15) NOT NULL,
+	[Description] [VARCHAR](MAX) NOT NULL,
+	[SearchText] [VARCHAR](MAX) NOT NULL,
+	[Birthdate] [DATETIME] DEFAULT GETDATE(),
 	[PersonsId] [BIGINT] NOT NULL,
 	[CompanysId] [BIGINT] NOT NULL,
  CONSTRAINT [PK_CvVisits] PRIMARY KEY CLUSTERED 

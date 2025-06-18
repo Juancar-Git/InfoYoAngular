@@ -14,34 +14,33 @@
 CREATE TABLE [org].[Companys](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[CompanyName] [VARCHAR](150) NOT NULL,
-	[RegisteredName] [VARCHAR](300) NOT NULL,
-	[NIF] [VARCHAR](300) NOT NULL,
-	[TaxAddress] [VARCHAR](300) NOT NULL,
-	[TaxCountry] [VARCHAR](300) NOT NULL,
-	[TaxProvince] [VARCHAR](300) NOT NULL,
-	[TaxTown] [VARCHAR](300) NOT NULL,
-	[TaxPostCode] [VARCHAR](300) NOT NULL,
-	[RegOffiAddress] [VARCHAR](300) NOT NULL,
-	[RegOffiCountry] [VARCHAR](300) NOT NULL,
-	[RegOffiProvince] [VARCHAR](300) NOT NULL,
-	[RegOffiTown] [VARCHAR](300) NOT NULL,
-	[RegOffiPostCode] [VARCHAR](300) NOT NULL,
-	[LaborSector] [VARCHAR](300) NOT NULL,
-	[WorkersNum] [VARCHAR](300) NOT NULL,
-	[InternalName] [VARCHAR](MAX) NOT NULL,
+	[RegisteredName] [VARCHAR](150) NOT NULL,
+	[NIF] [VARCHAR](30) NOT NULL,
+	[TaxAddress] [VARCHAR](100) NOT NULL,
+	[TaxCountry] [VARCHAR](100) NOT NULL,
+	[TaxProvince] [VARCHAR](100) NOT NULL,
+	[TaxTown] [VARCHAR](100) NOT NULL,
+	[TaxPostCode] [VARCHAR](15) NOT NULL,
+	[RegOffiAddress] [VARCHAR](200) NOT NULL,
+	[RegOffiCountry] [VARCHAR](100) NOT NULL,
+	[RegOffiProvince] [VARCHAR](100) NOT NULL,
+	[RegOffiTown] [VARCHAR](100) NOT NULL,
+	[RegOffiPostCode] [VARCHAR](15) NOT NULL,
+	[LaborSector] [VARCHAR](100) NOT NULL,
+	[WorkersNum] [INT] NOT NULL,
+	[InternalName] [VARCHAR](100) NOT NULL,
 	[Description] [VARCHAR](MAX) NOT NULL,
-	[MainEmail] [VARCHAR](MAX) NOT NULL,
-	[SecondaryEmail] [VARCHAR](MAX) NOT NULL,
+	[MainEmail] [VARCHAR](200) NOT NULL,
+	[SecondaryEmail] [VARCHAR](200) NOT NULL,
 	[MovilPhone] [VARCHAR](20) NOT NULL,
 	[LandlinePhone] [VARCHAR](20),
 	[ForeignPhone] [VARCHAR](20),
-	[WebSite] [VARCHAR](MAX) NOT NULL,
-	[LogoImgPath] [VARCHAR](500) NOT NULL,
-	[BgImgPath] [VARCHAR](500) NOT NULL,
-	[MiniImgPath] [VARCHAR](500) NOT NULL,
-	[MiniText] [VARCHAR](150) NOT NULL,
-	[CompanyBgImgPath] [VARCHAR](50) NOT NULL,
-
+	[WebSite] [VARCHAR](MAX),
+	[LogoImgPath] [VARCHAR](MAX),
+	[BgImgPath] [VARCHAR](MAX),
+	[MiniImgPath] [VARCHAR](MAX),
+	[CompanyBgImgPath] [VARCHAR](MAX),
+	[MiniText] [VARCHAR](150),
  CONSTRAINT [PK_Companys] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -54,10 +53,11 @@ GO
 ------------------------------------------------------
 CREATE TABLE [org].[CompanyInfo](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Title] [VARCHAR](300) NOT NULL,
-	[Description] [VARCHAR](MAX) NOT NULL,
-	-- Completar mas adelante
-	-- Completar mas adelante
+	[Description] [VARCHAR](MAX),
+	[YtVideoUrl] [VARCHAR](MAX),
+	[FirstImgUrl] [VARCHAR](MAX) NOT NULL,
+	[SecondImgUrl] [VARCHAR](MAX) NOT NULL,
+	[CompanysId] [BIGINT] NOT NULL,
  CONSTRAINT [PK_CompanyInfo] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -65,22 +65,35 @@ CREATE TABLE [org].[CompanyInfo](
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[CompanyInfo]  WITH CHECK ADD  CONSTRAINT [FK_CompanyInfo_Companys] FOREIGN KEY([generalPageId])
-REFERENCES [dbo].[Companys] ([Id])
+ALTER TABLE [org].[CompanyInfo]  WITH CHECK ADD  CONSTRAINT [FK_CompanyInfo_Companys] FOREIGN KEY([CompanysId])
+REFERENCES [org].[Companys] ([Id])
 GO
 
-ALTER TABLE [dbo].[CompanyInfo] CHECK CONSTRAINT [FK_CompanyInfo_Companys]
+ALTER TABLE [org].[CompanyInfo] CHECK CONSTRAINT [FK_CompanyInfo_Companys]
 GO
+
 
 ------------------------------------------------------
 -- 			Company Job Offers TABLE
 ------------------------------------------------------
 CREATE TABLE [org].[CompanyJobOffers](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Title] [VARCHAR](300) NOT NULL,
+	[Title] [VARCHAR](150) NOT NULL,
+	[PublicationDate] [DATETIME] DEFAULT GETDATE(),
+	[Country] [VARCHAR](100) NOT NULL,
+	[Province] [VARCHAR](100) NOT NULL,
+	[Town] [VARCHAR](100) NOT NULL,
+	[LocationType] [VARCHAR](50) NOT NULL CHECK(DocumentType IN('InPerson', 'Hybrid', 'TeleWorking', 'Unspecified')),
+	[Salary] [DECIMAL](10,2),
+	[MinExperience] [INT] NOT NULL,
+	[ContractType] [VARCHAR](50) NOT NULL CHECK(DocumentType IN('Permanent', 'FixedTerm', 'SeasonalPermanent', 'SelfEmployed', 'PartTime', 'Training', 'Replacement', 'Others')),
+	[WorkDayType] [VARCHAR](50) NOT NULL CHECK(DocumentType IN('FullTime', 'PartTime-Unspecified', 'PartTime-Morning', 'ContinuousShift-Unspecified', 'ContinuousShift-Morning', 'PartTime-Afternoon', 'PartTime-Night', 'ContinuousShift-Afternoon', 'ContinuousShift-Night', 'Unspecified')),
+	--Continuar
+	--Continuar
 	[Description] [VARCHAR](MAX) NOT NULL,
-	-- Completar mas adelante
-	-- Completar mas adelante
+	--Continuar
+	--Continuar
+	[CompanysId] [BIGINT] NOT NULL,
  CONSTRAINT [PK_CompanyJobOffers] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -88,9 +101,9 @@ CREATE TABLE [org].[CompanyJobOffers](
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[CompanyJobOffers]  WITH CHECK ADD  CONSTRAINT [FK_CompanyJobOffers_Companys] FOREIGN KEY([generalPageId])
-REFERENCES [dbo].[Companys] ([Id])
+ALTER TABLE [org].[CompanyJobOffers]  WITH CHECK ADD  CONSTRAINT [FK_CompanyJobOffers_Companys] FOREIGN KEY([CompanysId])
+REFERENCES [org].[Companys] ([Id])
 GO
 
-ALTER TABLE [dbo].[CompanyJobOffers] CHECK CONSTRAINT [FK_CompanyJobOffers_Companys]
+ALTER TABLE [org].[CompanyJobOffers] CHECK CONSTRAINT [FK_CompanyJobOffers_Companys]
 GO

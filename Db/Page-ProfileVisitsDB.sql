@@ -9,6 +9,7 @@
 
 CREATE TABLE [dbo].[ProfileVisitsPage](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[HeadTitle] [VARCHAR](100) NOT NULL,
 	[Title] [VARCHAR](100) NOT NULL,
 	[Subtititle] [VARCHAR](100) NOT NULL,
 	[Description] [VARCHAR](200) NOT NULL,

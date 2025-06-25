@@ -8,6 +8,7 @@
 ------------------------------------------------------
 CREATE TABLE [dbo].[JobsPageNoFilters](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[HeadTitle] [VARCHAR](100) NOT NULL,
 	[Title] [VARCHAR](100) NOT NULL,
 	[VoidSearchTextField] [VARCHAR](100) NOT NULL,
 	[VoidLocationField] [VARCHAR](100) NOT NULL,

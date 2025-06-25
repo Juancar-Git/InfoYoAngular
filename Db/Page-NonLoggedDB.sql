@@ -27,6 +27,7 @@ GO
 ------------------------------------------------------
 CREATE TABLE [dbo].[NoLogHeader](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[HeadTitle] [VARCHAR](100) NOT NULL,
 	[Title] [VARCHAR](50) NOT NULL,
 	[HeadBgImgPath] [VARCHAR](MAX) NOT NULL,
 	[CompanyAccessBtn] [VARCHAR](50) NOT NULL,

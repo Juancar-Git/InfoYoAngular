@@ -9,6 +9,7 @@
 
 CREATE TABLE [dbo].[PersonalDataPage](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[HeadTitle] [VARCHAR](100) NOT NULL,
 	[Title] [VARCHAR](100) NOT NULL,
 	[AboutMeTtl] [VARCHAR](100) NOT NULL,
 	[Photo] [VARCHAR](100) NOT NULL,

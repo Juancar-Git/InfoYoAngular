@@ -9,6 +9,7 @@
 
 CREATE TABLE [dbo].[MyOffersPage](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
+	[HeadTitle] [VARCHAR](100) NOT NULL,
 	[Title] [VARCHAR](100) NOT NULL,
 	[HideBtn] [VARCHAR](50) NOT NULL,
 	[CandidacyTab] [VARCHAR](100) NOT NULL,

@@ -5,13 +5,17 @@ GET http://api.zippopotam.us/{countryCode}/{postalCode}
 
 
 
-CREATE TABLE paises (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    nombre NVARCHAR(100) NOT NULL,
-    codigo_iso CHAR(3) NOT NULL
+CREATE TABLE Countrys (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    IsoCode CHAR(3) UNIQUE NOT NULL
 );
 
-INSERT INTO paises (nombre, codigo_iso) VALUES
+-- Index 
+CREATE UNIQUE INDEX IX_Countrys_IsoCode ON Countrys(IsoCode);
+
+-- Inserts
+INSERT INTO Countrys (Name, IsoCode) VALUES
 (N'Afganistán', 'AFG'),
 (N'Albania', 'ALB'),
 (N'Alemania', 'DEU'),

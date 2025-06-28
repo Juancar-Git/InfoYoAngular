@@ -30,6 +30,10 @@ CREATE TABLE [dbo].[MyOffersPage](
 ) ON [PRIMARY]
 GO
 
+------------------------------------------------------
+-- 			More Options Items TABLE
+------------------------------------------------------
+
 CREATE TABLE [dbo].[MoreOptionsItems](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[Title] [VARCHAR](100) NOT NULL,

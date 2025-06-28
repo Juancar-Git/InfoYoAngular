@@ -18,6 +18,7 @@ CREATE TABLE [org].[CvVisits](
 ) ON [PRIMARY]
 GO
 
+-- Foreign Keys
 ALTER TABLE [org].[CvVisits]  WITH CHECK ADD  CONSTRAINT [FK_CvVisits_Persons] FOREIGN KEY([PersonsId])
 REFERENCES [org].[Persons] ([Id])
 GO
@@ -31,3 +32,17 @@ GO
 
 ALTER TABLE [org].[CvVisits] CHECK CONSTRAINT [FK_CvVisits_Companys]
 GO
+
+
+-- Index 
+CREATE NONCLUSTERED INDEX IX_CvVisits_CompanysId
+ON org.CvVisits(CompanysId);
+
+CREATE NONCLUSTERED INDEX IX_CvVisits_PersonsId
+ON org.CvVisits(PersonsId);
+
+CREATE NONCLUSTERED INDEX IX_CvVisits_VisitType
+ON org.CvVisits(VisitType);
+
+CREATE NONCLUSTERED INDEX IX_CvVisits_Birthdate
+ON org.CvVisits(Birthdate);

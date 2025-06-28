@@ -6,7 +6,7 @@
 ------------------------------------------------------
 -- 			Jobs Page No Filters TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[JobsPageNoFilters](
+CREATE TABLE [dbo].[JobsPageNoFilt](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[HeadTitle] [VARCHAR](100) NOT NULL,
 	[Title] [VARCHAR](100) NOT NULL,
@@ -15,21 +15,21 @@ CREATE TABLE [dbo].[JobsPageNoFilters](
 	[SearchBtn] [VARCHAR](50) NOT NULL,
 	[OffersTitle] [VARCHAR](100) NOT NULL,
 	[OffersBaseUrl] [VARCHAR](MAX) NOT NULL,
-	[candidacyTitle] [VARCHAR](100) NOT NULL,
-	[candidacyComment] [VARCHAR](100) NOT NULL,
-	[candidacyLinkText] [VARCHAR](100) NOT NULL,
-	[candidacyLinkUrl] [VARCHAR](MAX) NOT NULL,
-	[preferencesTitle] [VARCHAR](100) NOT NULL,
-	[prefBtn] [VARCHAR](50) NOT NULL,
-	[prefBtnUrl] [VARCHAR](100) NOT NULL,
-	[prefBtn] [VARCHAR](50) NOT NULL,
-	[prefEditBtnUrl] [VARCHAR](MAX) NOT NULL,
-	[prefMoreBtn] [VARCHAR](50) NOT NULL,
-	[prefMoreBtnUrl] [VARCHAR](MAX) NOT NULL,
+	[CandidacyTitle] [VARCHAR](100) NOT NULL,
+	[CandidacyComment] [VARCHAR](100) NOT NULL,
+	[CandidacyLinkText] [VARCHAR](100) NOT NULL,
+	[CandidacyLinkUrl] [VARCHAR](MAX) NOT NULL,
+	[PreferencesTitle] [VARCHAR](100) NOT NULL,
+	[PrefBtn] [VARCHAR](50) NOT NULL,
+	[PrefBtnUrl] [VARCHAR](100) NOT NULL,
+	[PrefBtn] [VARCHAR](50) NOT NULL,
+	[PrefEditBtnUrl] [VARCHAR](MAX) NOT NULL,
+	[PrefMoreBtn] [VARCHAR](50) NOT NULL,
+	[PrefMoreBtnUrl] [VARCHAR](MAX) NOT NULL,
 	[SaveItemIcon] [VARCHAR](100) NOT NULL,
 	[YourOffersTitle] [VARCHAR](100) NOT NULL,
 	[YourOffersSubTitle] [VARCHAR](100) NOT NULL,
- CONSTRAINT [PK_JobsPageNoFilters] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_JobsPageNoFilt] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -40,7 +40,7 @@ GO
 ------------------------------------------------------
 -- 			Jobs Page With Filters TABLE
 ------------------------------------------------------
-CREATE TABLE [dbo].[JobsPageWithFilters](
+CREATE TABLE [dbo].[JobsPageWithFilt](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[TitleSearchTextField] [VARCHAR](50) NOT NULL,
 	[VoidSearchTextField] [VARCHAR](100) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE [dbo].[JobsPageWithFilters](
 	[NewSearchBtn] [VARCHAR](50) NOT NULL,
 	[RelationOffersTxt] [VARCHAR](300) NOT NULL,
 	[RelationCompaniesTxt] [VARCHAR](300) NOT NULL,
- CONSTRAINT [PK_JobsPageWithFilters] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_JobsPageWithFilt] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -89,6 +89,10 @@ CREATE TABLE [dbo].[SideFilterTypes](
 ) ON [PRIMARY]
 GO
 
+-- Index 
+CREATE NONCLUSTERED INDEX IX_SideFilterTypes_FilterKey ON dbo.SideFilterTypes(FilterKey);
+
+
 ------------------------------------------------------
 -- 			Footer Links Section Columns Items TABLE
 ------------------------------------------------------
@@ -104,9 +108,14 @@ CREATE TABLE [dbo].[SideFilterItems](
 ) ON [PRIMARY]
 GO
 
+-- Foreign Keys
 ALTER TABLE [dbo].[SideFilterItems]  WITH CHECK ADD  CONSTRAINT [FK_SideFilterItems_SideFilterTypes] FOREIGN KEY([SideFilterTypesId])
 REFERENCES [dbo].[SideFilterTypes] ([Id])
 GO
 
 ALTER TABLE [dbo].[SideFilterItems] CHECK CONSTRAINT [FK_SideFilterItems_SideFilterTypes]
 GO
+
+
+-- Index 
+CREATE NONCLUSTERED INDEX IX_SideFilterItems_SideFilterTypesId ON dbo.SideFilterItems(SideFilterTypesId);

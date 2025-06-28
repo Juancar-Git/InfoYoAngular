@@ -15,7 +15,7 @@ CREATE TABLE [org].[Companys](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[CompanyName] [VARCHAR](150) NOT NULL,
 	[RegisteredName] [VARCHAR](150) NOT NULL,
-	[NIF] [VARCHAR](30) NOT NULL,
+	[NIF] [VARCHAR](30) UNIQUE NOT NULL,
 	[TaxAddress] [VARCHAR](100) NOT NULL,
 	[TaxCountry] [VARCHAR](100) NOT NULL,
 	[TaxProvince] [VARCHAR](100) NOT NULL,
@@ -48,6 +48,13 @@ CREATE TABLE [org].[Companys](
 ) ON [PRIMARY]
 GO
 
+-- Index
+CREATE UNIQUE INDEX IX_Companys_NIF ON org.Companys(NIF);
+
+CREATE NONCLUSTERED INDEX IX_Companys_CompanyName ON org.Companys(CompanyName);
+
+CREATE NONCLUSTERED INDEX IX_Companys_TaxLocation
+ON org.Companys(TaxCountry, TaxProvince, TaxTown);
 
 
 ------------------------------------------------------
@@ -67,6 +74,7 @@ CREATE TABLE [org].[CompanyInfo](
 ) ON [PRIMARY]
 GO
 
+-- Foreign Keys
 ALTER TABLE [org].[CompanyInfo]  WITH CHECK ADD  CONSTRAINT [FK_CompanyInfo_Companys] FOREIGN KEY([CompanysId])
 REFERENCES [org].[Companys] ([Id])
 GO
@@ -75,6 +83,8 @@ ALTER TABLE [org].[CompanyInfo] CHECK CONSTRAINT [FK_CompanyInfo_Companys]
 GO
 
 
+-- Index 
+CREATE UNIQUE INDEX IX_CompanyInfo_CompanysId ON org.CompanyInfo(CompanysId);
 
 
 ------------------------------------------------------
@@ -112,6 +122,7 @@ CREATE TABLE [org].[CompanyJobOffers](
 ) ON [PRIMARY]
 GO
 
+-- Foreign Keys
 ALTER TABLE [org].[CompanyJobOffers]  WITH CHECK ADD  CONSTRAINT [FK_CompanyJobOffers_Companys] FOREIGN KEY([CompanysId])
 REFERENCES [org].[Companys] ([Id])
 GO
@@ -146,6 +157,24 @@ GO
 
 ALTER TABLE [org].[CompanyJobOffers] CHECK CONSTRAINT [FK_CompanyJobOffers_ContractType]
 GO
+
+
+-- Index 
+CREATE NONCLUSTERED INDEX IX_JobOffers_Active_PublicationDate
+ON org.CompanyJobOffers(Active, PublicationDate);
+
+CREATE NONCLUSTERED INDEX IX_JobOffers_Location
+ON org.CompanyJobOffers(Country, Province, Town);
+
+CREATE NONCLUSTERED INDEX IX_JobOffers_JobCategory
+ON org.CompanyJobOffers(JobCategoryId);
+
+CREATE NONCLUSTERED INDEX IX_JobOffers_CompanysId
+ON org.CompanyJobOffers(CompanysId);
+
+CREATE NONCLUSTERED INDEX IX_JobOffers_ContractType_WorkDay
+ON org.CompanyJobOffers(ContractTypeId, WorkDayTypeId);
+
 
 ------------------------------------------------------
 -- 			Job Category TABLE
@@ -237,6 +266,15 @@ GO
 ALTER TABLE [org].[CompanyOpinions] CHECK CONSTRAINT [FK_CompanyOpinions_Persons]
 GO
 
+-- Index 
+CREATE NONCLUSTERED INDEX IX_CompanyOpinions_CompanysId
+ON org.CompanyOpinions(CompanysId);
+
+CREATE NONCLUSTERED INDEX IX_CompanyOpinions_Companys_Active
+ON org.CompanyOpinions(CompanysId, Active);
+
+CREATE NONCLUSTERED INDEX IX_CompanyOpinions_PersonsId
+ON org.CompanyOpinions(PersonsId);
 
 
 ------------------------------------------------------
@@ -256,6 +294,7 @@ CREATE TABLE [org].[CnyComplaintOpinions](
 ) ON [PRIMARY]
 GO
 
+-- Foreign Keys
 ALTER TABLE [org].[CnyComplaintOpinions]  WITH CHECK ADD  CONSTRAINT [FK_CnyComplaintOpinions_CompanyOpinions] FOREIGN KEY([CompanyOpinionsId])
 REFERENCES [org].[CompanyOpinions] ([Id])
 GO
@@ -276,6 +315,14 @@ GO
 
 ALTER TABLE [org].[CnyComplaintOpinions] CHECK CONSTRAINT [FK_CnyComplaintOpinions_CnyComplaintReason]
 GO
+
+-- Index 
+CREATE NONCLUSTERED INDEX IX_CnyComplaintOpinions_Reason
+ON org.CnyComplaintOpinions(CnyComplaintReasonId);
+
+CREATE NONCLUSTERED INDEX IX_CnyComplaintOpinions_Active
+ON org.CnyComplaintOpinions(Active)
+WHERE Active = 1;
 
 
 ------------------------------------------------------

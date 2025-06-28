@@ -22,7 +22,9 @@ CREATE TABLE [auth].[Users](
 ) ON [PRIMARY]
 GO
 
-
+-- Index
+CREATE NONCLUSTERED INDEX IX_Users_Rol_Status
+ON auth.Users(Rol, Status);
 
 
 ------------------------------------------------------
@@ -57,6 +59,7 @@ CREATE TABLE [org].[Persons](
 	[OpenToWork] [BIT] NOT NULL DEFAULT FALSE,
 	[CreationDate] [DATETIME] NOT NULL DEFAULT GETDATE(),
 	[Closed] [BIT] NOT NULL DEFAULT FALSE,
+	[UsersId] [BIGINT] NOT NULL,
  CONSTRAINT [PK_Persons] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -64,6 +67,28 @@ CREATE TABLE [org].[Persons](
 ) ON [PRIMARY]
 GO
 
+-- Foreign Keys
+ALTER TABLE [org].[Persons]  WITH CHECK ADD  CONSTRAINT [FK_Persons_Users] FOREIGN KEY([UsersId])
+REFERENCES [auth].[Users] ([Id])
+GO
+
+ALTER TABLE [org].[Persons] CHECK CONSTRAINT [FK_Persons_Users]
+GO
+
+ALTER TABLE [org].[Persons] ADD CONSTRAINT [UQ_Persons_UsersId] UNIQUE ([UsersId]);
+GO
+
+-- Index
+CREATE NONCLUSTERED INDEX IX_Persons_Name_Surnames
+ON org.Persons(Name, FirstSurname, SecondSurname);
+
+CREATE NONCLUSTERED INDEX IX_Persons_Location
+ON org.Persons(Country, Province, Town);
+
+
+CREATE NONCLUSTERED INDEX IX_Persons_OpenToWork
+ON org.Persons(OpenToWork)
+WHERE OpenToWork = 1;
 
 ------------------------------------------------------
 -- 			Link Company Job Offers - Person TABLE
@@ -81,6 +106,7 @@ CREATE TABLE [org].[JobOffersPersons](
 ) ON [PRIMARY]
 GO
 
+-- Foreign Keys
 ALTER TABLE [org].[JobOffersPersons]  WITH CHECK ADD  CONSTRAINT [FK_JobOffersPersons_CompanyJobOffers] FOREIGN KEY([JobOffersId])
 REFERENCES [org].[CompanyJobOffers] ([Id])
 GO
@@ -94,3 +120,14 @@ GO
 
 ALTER TABLE [org].[JobOffersPersons] CHECK CONSTRAINT [FK_JobOffersPersons_Persons]
 GO
+
+
+-- Index
+CREATE NONCLUSTERED INDEX IX_JobOffersPersons_JobOffersId
+ON org.JobOffersPersons(JobOffersId);
+
+CREATE NONCLUSTERED INDEX IX_JobOffersPersons_Status
+ON org.JobOffersPersons(Status);
+
+CREATE NONCLUSTERED INDEX IX_JobOffersPersons_ApplicationDate
+ON org.JobOffersPersons(ApplicationDate);

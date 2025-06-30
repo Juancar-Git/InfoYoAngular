@@ -113,10 +113,6 @@
       <Project>{e9549f19-154c-4e37-9d99-de46c37ee4e8}</Project>
       <Name>Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{e92f9142-623d-463e-ba57-71686c17a52f}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

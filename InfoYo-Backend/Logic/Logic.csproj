@@ -52,10 +52,6 @@
       <Project>{83c246d3-3b40-4997-b41f-1fc347a0ad27}</Project>
       <Name>Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{e92f9142-623d-463e-ba57-71686c17a52f}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Rest\Rest.csproj">
       <Project>{bdfef307-a1a7-4b2c-8b22-3cf3185ff1bb}</Project>
       <Name>Rest</Name>

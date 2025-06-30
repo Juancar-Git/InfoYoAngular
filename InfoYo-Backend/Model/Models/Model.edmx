@@ -1,0 +1,2769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Rol" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OCnyComplaintOpinion">
+          <Key>
+            <PropertyRef Name="OCompanyOpinionId" />
+            <PropertyRef Name="OPersonId" />
+          </Key>
+          <Property Name="OCompanyOpinionId" Type="bigint" Nullable="false" />
+          <Property Name="OPersonId" Type="bigint" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="2000" />
+          <Property Name="Stars" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="OCnyComplaintReasonId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OCnyComplaintReason">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="RegisteredName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NIF" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TaxAddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TaxCountry" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TaxProvince" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TaxTown" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TaxPostCode" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="RegOffiAddress" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="RegOffiCountry" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RegOffiProvince" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RegOffiTown" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RegOffiPostCode" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="LaborSector" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="WorkersNum" Type="int" Nullable="false" />
+          <Property Name="InternalName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="MainEmail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="SecondaryEmail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="MovilPhone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="LandlinePhone" Type="varchar" MaxLength="20" />
+          <Property Name="ForeignPhone" Type="varchar" MaxLength="20" />
+          <Property Name="WebSite" Type="varchar(max)" />
+          <Property Name="LogoImgPath" Type="varchar(max)" />
+          <Property Name="BgImgPath" Type="varchar(max)" />
+          <Property Name="MiniImgPath" Type="varchar(max)" />
+          <Property Name="CompanyBgImgPath" Type="varchar(max)" />
+          <Property Name="MiniText" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="OCompanyInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="YtVideoUrl" Type="varchar(max)" />
+          <Property Name="FirstImgUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="SecondImgUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="OCompanyId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OCompanyJobOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="PublicationDate" Type="datetime" />
+          <Property Name="Country" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Province" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Town" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LocationType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="MinExperienceYears" Type="int" Nullable="false" />
+          <Property Name="MinRequirements" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="OCompanyId" Type="bigint" Nullable="false" />
+          <Property Name="OJobCategoryId" Type="bigint" Nullable="false" />
+          <Property Name="OMinStudyId" Type="bigint" Nullable="false" />
+          <Property Name="OWorkDayTypeId" Type="bigint" Nullable="false" />
+          <Property Name="OContractTypeId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OCompanyOpinion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" />
+          <Property Name="Description" Type="varchar" MaxLength="300" />
+          <Property Name="Stars" Type="int" Nullable="false" />
+          <Property Name="Complaints" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="OCompanyId" Type="bigint" Nullable="false" />
+          <Property Name="OPersonId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OContractType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OCountry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsoCode" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OCvVisit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VisitType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="SearchText" Type="varchar(max)" Nullable="false" />
+          <Property Name="Birthdate" Type="datetime" />
+          <Property Name="OPersonId" Type="bigint" Nullable="false" />
+          <Property Name="OCompanyId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OJobCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OJobOfferPerson">
+          <Key>
+            <PropertyRef Name="OPersonId" />
+            <PropertyRef Name="OJobOfferId" />
+          </Key>
+          <Property Name="OPersonId" Type="bigint" Nullable="false" />
+          <Property Name="OJobOfferId" Type="bigint" Nullable="false" />
+          <Property Name="ApplicationDate" Type="date" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OMinStudy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FirstSurname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SecondSurname" Type="varchar" MaxLength="100" />
+          <Property Name="Birthdate" Type="datetime" />
+          <Property Name="DocumentType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PostCode" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Province" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Town" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="MovilPhone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="LandlinePhone" Type="varchar" MaxLength="20" />
+          <Property Name="ForeignPhone" Type="varchar" MaxLength="20" />
+          <Property Name="PreferPhone" Type="char" MaxLength="1" />
+          <Property Name="WebSite" Type="varchar(max)" Nullable="false" />
+          <Property Name="OpenToWork" Type="bit" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Closed" Type="bit" Nullable="false" />
+          <Property Name="AUserId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OPublicityData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicityBgImgPath" Type="varchar(max)" Nullable="false" />
+          <Property Name="LinkUrl" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OWorkDayType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogDropDownMenuLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LinkUrl" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WCandidateLogIn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogInTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ForgetPw" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LogInBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SignInTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreateCvTl" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CreateCvDesc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateCvIcon" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RegisterTl" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="RegisterDesc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="RegisterIcon" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UpdCvTl" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="UpdCvDesc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="UpdCvIcon" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SignInBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpenSession" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CompanyAccess" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Help" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WCompanyPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeadTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmployeesText" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OpinionsText" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="InfoTabTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="InfoSectionTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="InfoSeeMore" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OffersTabTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OffersSectionTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NewLabel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PostAgainLabel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AgoTxt" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NoDataSalaryTxt" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpinionsTabTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OpinionsSectionTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ComplaintBnt" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PreviousBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NextBtn" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrAppDowloadLinkItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TitleHoverDesc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ItemUrl" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrLinksSectionCol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrLinksSectionColItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TitleHoverDesc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ItemPath" Type="varchar(max)" Nullable="false" />
+          <Property Name="WFtrLinksSectionColId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrPartnersSect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CopyrightText" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrPartnersSectItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemUrl" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrSocialMediaSect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrSocialMediaSectItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TitleHoverDesc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IconItem" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ItemUrl" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WGender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WJobsPageNoFilt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeadTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VoidSearchTextField" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VoidLocationField" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SearchBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OffersTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OffersBaseUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="CandidacyTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CandidacyComment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CandidacyLinkText" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CandidacyLinkUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="PreferencesTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PrefBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrefBtnUrl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PrefEditBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrefEditBtnUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="PrefMoreBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrefMoreBtnUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="SaveItemIcon" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="YourOffersTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="YourOffersSubTitle" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WJobsPageWithFilt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleSearchTextField" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VoidSearchTextField" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TitleLocationField" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VoidLocationField" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NonVariableOffersQtyText" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderByOffersText" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderByOffersInfoText" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="NextBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PreviousBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NewSearchBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RelationOffersTxt" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="RelationCompaniesTxt" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WLogHeader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WLogNavBarLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LinkUrl" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMoreOptionsItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMyCvPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ExperienceTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AddBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EditBtn" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMyCvSect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FilterKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SubTitle" Type="varchar" MaxLength="300" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="AddEditBaseUrl" Type="varchar(max)" />
+          <Property Name="DefaultTxt" Type="varchar" MaxLength="150" />
+          <Property Name="AddCardText" Type="varchar" MaxLength="150" />
+          <Property Name="AddCardBtn" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="WMyCvSectOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="WMyCvSectId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMyOffersPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeadTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="HideBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CandidacyTab" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmptyCandidacyTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmptyCandidacyDesc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmptyCandidacyImg" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SavedTab" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmptySavedTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmptySavedDesc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmptySavedImg" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MoreOptionsTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NextBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PreviousBtn" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCitiesItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FilterName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FilterValue" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCitiesSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MoreCitiesBtn" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCompanyItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ItemBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemBtnUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="EnabledItem" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCompanyPublicityItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ItemBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemBtnUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="EnabledItem" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCompanySection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ShowMoreTextBtn" Type="varchar(max)" Nullable="false" />
+          <Property Name="DefaultMiniIconImgPath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="DefaultMiniImgPath" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DefaultOffersQtyText" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogFiltersItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FilterName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FilterValue" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogFiltersSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="MoreFiltersBtn" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogHeader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeadTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HeadBgImgPath" Type="varchar(max)" Nullable="false" />
+          <Property Name="CompanyAccessBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CompanyAccessBtnUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="CandidateAccessBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CandidateAccessBtnUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="BlockFilterTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SeachFilterTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LocationFilterTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SearchBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SearchBtnHoverDesc" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogNavBarLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LinkUrl" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogSectorItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FilterName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FilterValue" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogSectorSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MoreSectorsBtn" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WOrdeByOffersItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WPersonalDataPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeadTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AboutMeTtl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Photo" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhotoBtn" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FirstSurName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SecondoSurName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DocType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DocNum" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ResideceTtl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PostCode" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Province" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Town" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AccessTtl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModEmailTxt" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneTtl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MovilPhone" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LandlinePhone" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ForeignPhone" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Preferential" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="WebTtl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="WebDescTxt" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="WebUrl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AddWeb" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OptionalTxt" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SaveBtn" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CancelBtn" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WProfileVisitsPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeadTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Subtititle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="HourItemText" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="SeeCompanyItemBtn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SeeCompanyBaseItemUrl" Type="varchar(max)" Nullable="false" />
+          <Property Name="EmptyDefaultTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmptyDefaultDesc" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EmptyDefaultImg" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WSideFilterItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemValue" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ItemLabel" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="WSideFilterTypeId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WSideFilterType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FilterKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ShowMoreTitle" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_OCnyComplaintOpinion_OCnyComplaintReason">
+          <End Role="OCnyComplaintReason" Type="Self.OCnyComplaintReason" Multiplicity="1" />
+          <End Role="OCnyComplaintOpinion" Type="Self.OCnyComplaintOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCnyComplaintReason">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCnyComplaintOpinion">
+              <PropertyRef Name="OCnyComplaintReasonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCnyComplaintOpinion_OCompanyOpinion">
+          <End Role="OCompanyOpinion" Type="Self.OCompanyOpinion" Multiplicity="1" />
+          <End Role="OCnyComplaintOpinion" Type="Self.OCnyComplaintOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompanyOpinion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCnyComplaintOpinion">
+              <PropertyRef Name="OCompanyOpinionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCnyComplaintOpinion_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OCnyComplaintOpinion" Type="Self.OCnyComplaintOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCnyComplaintOpinion">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyInfo_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCompanyInfo" Type="Self.OCompanyInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyInfo">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OContractType">
+          <End Role="OContractType" Type="Self.OContractType" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OContractType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OContractTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OJobCategory">
+          <End Role="OJobCategory" Type="Self.OJobCategory" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OJobCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OJobCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OMinStudy">
+          <End Role="OMinStudy" Type="Self.OMinStudy" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OMinStudy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OMinStudyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OWorkDayType">
+          <End Role="OWorkDayType" Type="Self.OWorkDayType" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OWorkDayType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OWorkDayTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyOpinion_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCompanyOpinion" Type="Self.OCompanyOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyOpinion">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyOpinion_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OCompanyOpinion" Type="Self.OCompanyOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyOpinion">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCvVisit_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCvVisit" Type="Self.OCvVisit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCvVisit">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCvVisit_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OCvVisit" Type="Self.OCvVisit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCvVisit">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OJobOfferPerson_OCompanyJobOffer">
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="1" />
+          <End Role="OJobOfferPerson" Type="Self.OJobOfferPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompanyJobOffer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OJobOfferPerson">
+              <PropertyRef Name="OJobOfferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OJobOfferPerson_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OJobOfferPerson" Type="Self.OJobOfferPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OJobOfferPerson">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OPerson_AUser">
+          <End Role="AUser" Type="Self.AUser" Multiplicity="1" />
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OPerson">
+              <PropertyRef Name="AUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WFtrLinksSectionColItem_WFtrLinksSectionCol">
+          <End Role="WFtrLinksSectionCol" Type="Self.WFtrLinksSectionCol" Multiplicity="1" />
+          <End Role="WFtrLinksSectionColItem" Type="Self.WFtrLinksSectionColItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WFtrLinksSectionCol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WFtrLinksSectionColItem">
+              <PropertyRef Name="WFtrLinksSectionColId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WMyCvSectOption_WMyCvSect">
+          <End Role="WMyCvSect" Type="Self.WMyCvSect" Multiplicity="1" />
+          <End Role="WMyCvSectOption" Type="Self.WMyCvSectOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WMyCvSect">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WMyCvSectOption">
+              <PropertyRef Name="WMyCvSectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WSideFilterItem_WSideFilterType">
+          <End Role="WSideFilterType" Type="Self.WSideFilterType" Multiplicity="1" />
+          <End Role="WSideFilterItem" Type="Self.WSideFilterItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WSideFilterType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WSideFilterItem">
+              <PropertyRef Name="WSideFilterTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="AUser" EntityType="Self.AUser" Schema="auth" store:Type="Tables" />
+          <EntitySet Name="OCnyComplaintOpinion" EntityType="Self.OCnyComplaintOpinion" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OCnyComplaintReason" EntityType="Self.OCnyComplaintReason" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OCompany" EntityType="Self.OCompany" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OCompanyInfo" EntityType="Self.OCompanyInfo" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OCompanyJobOffer" EntityType="Self.OCompanyJobOffer" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OCompanyOpinion" EntityType="Self.OCompanyOpinion" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OContractType" EntityType="Self.OContractType" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OCountry" EntityType="Self.OCountry" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OCvVisit" EntityType="Self.OCvVisit" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OJobCategory" EntityType="Self.OJobCategory" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OJobOfferPerson" EntityType="Self.OJobOfferPerson" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OMinStudy" EntityType="Self.OMinStudy" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OPerson" EntityType="Self.OPerson" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OPublicityData" EntityType="Self.OPublicityData" Schema="org" store:Type="Tables" />
+          <EntitySet Name="OWorkDayType" EntityType="Self.OWorkDayType" Schema="org" store:Type="Tables" />
+          <EntitySet Name="LogDropDownMenuLink" EntityType="Self.LogDropDownMenuLink" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WCandidateLogIn" EntityType="Self.WCandidateLogIn" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WCompanyPage" EntityType="Self.WCompanyPage" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WFtrAppDowloadLinkItem" EntityType="Self.WFtrAppDowloadLinkItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WFtrLinksSectionCol" EntityType="Self.WFtrLinksSectionCol" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WFtrLinksSectionColItem" EntityType="Self.WFtrLinksSectionColItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WFtrPartnersSect" EntityType="Self.WFtrPartnersSect" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WFtrPartnersSectItem" EntityType="Self.WFtrPartnersSectItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WFtrSocialMediaSect" EntityType="Self.WFtrSocialMediaSect" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WFtrSocialMediaSectItem" EntityType="Self.WFtrSocialMediaSectItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WGender" EntityType="Self.WGender" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WJobsPageNoFilt" EntityType="Self.WJobsPageNoFilt" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WJobsPageWithFilt" EntityType="Self.WJobsPageWithFilt" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WLogHeader" EntityType="Self.WLogHeader" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WLogNavBarLink" EntityType="Self.WLogNavBarLink" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WMoreOptionsItems" EntityType="Self.WMoreOptionsItems" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WMyCvPage" EntityType="Self.WMyCvPage" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WMyCvSect" EntityType="Self.WMyCvSect" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WMyCvSectOption" EntityType="Self.WMyCvSectOption" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WMyOffersPage" EntityType="Self.WMyOffersPage" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogCitiesItem" EntityType="Self.WNoLogCitiesItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogCitiesSection" EntityType="Self.WNoLogCitiesSection" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogCompanyItem" EntityType="Self.WNoLogCompanyItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogCompanyPublicityItem" EntityType="Self.WNoLogCompanyPublicityItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogCompanySection" EntityType="Self.WNoLogCompanySection" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogFiltersItem" EntityType="Self.WNoLogFiltersItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogFiltersSection" EntityType="Self.WNoLogFiltersSection" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogHeader" EntityType="Self.WNoLogHeader" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogNavBarLink" EntityType="Self.WNoLogNavBarLink" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogSectorItem" EntityType="Self.WNoLogSectorItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WNoLogSectorSection" EntityType="Self.WNoLogSectorSection" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WOrdeByOffersItem" EntityType="Self.WOrdeByOffersItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WPersonalDataPage" EntityType="Self.WPersonalDataPage" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WProfileVisitsPage" EntityType="Self.WProfileVisitsPage" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WSideFilterItem" EntityType="Self.WSideFilterItem" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WSideFilterType" EntityType="Self.WSideFilterType" Schema="web" store:Type="Tables" />
+          <AssociationSet Name="FK_OCnyComplaintOpinion_OCnyComplaintReason" Association="Self.FK_OCnyComplaintOpinion_OCnyComplaintReason">
+            <End Role="OCnyComplaintReason" EntitySet="OCnyComplaintReason" />
+            <End Role="OCnyComplaintOpinion" EntitySet="OCnyComplaintOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCnyComplaintOpinion_OCompanyOpinion" Association="Self.FK_OCnyComplaintOpinion_OCompanyOpinion">
+            <End Role="OCompanyOpinion" EntitySet="OCompanyOpinion" />
+            <End Role="OCnyComplaintOpinion" EntitySet="OCnyComplaintOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCnyComplaintOpinion_OPerson" Association="Self.FK_OCnyComplaintOpinion_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OCnyComplaintOpinion" EntitySet="OCnyComplaintOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyInfo_OCompany" Association="Self.FK_OCompanyInfo_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCompanyInfo" EntitySet="OCompanyInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OCompany" Association="Self.FK_OCompanyJobOffer_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OContractType" Association="Self.FK_OCompanyJobOffer_OContractType">
+            <End Role="OContractType" EntitySet="OContractType" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OJobCategory" Association="Self.FK_OCompanyJobOffer_OJobCategory">
+            <End Role="OJobCategory" EntitySet="OJobCategory" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OMinStudy" Association="Self.FK_OCompanyJobOffer_OMinStudy">
+            <End Role="OMinStudy" EntitySet="OMinStudy" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OWorkDayType" Association="Self.FK_OCompanyJobOffer_OWorkDayType">
+            <End Role="OWorkDayType" EntitySet="OWorkDayType" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyOpinion_OCompany" Association="Self.FK_OCompanyOpinion_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCompanyOpinion" EntitySet="OCompanyOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyOpinion_OPerson" Association="Self.FK_OCompanyOpinion_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OCompanyOpinion" EntitySet="OCompanyOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCvVisit_OCompany" Association="Self.FK_OCvVisit_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCvVisit" EntitySet="OCvVisit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCvVisit_OPerson" Association="Self.FK_OCvVisit_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OCvVisit" EntitySet="OCvVisit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OJobOfferPerson_OCompanyJobOffer" Association="Self.FK_OJobOfferPerson_OCompanyJobOffer">
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+            <End Role="OJobOfferPerson" EntitySet="OJobOfferPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OJobOfferPerson_OPerson" Association="Self.FK_OJobOfferPerson_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OJobOfferPerson" EntitySet="OJobOfferPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OPerson_AUser" Association="Self.FK_OPerson_AUser">
+            <End Role="AUser" EntitySet="AUser" />
+            <End Role="OPerson" EntitySet="OPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WFtrLinksSectionColItem_WFtrLinksSectionCol" Association="Self.FK_WFtrLinksSectionColItem_WFtrLinksSectionCol">
+            <End Role="WFtrLinksSectionCol" EntitySet="WFtrLinksSectionCol" />
+            <End Role="WFtrLinksSectionColItem" EntitySet="WFtrLinksSectionColItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WMyCvSectOption_WMyCvSect" Association="Self.FK_WMyCvSectOption_WMyCvSect">
+            <End Role="WMyCvSect" EntitySet="WMyCvSect" />
+            <End Role="WMyCvSectOption" EntitySet="WMyCvSectOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WSideFilterItem_WSideFilterType" Association="Self.FK_WSideFilterItem_WSideFilterType">
+            <End Role="WSideFilterType" EntitySet="WSideFilterType" />
+            <End Role="WSideFilterItem" EntitySet="WSideFilterItem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OPerson" Relationship="Self.FK_OPerson_AUser" FromRole="AUser" ToRole="OPerson" />
+        </EntityType>
+        <EntityType Name="OCnyComplaintOpinion">
+          <Key>
+            <PropertyRef Name="OCompanyOpinionId" />
+            <PropertyRef Name="OPersonId" />
+          </Key>
+          <Property Name="OCompanyOpinionId" Type="Int64" Nullable="false" />
+          <Property Name="OPersonId" Type="Int64" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Stars" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="OCnyComplaintReasonId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="OCnyComplaintReason" Relationship="Self.FK_OCnyComplaintOpinion_OCnyComplaintReason" FromRole="OCnyComplaintOpinion" ToRole="OCnyComplaintReason" />
+          <NavigationProperty Name="OCompanyOpinion" Relationship="Self.FK_OCnyComplaintOpinion_OCompanyOpinion" FromRole="OCnyComplaintOpinion" ToRole="OCompanyOpinion" />
+          <NavigationProperty Name="OPerson" Relationship="Self.FK_OCnyComplaintOpinion_OPerson" FromRole="OCnyComplaintOpinion" ToRole="OPerson" />
+        </EntityType>
+        <EntityType Name="OCnyComplaintReason">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OCnyComplaintOpinion" Relationship="Self.FK_OCnyComplaintOpinion_OCnyComplaintReason" FromRole="OCnyComplaintReason" ToRole="OCnyComplaintOpinion" />
+        </EntityType>
+        <EntityType Name="OCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegisteredName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NIF" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxProvince" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxTown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxPostCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegOffiAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegOffiCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegOffiProvince" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegOffiTown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegOffiPostCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LaborSector" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WorkersNum" Type="Int32" Nullable="false" />
+          <Property Name="InternalName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MainEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SecondaryEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MovilPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LandlinePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ForeignPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LogoImgPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BgImgPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MiniImgPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyBgImgPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MiniText" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OCompanyInfo" Relationship="Self.FK_OCompanyInfo_OCompany" FromRole="OCompany" ToRole="OCompanyInfo" />
+          <NavigationProperty Name="OCompanyJobOffer" Relationship="Self.FK_OCompanyJobOffer_OCompany" FromRole="OCompany" ToRole="OCompanyJobOffer" />
+          <NavigationProperty Name="OCompanyOpinion" Relationship="Self.FK_OCompanyOpinion_OCompany" FromRole="OCompany" ToRole="OCompanyOpinion" />
+          <NavigationProperty Name="OCvVisit" Relationship="Self.FK_OCvVisit_OCompany" FromRole="OCompany" ToRole="OCvVisit" />
+        </EntityType>
+        <EntityType Name="OCompanyInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="YtVideoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FirstImgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SecondImgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OCompanyId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="OCompany" Relationship="Self.FK_OCompanyInfo_OCompany" FromRole="OCompanyInfo" ToRole="OCompany" />
+        </EntityType>
+        <EntityType Name="OCompanyJobOffer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="PublicationDate" Type="DateTime" Precision="3" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Province" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Town" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LocationType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="MinExperienceYears" Type="Int32" Nullable="false" />
+          <Property Name="MinRequirements" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="OCompanyId" Type="Int64" Nullable="false" />
+          <Property Name="OJobCategoryId" Type="Int64" Nullable="false" />
+          <Property Name="OMinStudyId" Type="Int64" Nullable="false" />
+          <Property Name="OWorkDayTypeId" Type="Int64" Nullable="false" />
+          <Property Name="OContractTypeId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="OCompany" Relationship="Self.FK_OCompanyJobOffer_OCompany" FromRole="OCompanyJobOffer" ToRole="OCompany" />
+          <NavigationProperty Name="OContractType" Relationship="Self.FK_OCompanyJobOffer_OContractType" FromRole="OCompanyJobOffer" ToRole="OContractType" />
+          <NavigationProperty Name="OJobCategory" Relationship="Self.FK_OCompanyJobOffer_OJobCategory" FromRole="OCompanyJobOffer" ToRole="OJobCategory" />
+          <NavigationProperty Name="OMinStudy" Relationship="Self.FK_OCompanyJobOffer_OMinStudy" FromRole="OCompanyJobOffer" ToRole="OMinStudy" />
+          <NavigationProperty Name="OWorkDayType" Relationship="Self.FK_OCompanyJobOffer_OWorkDayType" FromRole="OCompanyJobOffer" ToRole="OWorkDayType" />
+          <NavigationProperty Name="OJobOfferPerson" Relationship="Self.FK_OJobOfferPerson_OCompanyJobOffer" FromRole="OCompanyJobOffer" ToRole="OJobOfferPerson" />
+        </EntityType>
+        <EntityType Name="OCompanyOpinion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Stars" Type="Int32" Nullable="false" />
+          <Property Name="Complaints" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="OCompanyId" Type="Int64" Nullable="false" />
+          <Property Name="OPersonId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="OCnyComplaintOpinion" Relationship="Self.FK_OCnyComplaintOpinion_OCompanyOpinion" FromRole="OCompanyOpinion" ToRole="OCnyComplaintOpinion" />
+          <NavigationProperty Name="OCompany" Relationship="Self.FK_OCompanyOpinion_OCompany" FromRole="OCompanyOpinion" ToRole="OCompany" />
+          <NavigationProperty Name="OPerson" Relationship="Self.FK_OCompanyOpinion_OPerson" FromRole="OCompanyOpinion" ToRole="OPerson" />
+        </EntityType>
+        <EntityType Name="OContractType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OCompanyJobOffer" Relationship="Self.FK_OCompanyJobOffer_OContractType" FromRole="OContractType" ToRole="OCompanyJobOffer" />
+        </EntityType>
+        <EntityType Name="OCountry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsoCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OCvVisit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VisitType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SearchText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Birthdate" Type="DateTime" Precision="3" />
+          <Property Name="OPersonId" Type="Int64" Nullable="false" />
+          <Property Name="OCompanyId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="OCompany" Relationship="Self.FK_OCvVisit_OCompany" FromRole="OCvVisit" ToRole="OCompany" />
+          <NavigationProperty Name="OPerson" Relationship="Self.FK_OCvVisit_OPerson" FromRole="OCvVisit" ToRole="OPerson" />
+        </EntityType>
+        <EntityType Name="OJobCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OCompanyJobOffer" Relationship="Self.FK_OCompanyJobOffer_OJobCategory" FromRole="OJobCategory" ToRole="OCompanyJobOffer" />
+        </EntityType>
+        <EntityType Name="OJobOfferPerson">
+          <Key>
+            <PropertyRef Name="OPersonId" />
+            <PropertyRef Name="OJobOfferId" />
+          </Key>
+          <Property Name="OPersonId" Type="Int64" Nullable="false" />
+          <Property Name="OJobOfferId" Type="Int64" Nullable="false" />
+          <Property Name="ApplicationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OCompanyJobOffer" Relationship="Self.FK_OJobOfferPerson_OCompanyJobOffer" FromRole="OJobOfferPerson" ToRole="OCompanyJobOffer" />
+          <NavigationProperty Name="OPerson" Relationship="Self.FK_OJobOfferPerson_OPerson" FromRole="OJobOfferPerson" ToRole="OPerson" />
+        </EntityType>
+        <EntityType Name="OMinStudy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OCompanyJobOffer" Relationship="Self.FK_OCompanyJobOffer_OMinStudy" FromRole="OMinStudy" ToRole="OCompanyJobOffer" />
+        </EntityType>
+        <EntityType Name="OPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SecondSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Birthdate" Type="DateTime" Precision="3" />
+          <Property Name="DocumentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Province" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Town" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MovilPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LandlinePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ForeignPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PreferPhone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpenToWork" Type="Boolean" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Closed" Type="Boolean" Nullable="false" />
+          <Property Name="AUserId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="AUser" Relationship="Self.FK_OPerson_AUser" FromRole="OPerson" ToRole="AUser" />
+          <NavigationProperty Name="OCnyComplaintOpinion" Relationship="Self.FK_OCnyComplaintOpinion_OPerson" FromRole="OPerson" ToRole="OCnyComplaintOpinion" />
+          <NavigationProperty Name="OCompanyOpinion" Relationship="Self.FK_OCompanyOpinion_OPerson" FromRole="OPerson" ToRole="OCompanyOpinion" />
+          <NavigationProperty Name="OCvVisit" Relationship="Self.FK_OCvVisit_OPerson" FromRole="OPerson" ToRole="OCvVisit" />
+          <NavigationProperty Name="OJobOfferPerson" Relationship="Self.FK_OJobOfferPerson_OPerson" FromRole="OPerson" ToRole="OJobOfferPerson" />
+        </EntityType>
+        <EntityType Name="OPublicityData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicityBgImgPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OWorkDayType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OCompanyJobOffer" Relationship="Self.FK_OCompanyJobOffer_OWorkDayType" FromRole="OWorkDayType" ToRole="OCompanyJobOffer" />
+        </EntityType>
+        <EntityType Name="LogDropDownMenuLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WCandidateLogIn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogInTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ForgetPw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LogInBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SignInTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateCvTl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateCvDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateCvIcon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegisterTl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegisterDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RegisterIcon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UpdCvTl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UpdCvDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UpdCvIcon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SignInBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpenSession" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyAccess" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Help" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WCompanyPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeadTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeesText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpinionsText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InfoTabTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InfoSectionTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InfoSeeMore" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OffersTabTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OffersSectionTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NewLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostAgainLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AgoTxt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NoDataSalaryTxt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpinionsTabTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpinionsSectionTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ComplaintBnt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PreviousBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NextBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrAppDowloadLinkItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TitleHoverDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrLinksSectionCol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="WFtrLinksSectionColItem" Relationship="Self.FK_WFtrLinksSectionColItem_WFtrLinksSectionCol" FromRole="WFtrLinksSectionCol" ToRole="WFtrLinksSectionColItem" />
+        </EntityType>
+        <EntityType Name="WFtrLinksSectionColItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TitleHoverDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WFtrLinksSectionColId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="WFtrLinksSectionCol" Relationship="Self.FK_WFtrLinksSectionColItem_WFtrLinksSectionCol" FromRole="WFtrLinksSectionColItem" ToRole="WFtrLinksSectionCol" />
+        </EntityType>
+        <EntityType Name="WFtrPartnersSect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CopyrightText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrPartnersSectItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrSocialMediaSect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WFtrSocialMediaSectItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TitleHoverDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IconItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WGender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WJobsPageNoFilt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeadTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VoidSearchTextField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VoidLocationField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SearchBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OffersTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OffersBaseUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CandidacyTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CandidacyComment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CandidacyLinkText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CandidacyLinkUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PreferencesTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrefBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrefBtnUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrefEditBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrefEditBtnUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrefMoreBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrefMoreBtnUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SaveItemIcon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="YourOffersTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="YourOffersSubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WJobsPageWithFilt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleSearchTextField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VoidSearchTextField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TitleLocationField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VoidLocationField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NonVariableOffersQtyText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderByOffersText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderByOffersInfoText" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NextBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PreviousBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NewSearchBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RelationOffersTxt" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RelationCompaniesTxt" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WLogHeader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WLogNavBarLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMoreOptionsItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMyCvPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ExperienceTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AddBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EditBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMyCvSect">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FilterKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SubTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AddEditBaseUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultTxt" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AddCardText" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AddCardBtn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="WMyCvSectOption" Relationship="Self.FK_WMyCvSectOption_WMyCvSect" FromRole="WMyCvSect" ToRole="WMyCvSectOption" />
+        </EntityType>
+        <EntityType Name="WMyCvSectOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WMyCvSectId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="WMyCvSect" Relationship="Self.FK_WMyCvSectOption_WMyCvSect" FromRole="WMyCvSectOption" ToRole="WMyCvSect" />
+        </EntityType>
+        <EntityType Name="WMyOffersPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeadTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HideBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CandidacyTab" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptyCandidacyTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptyCandidacyDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptyCandidacyImg" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SavedTab" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptySavedTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptySavedDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptySavedImg" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MoreOptionsTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NextBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PreviousBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCitiesItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilterName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilterValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCitiesSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MoreCitiesBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCompanyItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBtnUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EnabledItem" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCompanyPublicityItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBtnUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EnabledItem" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogCompanySection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShowMoreTextBtn" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DefaultMiniIconImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DefaultMiniImgPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DefaultOffersQtyText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogFiltersItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilterName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilterValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogFiltersSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MoreFiltersBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogHeader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeadTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HeadBgImgPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyAccessBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyAccessBtnUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CandidateAccessBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CandidateAccessBtnUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BlockFilterTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SeachFilterTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LocationFilterTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SearchBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SearchBtnHoverDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogNavBarLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogSectorItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemBgImgPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilterName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FilterValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WNoLogSectorSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MoreSectorsBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WOrdeByOffersItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WPersonalDataPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeadTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AboutMeTtl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhotoBtn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstSurName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SecondoSurName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ResideceTtl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Province" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Town" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccessTtl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModEmailTxt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneTtl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MovilPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LandlinePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ForeignPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Preferential" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WebTtl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WebDescTxt" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WebUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AddWeb" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OptionalTxt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SaveBtn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CancelBtn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WProfileVisitsPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeadTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Subtititle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HourItemText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SeeCompanyItemBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SeeCompanyBaseItemUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptyDefaultTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptyDefaultDesc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmptyDefaultImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WSideFilterItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemValue" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemLabel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WSideFilterTypeId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="WSideFilterType" Relationship="Self.FK_WSideFilterItem_WSideFilterType" FromRole="WSideFilterItem" ToRole="WSideFilterType" />
+        </EntityType>
+        <EntityType Name="WSideFilterType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FilterKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ShowMoreTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="WSideFilterItem" Relationship="Self.FK_WSideFilterItem_WSideFilterType" FromRole="WSideFilterType" ToRole="WSideFilterItem" />
+        </EntityType>
+        <Association Name="FK_OPerson_AUser">
+          <End Role="AUser" Type="Self.AUser" Multiplicity="1" />
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OPerson">
+              <PropertyRef Name="AUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCnyComplaintOpinion_OCnyComplaintReason">
+          <End Role="OCnyComplaintReason" Type="Self.OCnyComplaintReason" Multiplicity="1" />
+          <End Role="OCnyComplaintOpinion" Type="Self.OCnyComplaintOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCnyComplaintReason">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCnyComplaintOpinion">
+              <PropertyRef Name="OCnyComplaintReasonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCnyComplaintOpinion_OCompanyOpinion">
+          <End Role="OCompanyOpinion" Type="Self.OCompanyOpinion" Multiplicity="1" />
+          <End Role="OCnyComplaintOpinion" Type="Self.OCnyComplaintOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompanyOpinion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCnyComplaintOpinion">
+              <PropertyRef Name="OCompanyOpinionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCnyComplaintOpinion_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OCnyComplaintOpinion" Type="Self.OCnyComplaintOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCnyComplaintOpinion">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyInfo_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCompanyInfo" Type="Self.OCompanyInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyInfo">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyOpinion_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCompanyOpinion" Type="Self.OCompanyOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyOpinion">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCvVisit_OCompany">
+          <End Role="OCompany" Type="Self.OCompany" Multiplicity="1" />
+          <End Role="OCvVisit" Type="Self.OCvVisit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCvVisit">
+              <PropertyRef Name="OCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OContractType">
+          <End Role="OContractType" Type="Self.OContractType" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OContractType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OContractTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OJobCategory">
+          <End Role="OJobCategory" Type="Self.OJobCategory" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OJobCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OJobCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OMinStudy">
+          <End Role="OMinStudy" Type="Self.OMinStudy" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OMinStudy">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OMinStudyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyJobOffer_OWorkDayType">
+          <End Role="OWorkDayType" Type="Self.OWorkDayType" Multiplicity="1" />
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OWorkDayType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyJobOffer">
+              <PropertyRef Name="OWorkDayTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OJobOfferPerson_OCompanyJobOffer">
+          <End Role="OCompanyJobOffer" Type="Self.OCompanyJobOffer" Multiplicity="1" />
+          <End Role="OJobOfferPerson" Type="Self.OJobOfferPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCompanyJobOffer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OJobOfferPerson">
+              <PropertyRef Name="OJobOfferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCompanyOpinion_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OCompanyOpinion" Type="Self.OCompanyOpinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCompanyOpinion">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OCvVisit_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OCvVisit" Type="Self.OCvVisit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OCvVisit">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OJobOfferPerson_OPerson">
+          <End Role="OPerson" Type="Self.OPerson" Multiplicity="1" />
+          <End Role="OJobOfferPerson" Type="Self.OJobOfferPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OJobOfferPerson">
+              <PropertyRef Name="OPersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WFtrLinksSectionColItem_WFtrLinksSectionCol">
+          <End Role="WFtrLinksSectionCol" Type="Self.WFtrLinksSectionCol" Multiplicity="1" />
+          <End Role="WFtrLinksSectionColItem" Type="Self.WFtrLinksSectionColItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WFtrLinksSectionCol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WFtrLinksSectionColItem">
+              <PropertyRef Name="WFtrLinksSectionColId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WMyCvSectOption_WMyCvSect">
+          <End Role="WMyCvSect" Type="Self.WMyCvSect" Multiplicity="1" />
+          <End Role="WMyCvSectOption" Type="Self.WMyCvSectOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WMyCvSect">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WMyCvSectOption">
+              <PropertyRef Name="WMyCvSectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WSideFilterItem_WSideFilterType">
+          <End Role="WSideFilterType" Type="Self.WSideFilterType" Multiplicity="1" />
+          <End Role="WSideFilterItem" Type="Self.WSideFilterItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WSideFilterType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WSideFilterItem">
+              <PropertyRef Name="WSideFilterTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AUser" EntityType="Self.AUser" />
+          <EntitySet Name="OCnyComplaintOpinion" EntityType="Self.OCnyComplaintOpinion" />
+          <EntitySet Name="OCnyComplaintReason" EntityType="Self.OCnyComplaintReason" />
+          <EntitySet Name="OCompany" EntityType="Self.OCompany" />
+          <EntitySet Name="OCompanyInfo" EntityType="Self.OCompanyInfo" />
+          <EntitySet Name="OCompanyJobOffer" EntityType="Self.OCompanyJobOffer" />
+          <EntitySet Name="OCompanyOpinion" EntityType="Self.OCompanyOpinion" />
+          <EntitySet Name="OContractType" EntityType="Self.OContractType" />
+          <EntitySet Name="OCountry" EntityType="Self.OCountry" />
+          <EntitySet Name="OCvVisit" EntityType="Self.OCvVisit" />
+          <EntitySet Name="OJobCategory" EntityType="Self.OJobCategory" />
+          <EntitySet Name="OJobOfferPerson" EntityType="Self.OJobOfferPerson" />
+          <EntitySet Name="OMinStudy" EntityType="Self.OMinStudy" />
+          <EntitySet Name="OPerson" EntityType="Self.OPerson" />
+          <EntitySet Name="OPublicityData" EntityType="Self.OPublicityData" />
+          <EntitySet Name="OWorkDayType" EntityType="Self.OWorkDayType" />
+          <EntitySet Name="LogDropDownMenuLink" EntityType="Self.LogDropDownMenuLink" />
+          <EntitySet Name="WCandidateLogIn" EntityType="Self.WCandidateLogIn" />
+          <EntitySet Name="WCompanyPage" EntityType="Self.WCompanyPage" />
+          <EntitySet Name="WFtrAppDowloadLinkItem" EntityType="Self.WFtrAppDowloadLinkItem" />
+          <EntitySet Name="WFtrLinksSectionCol" EntityType="Self.WFtrLinksSectionCol" />
+          <EntitySet Name="WFtrLinksSectionColItem" EntityType="Self.WFtrLinksSectionColItem" />
+          <EntitySet Name="WFtrPartnersSect" EntityType="Self.WFtrPartnersSect" />
+          <EntitySet Name="WFtrPartnersSectItem" EntityType="Self.WFtrPartnersSectItem" />
+          <EntitySet Name="WFtrSocialMediaSect" EntityType="Self.WFtrSocialMediaSect" />
+          <EntitySet Name="WFtrSocialMediaSectItem" EntityType="Self.WFtrSocialMediaSectItem" />
+          <EntitySet Name="WGender" EntityType="Self.WGender" />
+          <EntitySet Name="WJobsPageNoFilt" EntityType="Self.WJobsPageNoFilt" />
+          <EntitySet Name="WJobsPageWithFilt" EntityType="Self.WJobsPageWithFilt" />
+          <EntitySet Name="WLogHeader" EntityType="Self.WLogHeader" />
+          <EntitySet Name="WLogNavBarLink" EntityType="Self.WLogNavBarLink" />
+          <EntitySet Name="WMoreOptionsItems" EntityType="Self.WMoreOptionsItems" />
+          <EntitySet Name="WMyCvPage" EntityType="Self.WMyCvPage" />
+          <EntitySet Name="WMyCvSect" EntityType="Self.WMyCvSect" />
+          <EntitySet Name="WMyCvSectOption" EntityType="Self.WMyCvSectOption" />
+          <EntitySet Name="WMyOffersPage" EntityType="Self.WMyOffersPage" />
+          <EntitySet Name="WNoLogCitiesItem" EntityType="Self.WNoLogCitiesItem" />
+          <EntitySet Name="WNoLogCitiesSection" EntityType="Self.WNoLogCitiesSection" />
+          <EntitySet Name="WNoLogCompanyItem" EntityType="Self.WNoLogCompanyItem" />
+          <EntitySet Name="WNoLogCompanyPublicityItem" EntityType="Self.WNoLogCompanyPublicityItem" />
+          <EntitySet Name="WNoLogCompanySection" EntityType="Self.WNoLogCompanySection" />
+          <EntitySet Name="WNoLogFiltersItem" EntityType="Self.WNoLogFiltersItem" />
+          <EntitySet Name="WNoLogFiltersSection" EntityType="Self.WNoLogFiltersSection" />
+          <EntitySet Name="WNoLogHeader" EntityType="Self.WNoLogHeader" />
+          <EntitySet Name="WNoLogNavBarLink" EntityType="Self.WNoLogNavBarLink" />
+          <EntitySet Name="WNoLogSectorItem" EntityType="Self.WNoLogSectorItem" />
+          <EntitySet Name="WNoLogSectorSection" EntityType="Self.WNoLogSectorSection" />
+          <EntitySet Name="WOrdeByOffersItem" EntityType="Self.WOrdeByOffersItem" />
+          <EntitySet Name="WPersonalDataPage" EntityType="Self.WPersonalDataPage" />
+          <EntitySet Name="WProfileVisitsPage" EntityType="Self.WProfileVisitsPage" />
+          <EntitySet Name="WSideFilterItem" EntityType="Self.WSideFilterItem" />
+          <EntitySet Name="WSideFilterType" EntityType="Self.WSideFilterType" />
+          <AssociationSet Name="FK_OPerson_AUser" Association="Self.FK_OPerson_AUser">
+            <End Role="AUser" EntitySet="AUser" />
+            <End Role="OPerson" EntitySet="OPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCnyComplaintOpinion_OCnyComplaintReason" Association="Self.FK_OCnyComplaintOpinion_OCnyComplaintReason">
+            <End Role="OCnyComplaintReason" EntitySet="OCnyComplaintReason" />
+            <End Role="OCnyComplaintOpinion" EntitySet="OCnyComplaintOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCnyComplaintOpinion_OCompanyOpinion" Association="Self.FK_OCnyComplaintOpinion_OCompanyOpinion">
+            <End Role="OCompanyOpinion" EntitySet="OCompanyOpinion" />
+            <End Role="OCnyComplaintOpinion" EntitySet="OCnyComplaintOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCnyComplaintOpinion_OPerson" Association="Self.FK_OCnyComplaintOpinion_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OCnyComplaintOpinion" EntitySet="OCnyComplaintOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyInfo_OCompany" Association="Self.FK_OCompanyInfo_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCompanyInfo" EntitySet="OCompanyInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OCompany" Association="Self.FK_OCompanyJobOffer_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyOpinion_OCompany" Association="Self.FK_OCompanyOpinion_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCompanyOpinion" EntitySet="OCompanyOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCvVisit_OCompany" Association="Self.FK_OCvVisit_OCompany">
+            <End Role="OCompany" EntitySet="OCompany" />
+            <End Role="OCvVisit" EntitySet="OCvVisit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OContractType" Association="Self.FK_OCompanyJobOffer_OContractType">
+            <End Role="OContractType" EntitySet="OContractType" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OJobCategory" Association="Self.FK_OCompanyJobOffer_OJobCategory">
+            <End Role="OJobCategory" EntitySet="OJobCategory" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OMinStudy" Association="Self.FK_OCompanyJobOffer_OMinStudy">
+            <End Role="OMinStudy" EntitySet="OMinStudy" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyJobOffer_OWorkDayType" Association="Self.FK_OCompanyJobOffer_OWorkDayType">
+            <End Role="OWorkDayType" EntitySet="OWorkDayType" />
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OJobOfferPerson_OCompanyJobOffer" Association="Self.FK_OJobOfferPerson_OCompanyJobOffer">
+            <End Role="OCompanyJobOffer" EntitySet="OCompanyJobOffer" />
+            <End Role="OJobOfferPerson" EntitySet="OJobOfferPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCompanyOpinion_OPerson" Association="Self.FK_OCompanyOpinion_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OCompanyOpinion" EntitySet="OCompanyOpinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OCvVisit_OPerson" Association="Self.FK_OCvVisit_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OCvVisit" EntitySet="OCvVisit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OJobOfferPerson_OPerson" Association="Self.FK_OJobOfferPerson_OPerson">
+            <End Role="OPerson" EntitySet="OPerson" />
+            <End Role="OJobOfferPerson" EntitySet="OJobOfferPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WFtrLinksSectionColItem_WFtrLinksSectionCol" Association="Self.FK_WFtrLinksSectionColItem_WFtrLinksSectionCol">
+            <End Role="WFtrLinksSectionCol" EntitySet="WFtrLinksSectionCol" />
+            <End Role="WFtrLinksSectionColItem" EntitySet="WFtrLinksSectionColItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WMyCvSectOption_WMyCvSect" Association="Self.FK_WMyCvSectOption_WMyCvSect">
+            <End Role="WMyCvSect" EntitySet="WMyCvSect" />
+            <End Role="WMyCvSectOption" EntitySet="WMyCvSectOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WSideFilterItem_WSideFilterType" Association="Self.FK_WSideFilterItem_WSideFilterType">
+            <End Role="WSideFilterType" EntitySet="WSideFilterType" />
+            <End Role="WSideFilterItem" EntitySet="WSideFilterItem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="DbConnection">
+          <EntitySetMapping Name="AUser">
+            <EntityTypeMapping TypeName="Model.AUser">
+              <MappingFragment StoreEntitySet="AUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCnyComplaintOpinion">
+            <EntityTypeMapping TypeName="Model.OCnyComplaintOpinion">
+              <MappingFragment StoreEntitySet="OCnyComplaintOpinion">
+                <ScalarProperty Name="OCompanyOpinionId" ColumnName="OCompanyOpinionId" />
+                <ScalarProperty Name="OPersonId" ColumnName="OPersonId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="OCnyComplaintReasonId" ColumnName="OCnyComplaintReasonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCnyComplaintReason">
+            <EntityTypeMapping TypeName="Model.OCnyComplaintReason">
+              <MappingFragment StoreEntitySet="OCnyComplaintReason">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCompany">
+            <EntityTypeMapping TypeName="Model.OCompany">
+              <MappingFragment StoreEntitySet="OCompany">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="RegisteredName" ColumnName="RegisteredName" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="TaxAddress" ColumnName="TaxAddress" />
+                <ScalarProperty Name="TaxCountry" ColumnName="TaxCountry" />
+                <ScalarProperty Name="TaxProvince" ColumnName="TaxProvince" />
+                <ScalarProperty Name="TaxTown" ColumnName="TaxTown" />
+                <ScalarProperty Name="TaxPostCode" ColumnName="TaxPostCode" />
+                <ScalarProperty Name="RegOffiAddress" ColumnName="RegOffiAddress" />
+                <ScalarProperty Name="RegOffiCountry" ColumnName="RegOffiCountry" />
+                <ScalarProperty Name="RegOffiProvince" ColumnName="RegOffiProvince" />
+                <ScalarProperty Name="RegOffiTown" ColumnName="RegOffiTown" />
+                <ScalarProperty Name="RegOffiPostCode" ColumnName="RegOffiPostCode" />
+                <ScalarProperty Name="LaborSector" ColumnName="LaborSector" />
+                <ScalarProperty Name="WorkersNum" ColumnName="WorkersNum" />
+                <ScalarProperty Name="InternalName" ColumnName="InternalName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MainEmail" ColumnName="MainEmail" />
+                <ScalarProperty Name="SecondaryEmail" ColumnName="SecondaryEmail" />
+                <ScalarProperty Name="MovilPhone" ColumnName="MovilPhone" />
+                <ScalarProperty Name="LandlinePhone" ColumnName="LandlinePhone" />
+                <ScalarProperty Name="ForeignPhone" ColumnName="ForeignPhone" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="LogoImgPath" ColumnName="LogoImgPath" />
+                <ScalarProperty Name="BgImgPath" ColumnName="BgImgPath" />
+                <ScalarProperty Name="MiniImgPath" ColumnName="MiniImgPath" />
+                <ScalarProperty Name="CompanyBgImgPath" ColumnName="CompanyBgImgPath" />
+                <ScalarProperty Name="MiniText" ColumnName="MiniText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCompanyInfo">
+            <EntityTypeMapping TypeName="Model.OCompanyInfo">
+              <MappingFragment StoreEntitySet="OCompanyInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="YtVideoUrl" ColumnName="YtVideoUrl" />
+                <ScalarProperty Name="FirstImgUrl" ColumnName="FirstImgUrl" />
+                <ScalarProperty Name="SecondImgUrl" ColumnName="SecondImgUrl" />
+                <ScalarProperty Name="OCompanyId" ColumnName="OCompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCompanyJobOffer">
+            <EntityTypeMapping TypeName="Model.OCompanyJobOffer">
+              <MappingFragment StoreEntitySet="OCompanyJobOffer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="MinExperienceYears" ColumnName="MinExperienceYears" />
+                <ScalarProperty Name="MinRequirements" ColumnName="MinRequirements" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="OCompanyId" ColumnName="OCompanyId" />
+                <ScalarProperty Name="OJobCategoryId" ColumnName="OJobCategoryId" />
+                <ScalarProperty Name="OMinStudyId" ColumnName="OMinStudyId" />
+                <ScalarProperty Name="OWorkDayTypeId" ColumnName="OWorkDayTypeId" />
+                <ScalarProperty Name="OContractTypeId" ColumnName="OContractTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCompanyOpinion">
+            <EntityTypeMapping TypeName="Model.OCompanyOpinion">
+              <MappingFragment StoreEntitySet="OCompanyOpinion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Complaints" ColumnName="Complaints" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="OCompanyId" ColumnName="OCompanyId" />
+                <ScalarProperty Name="OPersonId" ColumnName="OPersonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OContractType">
+            <EntityTypeMapping TypeName="Model.OContractType">
+              <MappingFragment StoreEntitySet="OContractType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCountry">
+            <EntityTypeMapping TypeName="Model.OCountry">
+              <MappingFragment StoreEntitySet="OCountry">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsoCode" ColumnName="IsoCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCvVisit">
+            <EntityTypeMapping TypeName="Model.OCvVisit">
+              <MappingFragment StoreEntitySet="OCvVisit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VisitType" ColumnName="VisitType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SearchText" ColumnName="SearchText" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="OPersonId" ColumnName="OPersonId" />
+                <ScalarProperty Name="OCompanyId" ColumnName="OCompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OJobCategory">
+            <EntityTypeMapping TypeName="Model.OJobCategory">
+              <MappingFragment StoreEntitySet="OJobCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OJobOfferPerson">
+            <EntityTypeMapping TypeName="Model.OJobOfferPerson">
+              <MappingFragment StoreEntitySet="OJobOfferPerson">
+                <ScalarProperty Name="OPersonId" ColumnName="OPersonId" />
+                <ScalarProperty Name="OJobOfferId" ColumnName="OJobOfferId" />
+                <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OMinStudy">
+            <EntityTypeMapping TypeName="Model.OMinStudy">
+              <MappingFragment StoreEntitySet="OMinStudy">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPerson">
+            <EntityTypeMapping TypeName="Model.OPerson">
+              <MappingFragment StoreEntitySet="OPerson">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FirstSurname" ColumnName="FirstSurname" />
+                <ScalarProperty Name="SecondSurname" ColumnName="SecondSurname" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="MovilPhone" ColumnName="MovilPhone" />
+                <ScalarProperty Name="LandlinePhone" ColumnName="LandlinePhone" />
+                <ScalarProperty Name="ForeignPhone" ColumnName="ForeignPhone" />
+                <ScalarProperty Name="PreferPhone" ColumnName="PreferPhone" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="OpenToWork" ColumnName="OpenToWork" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Closed" ColumnName="Closed" />
+                <ScalarProperty Name="AUserId" ColumnName="AUserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPublicityData">
+            <EntityTypeMapping TypeName="Model.OPublicityData">
+              <MappingFragment StoreEntitySet="OPublicityData">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PublicityBgImgPath" ColumnName="PublicityBgImgPath" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OWorkDayType">
+            <EntityTypeMapping TypeName="Model.OWorkDayType">
+              <MappingFragment StoreEntitySet="OWorkDayType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogDropDownMenuLink">
+            <EntityTypeMapping TypeName="Model.LogDropDownMenuLink">
+              <MappingFragment StoreEntitySet="LogDropDownMenuLink">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WCandidateLogIn">
+            <EntityTypeMapping TypeName="Model.WCandidateLogIn">
+              <MappingFragment StoreEntitySet="WCandidateLogIn">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LogInTitle" ColumnName="LogInTitle" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ForgetPw" ColumnName="ForgetPw" />
+                <ScalarProperty Name="LogInBtn" ColumnName="LogInBtn" />
+                <ScalarProperty Name="SignInTitle" ColumnName="SignInTitle" />
+                <ScalarProperty Name="CreateCvTl" ColumnName="CreateCvTl" />
+                <ScalarProperty Name="CreateCvDesc" ColumnName="CreateCvDesc" />
+                <ScalarProperty Name="CreateCvIcon" ColumnName="CreateCvIcon" />
+                <ScalarProperty Name="RegisterTl" ColumnName="RegisterTl" />
+                <ScalarProperty Name="RegisterDesc" ColumnName="RegisterDesc" />
+                <ScalarProperty Name="RegisterIcon" ColumnName="RegisterIcon" />
+                <ScalarProperty Name="UpdCvTl" ColumnName="UpdCvTl" />
+                <ScalarProperty Name="UpdCvDesc" ColumnName="UpdCvDesc" />
+                <ScalarProperty Name="UpdCvIcon" ColumnName="UpdCvIcon" />
+                <ScalarProperty Name="SignInBtn" ColumnName="SignInBtn" />
+                <ScalarProperty Name="OpenSession" ColumnName="OpenSession" />
+                <ScalarProperty Name="CompanyAccess" ColumnName="CompanyAccess" />
+                <ScalarProperty Name="Help" ColumnName="Help" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WCompanyPage">
+            <EntityTypeMapping TypeName="Model.WCompanyPage">
+              <MappingFragment StoreEntitySet="WCompanyPage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HeadTitle" ColumnName="HeadTitle" />
+                <ScalarProperty Name="EmployeesText" ColumnName="EmployeesText" />
+                <ScalarProperty Name="OpinionsText" ColumnName="OpinionsText" />
+                <ScalarProperty Name="InfoTabTitle" ColumnName="InfoTabTitle" />
+                <ScalarProperty Name="InfoSectionTitle" ColumnName="InfoSectionTitle" />
+                <ScalarProperty Name="InfoSeeMore" ColumnName="InfoSeeMore" />
+                <ScalarProperty Name="OffersTabTitle" ColumnName="OffersTabTitle" />
+                <ScalarProperty Name="OffersSectionTitle" ColumnName="OffersSectionTitle" />
+                <ScalarProperty Name="NewLabel" ColumnName="NewLabel" />
+                <ScalarProperty Name="PostAgainLabel" ColumnName="PostAgainLabel" />
+                <ScalarProperty Name="AgoTxt" ColumnName="AgoTxt" />
+                <ScalarProperty Name="NoDataSalaryTxt" ColumnName="NoDataSalaryTxt" />
+                <ScalarProperty Name="OpinionsTabTitle" ColumnName="OpinionsTabTitle" />
+                <ScalarProperty Name="OpinionsSectionTitle" ColumnName="OpinionsSectionTitle" />
+                <ScalarProperty Name="ComplaintBnt" ColumnName="ComplaintBnt" />
+                <ScalarProperty Name="PreviousBtn" ColumnName="PreviousBtn" />
+                <ScalarProperty Name="NextBtn" ColumnName="NextBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WFtrAppDowloadLinkItem">
+            <EntityTypeMapping TypeName="Model.WFtrAppDowloadLinkItem">
+              <MappingFragment StoreEntitySet="WFtrAppDowloadLinkItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TitleHoverDesc" ColumnName="TitleHoverDesc" />
+                <ScalarProperty Name="ItemBgImgPath" ColumnName="ItemBgImgPath" />
+                <ScalarProperty Name="ItemUrl" ColumnName="ItemUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WFtrLinksSectionCol">
+            <EntityTypeMapping TypeName="Model.WFtrLinksSectionCol">
+              <MappingFragment StoreEntitySet="WFtrLinksSectionCol">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WFtrLinksSectionColItem">
+            <EntityTypeMapping TypeName="Model.WFtrLinksSectionColItem">
+              <MappingFragment StoreEntitySet="WFtrLinksSectionColItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleHoverDesc" ColumnName="TitleHoverDesc" />
+                <ScalarProperty Name="ItemPath" ColumnName="ItemPath" />
+                <ScalarProperty Name="WFtrLinksSectionColId" ColumnName="WFtrLinksSectionColId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WFtrPartnersSect">
+            <EntityTypeMapping TypeName="Model.WFtrPartnersSect">
+              <MappingFragment StoreEntitySet="WFtrPartnersSect">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CopyrightText" ColumnName="CopyrightText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WFtrPartnersSectItem">
+            <EntityTypeMapping TypeName="Model.WFtrPartnersSectItem">
+              <MappingFragment StoreEntitySet="WFtrPartnersSectItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ItemUrl" ColumnName="ItemUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WFtrSocialMediaSect">
+            <EntityTypeMapping TypeName="Model.WFtrSocialMediaSect">
+              <MappingFragment StoreEntitySet="WFtrSocialMediaSect">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WFtrSocialMediaSectItem">
+            <EntityTypeMapping TypeName="Model.WFtrSocialMediaSectItem">
+              <MappingFragment StoreEntitySet="WFtrSocialMediaSectItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TitleHoverDesc" ColumnName="TitleHoverDesc" />
+                <ScalarProperty Name="IconItem" ColumnName="IconItem" />
+                <ScalarProperty Name="ItemUrl" ColumnName="ItemUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WGender">
+            <EntityTypeMapping TypeName="Model.WGender">
+              <MappingFragment StoreEntitySet="WGender">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WJobsPageNoFilt">
+            <EntityTypeMapping TypeName="Model.WJobsPageNoFilt">
+              <MappingFragment StoreEntitySet="WJobsPageNoFilt">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HeadTitle" ColumnName="HeadTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="VoidSearchTextField" ColumnName="VoidSearchTextField" />
+                <ScalarProperty Name="VoidLocationField" ColumnName="VoidLocationField" />
+                <ScalarProperty Name="SearchBtn" ColumnName="SearchBtn" />
+                <ScalarProperty Name="OffersTitle" ColumnName="OffersTitle" />
+                <ScalarProperty Name="OffersBaseUrl" ColumnName="OffersBaseUrl" />
+                <ScalarProperty Name="CandidacyTitle" ColumnName="CandidacyTitle" />
+                <ScalarProperty Name="CandidacyComment" ColumnName="CandidacyComment" />
+                <ScalarProperty Name="CandidacyLinkText" ColumnName="CandidacyLinkText" />
+                <ScalarProperty Name="CandidacyLinkUrl" ColumnName="CandidacyLinkUrl" />
+                <ScalarProperty Name="PreferencesTitle" ColumnName="PreferencesTitle" />
+                <ScalarProperty Name="PrefBtn" ColumnName="PrefBtn" />
+                <ScalarProperty Name="PrefBtnUrl" ColumnName="PrefBtnUrl" />
+                <ScalarProperty Name="PrefEditBtn" ColumnName="PrefEditBtn" />
+                <ScalarProperty Name="PrefEditBtnUrl" ColumnName="PrefEditBtnUrl" />
+                <ScalarProperty Name="PrefMoreBtn" ColumnName="PrefMoreBtn" />
+                <ScalarProperty Name="PrefMoreBtnUrl" ColumnName="PrefMoreBtnUrl" />
+                <ScalarProperty Name="SaveItemIcon" ColumnName="SaveItemIcon" />
+                <ScalarProperty Name="YourOffersTitle" ColumnName="YourOffersTitle" />
+                <ScalarProperty Name="YourOffersSubTitle" ColumnName="YourOffersSubTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WJobsPageWithFilt">
+            <EntityTypeMapping TypeName="Model.WJobsPageWithFilt">
+              <MappingFragment StoreEntitySet="WJobsPageWithFilt">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TitleSearchTextField" ColumnName="TitleSearchTextField" />
+                <ScalarProperty Name="VoidSearchTextField" ColumnName="VoidSearchTextField" />
+                <ScalarProperty Name="TitleLocationField" ColumnName="TitleLocationField" />
+                <ScalarProperty Name="VoidLocationField" ColumnName="VoidLocationField" />
+                <ScalarProperty Name="NonVariableOffersQtyText" ColumnName="NonVariableOffersQtyText" />
+                <ScalarProperty Name="OrderByOffersText" ColumnName="OrderByOffersText" />
+                <ScalarProperty Name="OrderByOffersInfoText" ColumnName="OrderByOffersInfoText" />
+                <ScalarProperty Name="NextBtn" ColumnName="NextBtn" />
+                <ScalarProperty Name="PreviousBtn" ColumnName="PreviousBtn" />
+                <ScalarProperty Name="NewSearchBtn" ColumnName="NewSearchBtn" />
+                <ScalarProperty Name="RelationOffersTxt" ColumnName="RelationOffersTxt" />
+                <ScalarProperty Name="RelationCompaniesTxt" ColumnName="RelationCompaniesTxt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WLogHeader">
+            <EntityTypeMapping TypeName="Model.WLogHeader">
+              <MappingFragment StoreEntitySet="WLogHeader">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WLogNavBarLink">
+            <EntityTypeMapping TypeName="Model.WLogNavBarLink">
+              <MappingFragment StoreEntitySet="WLogNavBarLink">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMoreOptionsItems">
+            <EntityTypeMapping TypeName="Model.WMoreOptionsItems">
+              <MappingFragment StoreEntitySet="WMoreOptionsItems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMyCvPage">
+            <EntityTypeMapping TypeName="Model.WMyCvPage">
+              <MappingFragment StoreEntitySet="WMyCvPage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ExperienceTitle" ColumnName="ExperienceTitle" />
+                <ScalarProperty Name="AddBtn" ColumnName="AddBtn" />
+                <ScalarProperty Name="EditBtn" ColumnName="EditBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMyCvSect">
+            <EntityTypeMapping TypeName="Model.WMyCvSect">
+              <MappingFragment StoreEntitySet="WMyCvSect">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FilterKey" ColumnName="FilterKey" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AddEditBaseUrl" ColumnName="AddEditBaseUrl" />
+                <ScalarProperty Name="DefaultTxt" ColumnName="DefaultTxt" />
+                <ScalarProperty Name="AddCardText" ColumnName="AddCardText" />
+                <ScalarProperty Name="AddCardBtn" ColumnName="AddCardBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMyCvSectOption">
+            <EntityTypeMapping TypeName="Model.WMyCvSectOption">
+              <MappingFragment StoreEntitySet="WMyCvSectOption">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="WMyCvSectId" ColumnName="WMyCvSectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMyOffersPage">
+            <EntityTypeMapping TypeName="Model.WMyOffersPage">
+              <MappingFragment StoreEntitySet="WMyOffersPage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HeadTitle" ColumnName="HeadTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="HideBtn" ColumnName="HideBtn" />
+                <ScalarProperty Name="CandidacyTab" ColumnName="CandidacyTab" />
+                <ScalarProperty Name="EmptyCandidacyTitle" ColumnName="EmptyCandidacyTitle" />
+                <ScalarProperty Name="EmptyCandidacyDesc" ColumnName="EmptyCandidacyDesc" />
+                <ScalarProperty Name="EmptyCandidacyImg" ColumnName="EmptyCandidacyImg" />
+                <ScalarProperty Name="SavedTab" ColumnName="SavedTab" />
+                <ScalarProperty Name="EmptySavedTitle" ColumnName="EmptySavedTitle" />
+                <ScalarProperty Name="EmptySavedDesc" ColumnName="EmptySavedDesc" />
+                <ScalarProperty Name="EmptySavedImg" ColumnName="EmptySavedImg" />
+                <ScalarProperty Name="MoreOptionsTitle" ColumnName="MoreOptionsTitle" />
+                <ScalarProperty Name="NextBtn" ColumnName="NextBtn" />
+                <ScalarProperty Name="PreviousBtn" ColumnName="PreviousBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogCitiesItem">
+            <EntityTypeMapping TypeName="Model.WNoLogCitiesItem">
+              <MappingFragment StoreEntitySet="WNoLogCitiesItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ItemBgImgPath" ColumnName="ItemBgImgPath" />
+                <ScalarProperty Name="FilterName" ColumnName="FilterName" />
+                <ScalarProperty Name="FilterValue" ColumnName="FilterValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogCitiesSection">
+            <EntityTypeMapping TypeName="Model.WNoLogCitiesSection">
+              <MappingFragment StoreEntitySet="WNoLogCitiesSection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MoreCitiesBtn" ColumnName="MoreCitiesBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogCompanyItem">
+            <EntityTypeMapping TypeName="Model.WNoLogCompanyItem">
+              <MappingFragment StoreEntitySet="WNoLogCompanyItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ItemBgImgPath" ColumnName="ItemBgImgPath" />
+                <ScalarProperty Name="ItemBtn" ColumnName="ItemBtn" />
+                <ScalarProperty Name="ItemBtnUrl" ColumnName="ItemBtnUrl" />
+                <ScalarProperty Name="EnabledItem" ColumnName="EnabledItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogCompanyPublicityItem">
+            <EntityTypeMapping TypeName="Model.WNoLogCompanyPublicityItem">
+              <MappingFragment StoreEntitySet="WNoLogCompanyPublicityItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ItemBgImgPath" ColumnName="ItemBgImgPath" />
+                <ScalarProperty Name="ItemBtn" ColumnName="ItemBtn" />
+                <ScalarProperty Name="ItemBtnUrl" ColumnName="ItemBtnUrl" />
+                <ScalarProperty Name="EnabledItem" ColumnName="EnabledItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogCompanySection">
+            <EntityTypeMapping TypeName="Model.WNoLogCompanySection">
+              <MappingFragment StoreEntitySet="WNoLogCompanySection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ShowMoreTextBtn" ColumnName="ShowMoreTextBtn" />
+                <ScalarProperty Name="DefaultMiniIconImgPath" ColumnName="DefaultMiniIconImgPath" />
+                <ScalarProperty Name="DefaultMiniImgPath" ColumnName="DefaultMiniImgPath" />
+                <ScalarProperty Name="DefaultOffersQtyText" ColumnName="DefaultOffersQtyText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogFiltersItem">
+            <EntityTypeMapping TypeName="Model.WNoLogFiltersItem">
+              <MappingFragment StoreEntitySet="WNoLogFiltersItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ItemBgImgPath" ColumnName="ItemBgImgPath" />
+                <ScalarProperty Name="FilterName" ColumnName="FilterName" />
+                <ScalarProperty Name="FilterValue" ColumnName="FilterValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogFiltersSection">
+            <EntityTypeMapping TypeName="Model.WNoLogFiltersSection">
+              <MappingFragment StoreEntitySet="WNoLogFiltersSection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MoreFiltersBtn" ColumnName="MoreFiltersBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogHeader">
+            <EntityTypeMapping TypeName="Model.WNoLogHeader">
+              <MappingFragment StoreEntitySet="WNoLogHeader">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HeadTitle" ColumnName="HeadTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="HeadBgImgPath" ColumnName="HeadBgImgPath" />
+                <ScalarProperty Name="CompanyAccessBtn" ColumnName="CompanyAccessBtn" />
+                <ScalarProperty Name="CompanyAccessBtnUrl" ColumnName="CompanyAccessBtnUrl" />
+                <ScalarProperty Name="CandidateAccessBtn" ColumnName="CandidateAccessBtn" />
+                <ScalarProperty Name="CandidateAccessBtnUrl" ColumnName="CandidateAccessBtnUrl" />
+                <ScalarProperty Name="BlockFilterTitle" ColumnName="BlockFilterTitle" />
+                <ScalarProperty Name="SeachFilterTitle" ColumnName="SeachFilterTitle" />
+                <ScalarProperty Name="LocationFilterTitle" ColumnName="LocationFilterTitle" />
+                <ScalarProperty Name="SearchBtn" ColumnName="SearchBtn" />
+                <ScalarProperty Name="SearchBtnHoverDesc" ColumnName="SearchBtnHoverDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogNavBarLink">
+            <EntityTypeMapping TypeName="Model.WNoLogNavBarLink">
+              <MappingFragment StoreEntitySet="WNoLogNavBarLink">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogSectorItem">
+            <EntityTypeMapping TypeName="Model.WNoLogSectorItem">
+              <MappingFragment StoreEntitySet="WNoLogSectorItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ItemBgImgPath" ColumnName="ItemBgImgPath" />
+                <ScalarProperty Name="FilterName" ColumnName="FilterName" />
+                <ScalarProperty Name="FilterValue" ColumnName="FilterValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WNoLogSectorSection">
+            <EntityTypeMapping TypeName="Model.WNoLogSectorSection">
+              <MappingFragment StoreEntitySet="WNoLogSectorSection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MoreSectorsBtn" ColumnName="MoreSectorsBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WOrdeByOffersItem">
+            <EntityTypeMapping TypeName="Model.WOrdeByOffersItem">
+              <MappingFragment StoreEntitySet="WOrdeByOffersItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WPersonalDataPage">
+            <EntityTypeMapping TypeName="Model.WPersonalDataPage">
+              <MappingFragment StoreEntitySet="WPersonalDataPage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HeadTitle" ColumnName="HeadTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AboutMeTtl" ColumnName="AboutMeTtl" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhotoBtn" ColumnName="PhotoBtn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FirstSurName" ColumnName="FirstSurName" />
+                <ScalarProperty Name="SecondoSurName" ColumnName="SecondoSurName" />
+                <ScalarProperty Name="DocType" ColumnName="DocType" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="ResideceTtl" ColumnName="ResideceTtl" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AccessTtl" ColumnName="AccessTtl" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ModEmailTxt" ColumnName="ModEmailTxt" />
+                <ScalarProperty Name="PhoneTtl" ColumnName="PhoneTtl" />
+                <ScalarProperty Name="MovilPhone" ColumnName="MovilPhone" />
+                <ScalarProperty Name="LandlinePhone" ColumnName="LandlinePhone" />
+                <ScalarProperty Name="ForeignPhone" ColumnName="ForeignPhone" />
+                <ScalarProperty Name="Preferential" ColumnName="Preferential" />
+                <ScalarProperty Name="WebTtl" ColumnName="WebTtl" />
+                <ScalarProperty Name="WebDescTxt" ColumnName="WebDescTxt" />
+                <ScalarProperty Name="WebUrl" ColumnName="WebUrl" />
+                <ScalarProperty Name="AddWeb" ColumnName="AddWeb" />
+                <ScalarProperty Name="OptionalTxt" ColumnName="OptionalTxt" />
+                <ScalarProperty Name="SaveBtn" ColumnName="SaveBtn" />
+                <ScalarProperty Name="CancelBtn" ColumnName="CancelBtn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WProfileVisitsPage">
+            <EntityTypeMapping TypeName="Model.WProfileVisitsPage">
+              <MappingFragment StoreEntitySet="WProfileVisitsPage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HeadTitle" ColumnName="HeadTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Subtititle" ColumnName="Subtititle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="HourItemText" ColumnName="HourItemText" />
+                <ScalarProperty Name="SeeCompanyItemBtn" ColumnName="SeeCompanyItemBtn" />
+                <ScalarProperty Name="SeeCompanyBaseItemUrl" ColumnName="SeeCompanyBaseItemUrl" />
+                <ScalarProperty Name="EmptyDefaultTitle" ColumnName="EmptyDefaultTitle" />
+                <ScalarProperty Name="EmptyDefaultDesc" ColumnName="EmptyDefaultDesc" />
+                <ScalarProperty Name="EmptyDefaultImg" ColumnName="EmptyDefaultImg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WSideFilterItem">
+            <EntityTypeMapping TypeName="Model.WSideFilterItem">
+              <MappingFragment StoreEntitySet="WSideFilterItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ItemValue" ColumnName="ItemValue" />
+                <ScalarProperty Name="ItemLabel" ColumnName="ItemLabel" />
+                <ScalarProperty Name="WSideFilterTypeId" ColumnName="WSideFilterTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WSideFilterType">
+            <EntityTypeMapping TypeName="Model.WSideFilterType">
+              <MappingFragment StoreEntitySet="WSideFilterType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FilterKey" ColumnName="FilterKey" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ShowMoreTitle" ColumnName="ShowMoreTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -41,7 +41,6 @@ namespace Model.Models
         public virtual DbSet<OPerson> OPerson { get; set; }
         public virtual DbSet<OPublicityData> OPublicityData { get; set; }
         public virtual DbSet<OWorkDayType> OWorkDayType { get; set; }
-        public virtual DbSet<LogDropDownMenuLink> LogDropDownMenuLink { get; set; }
         public virtual DbSet<WCandidateLogIn> WCandidateLogIn { get; set; }
         public virtual DbSet<WCompanyPage> WCompanyPage { get; set; }
         public virtual DbSet<WFtrAppDowloadLinkItem> WFtrAppDowloadLinkItem { get; set; }
@@ -54,6 +53,7 @@ namespace Model.Models
         public virtual DbSet<WGender> WGender { get; set; }
         public virtual DbSet<WJobsPageNoFilt> WJobsPageNoFilt { get; set; }
         public virtual DbSet<WJobsPageWithFilt> WJobsPageWithFilt { get; set; }
+        public virtual DbSet<WLogDropDownMenuLink> WLogDropDownMenuLink { get; set; }
         public virtual DbSet<WLogHeader> WLogHeader { get; set; }
         public virtual DbSet<WLogNavBarLink> WLogNavBarLink { get; set; }
         public virtual DbSet<WMoreOptionsItems> WMoreOptionsItems { get; set; }

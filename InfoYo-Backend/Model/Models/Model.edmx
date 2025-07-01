@@ -208,14 +208,6 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
-        <EntityType Name="LogDropDownMenuLink">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LinkUrl" Type="varchar" MaxLength="300" Nullable="false" />
-        </EntityType>
         <EntityType Name="WCandidateLogIn">
           <Key>
             <PropertyRef Name="Id" />
@@ -376,6 +368,14 @@
           <Property Name="NewSearchBtn" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="RelationOffersTxt" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="RelationCompaniesTxt" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WLogDropDownMenuLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LinkUrl" Type="varchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="WLogHeader">
           <Key>
@@ -891,7 +891,6 @@
           <EntitySet Name="OPerson" EntityType="Self.OPerson" Schema="org" store:Type="Tables" />
           <EntitySet Name="OPublicityData" EntityType="Self.OPublicityData" Schema="org" store:Type="Tables" />
           <EntitySet Name="OWorkDayType" EntityType="Self.OWorkDayType" Schema="org" store:Type="Tables" />
-          <EntitySet Name="LogDropDownMenuLink" EntityType="Self.LogDropDownMenuLink" Schema="web" store:Type="Tables" />
           <EntitySet Name="WCandidateLogIn" EntityType="Self.WCandidateLogIn" Schema="web" store:Type="Tables" />
           <EntitySet Name="WCompanyPage" EntityType="Self.WCompanyPage" Schema="web" store:Type="Tables" />
           <EntitySet Name="WFtrAppDowloadLinkItem" EntityType="Self.WFtrAppDowloadLinkItem" Schema="web" store:Type="Tables" />
@@ -904,6 +903,7 @@
           <EntitySet Name="WGender" EntityType="Self.WGender" Schema="web" store:Type="Tables" />
           <EntitySet Name="WJobsPageNoFilt" EntityType="Self.WJobsPageNoFilt" Schema="web" store:Type="Tables" />
           <EntitySet Name="WJobsPageWithFilt" EntityType="Self.WJobsPageWithFilt" Schema="web" store:Type="Tables" />
+          <EntitySet Name="WLogDropDownMenuLink" EntityType="Self.WLogDropDownMenuLink" Schema="web" store:Type="Tables" />
           <EntitySet Name="WLogHeader" EntityType="Self.WLogHeader" Schema="web" store:Type="Tables" />
           <EntitySet Name="WLogNavBarLink" EntityType="Self.WLogNavBarLink" Schema="web" store:Type="Tables" />
           <EntitySet Name="WMoreOptionsItems" EntityType="Self.WMoreOptionsItems" Schema="web" store:Type="Tables" />
@@ -1244,14 +1244,6 @@
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="OCompanyJobOffer" Relationship="Self.FK_OCompanyJobOffer_OWorkDayType" FromRole="OWorkDayType" ToRole="OCompanyJobOffer" />
         </EntityType>
-        <EntityType Name="LogDropDownMenuLink">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LinkUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityType Name="WCandidateLogIn">
           <Key>
             <PropertyRef Name="Id" />
@@ -1414,6 +1406,14 @@
           <Property Name="NewSearchBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RelationOffersTxt" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RelationCompaniesTxt" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WLogDropDownMenuLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="WLogHeader">
           <Key>
@@ -1933,7 +1933,6 @@
           <EntitySet Name="OPerson" EntityType="Self.OPerson" />
           <EntitySet Name="OPublicityData" EntityType="Self.OPublicityData" />
           <EntitySet Name="OWorkDayType" EntityType="Self.OWorkDayType" />
-          <EntitySet Name="LogDropDownMenuLink" EntityType="Self.LogDropDownMenuLink" />
           <EntitySet Name="WCandidateLogIn" EntityType="Self.WCandidateLogIn" />
           <EntitySet Name="WCompanyPage" EntityType="Self.WCompanyPage" />
           <EntitySet Name="WFtrAppDowloadLinkItem" EntityType="Self.WFtrAppDowloadLinkItem" />
@@ -1946,6 +1945,7 @@
           <EntitySet Name="WGender" EntityType="Self.WGender" />
           <EntitySet Name="WJobsPageNoFilt" EntityType="Self.WJobsPageNoFilt" />
           <EntitySet Name="WJobsPageWithFilt" EntityType="Self.WJobsPageWithFilt" />
+          <EntitySet Name="WLogDropDownMenuLink" EntityType="Self.WLogDropDownMenuLink" />
           <EntitySet Name="WLogHeader" EntityType="Self.WLogHeader" />
           <EntitySet Name="WLogNavBarLink" EntityType="Self.WLogNavBarLink" />
           <EntitySet Name="WMoreOptionsItems" EntityType="Self.WMoreOptionsItems" />
@@ -2269,15 +2269,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LogDropDownMenuLink">
-            <EntityTypeMapping TypeName="Model.LogDropDownMenuLink">
-              <MappingFragment StoreEntitySet="LogDropDownMenuLink">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="WCandidateLogIn">
             <EntityTypeMapping TypeName="Model.WCandidateLogIn">
               <MappingFragment StoreEntitySet="WCandidateLogIn">
@@ -2448,6 +2439,15 @@
                 <ScalarProperty Name="NewSearchBtn" ColumnName="NewSearchBtn" />
                 <ScalarProperty Name="RelationOffersTxt" ColumnName="RelationOffersTxt" />
                 <ScalarProperty Name="RelationCompaniesTxt" ColumnName="RelationCompaniesTxt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WLogDropDownMenuLink">
+            <EntityTypeMapping TypeName="Model.WLogDropDownMenuLink">
+              <MappingFragment StoreEntitySet="WLogDropDownMenuLink">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

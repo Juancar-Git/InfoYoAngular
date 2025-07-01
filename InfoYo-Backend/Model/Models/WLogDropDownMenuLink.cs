@@ -12,7 +12,7 @@ namespace Model.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LogDropDownMenuLink
+    public partial class WLogDropDownMenuLink
     {
         public long Id { get; set; }
         public string Name { get; set; }

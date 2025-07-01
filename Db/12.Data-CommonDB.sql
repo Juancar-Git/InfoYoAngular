@@ -4,7 +4,7 @@
 CREATE TABLE [org].[OPublicityData](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[PublicityBgImgPath] [VARCHAR](MAX) NOT NULL,
-	[LinkUrl] [VARCHAR](50) NOT NULL,
+	[LinkUrl] [VARCHAR](MAX) NOT NULL,
 	-- Completar mas adelante
 	-- Completar mas adelante
  CONSTRAINT [PK_OPublicityData] PRIMARY KEY CLUSTERED 

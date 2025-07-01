@@ -35,7 +35,7 @@ GO
 ------------------------------------------------------
 -- 			Logged NavBar Links TABLE
 ------------------------------------------------------
-CREATE TABLE [web].[LogDropDownMenuLink](
+CREATE TABLE [web].[WLogDropDownMenuLink](
 	[Id] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[Name] [VARCHAR](50) NOT NULL,
 	[LinkUrl] [VARCHAR](300) NOT NULL,

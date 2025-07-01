@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9d13b5a14337425bb5ad1e0e6eb6920f" Name="Diagram1">
+      <Diagram DiagramId="5f2ed760f3ac4df08cfa37e4b9a74b38" Name="Diagram1">
         <EntityTypeShape EntityType="Model.AUser" Width="1.5" PointX="1.5" PointY="18.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.OCnyComplaintOpinion" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.OCnyComplaintReason" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
@@ -21,22 +21,22 @@
         <EntityTypeShape EntityType="Model.OPerson" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.OPublicityData" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.OWorkDayType" Width="1.5" PointX="3.75" PointY="26.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.LogDropDownMenuLink" Width="1.5" PointX="12.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WCandidateLogIn" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WCompanyPage" Width="1.5" PointX="5.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WFtrAppDowloadLinkItem" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WCompanyPage" Width="1.5" PointX="13.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WFtrAppDowloadLinkItem" Width="1.5" PointX="5.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WFtrLinksSectionCol" Width="1.5" PointX="10.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WFtrLinksSectionColItem" Width="1.5" PointX="13" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WFtrPartnersSect" Width="1.5" PointX="14.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WFtrPartnersSectItem" Width="1.5" PointX="7.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WFtrSocialMediaSect" Width="1.5" PointX="9.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WFtrSocialMediaSectItem" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WGender" Width="1.5" PointX="14.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WFtrPartnersSect" Width="1.5" PointX="7.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WFtrPartnersSectItem" Width="1.5" PointX="9.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WFtrSocialMediaSect" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WFtrSocialMediaSectItem" Width="1.5" PointX="14.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WGender" Width="1.5" PointX="15.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WJobsPageNoFilt" Width="1.5" PointX="15.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WJobsPageWithFilt" Width="1.5" PointX="16.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WLogHeader" Width="1.5" PointX="16.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WLogNavBarLink" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WMoreOptionsItems" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WLogDropDownMenuLink" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WLogHeader" Width="1.5" PointX="17.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WLogNavBarLink" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WMoreOptionsItems" Width="1.5" PointX="5.75" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WMyCvPage" Width="1.5" PointX="17.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WMyCvSect" Width="1.5" PointX="8.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WMyCvSectOption" Width="1.5" PointX="11" PointY="6.625" IsExpanded="true" />
@@ -46,15 +46,15 @@
         <EntityTypeShape EntityType="Model.WNoLogCompanyItem" Width="1.5" PointX="13.75" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WNoLogCompanyPublicityItem" Width="1.5" PointX="15.75" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WNoLogCompanySection" Width="1.5" PointX="17.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WNoLogFiltersItem" Width="1.5" PointX="18.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WNoLogFiltersSection" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WNoLogHeader" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WNoLogNavBarLink" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WNoLogSectorItem" Width="1.5" PointX="19.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WNoLogSectorSection" Width="1.5" PointX="19.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WOrdeByOffersItem" Width="1.5" PointX="20.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WPersonalDataPage" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WProfileVisitsPage" Width="1.5" PointX="20.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WNoLogFiltersItem" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WNoLogFiltersSection" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WNoLogHeader" Width="1.5" PointX="19.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WNoLogNavBarLink" Width="1.5" PointX="19.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WNoLogSectorItem" Width="1.5" PointX="19.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WNoLogSectorSection" Width="1.5" PointX="19.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WOrdeByOffersItem" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WPersonalDataPage" Width="1.5" PointX="9.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WProfileVisitsPage" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WSideFilterItem" Width="1.5" PointX="10" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WSideFilterType" Width="1.5" PointX="7.75" PointY="3" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_OPerson_AUser" ManuallyRouted="false" />

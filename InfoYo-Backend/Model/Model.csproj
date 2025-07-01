@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D257C36B-AD5B-4B65-A4A5-B874DA46FCED}</ProjectGuid>
+    <ProjectGuid>{24A4261B-66EF-49F6-B179-0BA90C9564B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
@@ -53,10 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\MyDbConnection.cs" />
+    <Compile Include="Metadata\AUser.cs" />
+    <Compile Include="Metadata\OCnyComplaintOpinion.cs" />
+    <Compile Include="Metadata\OCnyComplaintReason.cs" />
+    <Compile Include="Metadata\OCompany.cs" />
+    <Compile Include="Metadata\OCompanyInfo.cs" />
+    <Compile Include="Metadata\OCompanyJobOffer.cs" />
+    <Compile Include="Metadata\OCompanyOpinion.cs" />
+    <Compile Include="Metadata\OContractType.cs" />
+    <Compile Include="Metadata\OCountry.cs" />
+    <Compile Include="Metadata\OCvVisit.cs" />
+    <Compile Include="Metadata\OJobCategoy.cs" />
+    <Compile Include="Metadata\OJobOfferPerson.cs" />
+    <Compile Include="Metadata\OMinStudy.cs" />
+    <Compile Include="Metadata\OPerson.cs" />
+    <Compile Include="Metadata\OPublicityData.cs" />
+    <Compile Include="Metadata\OWorkDayType.cs" />
     <Compile Include="Models\AUser.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LogDropDownMenuLink.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.Context.cs">
@@ -153,6 +167,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WJobsPageWithFilt.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WLogDropDownMenuLink.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WLogHeader.cs">

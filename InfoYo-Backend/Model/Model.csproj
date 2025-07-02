@@ -248,10 +248,6 @@
       <Project>{130b34fc-0533-496d-877f-4a26076b69de}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{83c246d3-3b40-4997-b41f-1fc347a0ad27}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AUserVMR.cs" />
+    <Compile Include="ViewModels\OPersonVMR.cs" />
+    <Compile Include="ViewModels\PaginatedList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    public class AUserVMR
+    public class WMyCvSectOptionVMR
     {
         public long Id { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public string Title { get; set; }
+        public long WMyCvSectId { get; set; }
 
-
-        public OPersonVMR OPerson { get; set; }
+        public WMyCvSectVMR WMyCvSect { get; set; }
     }
 }

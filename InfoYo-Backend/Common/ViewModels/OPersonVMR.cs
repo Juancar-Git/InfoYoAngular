@@ -28,5 +28,14 @@ namespace Common.ViewModels
         public bool OpenToWork { get; set; }
         public System.DateTime CreationDate { get; set; }
         public bool Closed { get; set; }
+
+        // Propiedad de navegación (AUser)
+        public string AUserName { get; set; }
+
+        // Colecciones relacionadas
+        public List<OCnyComplaintOpinionVMR> ComplaintOpinions { get; set; } = new List<OCnyComplaintOpinionVMR>();
+        public List<OCompanyOpinionVMR> CompanyOpinions { get; set; } = new List<OCompanyOpinionVMR>();
+        public List<OCvVisitVMR> CvVisits { get; set; } = new List<OCvVisitVMR>();
+        public List<OJobOfferPersonVMR> JobOfferPersons { get; set; } = new List<OJobOfferPersonVMR>();
     }
 }

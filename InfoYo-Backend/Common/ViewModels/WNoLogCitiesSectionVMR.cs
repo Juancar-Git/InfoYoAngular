@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    public class AUserVMR
+    public class WNoLogCitiesSectionVMR
     {
         public long Id { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
-
-
-        public OPersonVMR OPerson { get; set; }
+        public string Title { get; set; }
+        public string MoreCitiesBtn { get; set; }
     }
 }

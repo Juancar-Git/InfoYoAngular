@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    public class AUserVMR
+    public class OWorkDayTypeVMR
     {
         public long Id { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public string Name { get; set; }
 
-
-        public OPersonVMR OPerson { get; set; }
+        public List<OCompanyJobOfferVMR> OCompanyJobOffer { get; set; } = new List<OCompanyJobOfferVMR>();
     }
 }

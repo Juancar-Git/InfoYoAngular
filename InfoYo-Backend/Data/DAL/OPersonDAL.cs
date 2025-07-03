@@ -43,6 +43,8 @@ namespace Data.DAL
                     Closed = x.Closed
                 });
 
+
+
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     query = query.Where(x => 

@@ -14,6 +14,7 @@ namespace Common.ViewModels
         public string FirstImgUrl { get; set; }
         public string SecondImgUrl { get; set; }
 
-        public virtual OCompanyVMR OCompany { get; set; }
+        // No tengo claro si aquí es útil. Revisar mas adelante
+        public long OCompanyId { get; set; }
     }
 }

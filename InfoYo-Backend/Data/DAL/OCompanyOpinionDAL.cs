@@ -1,6 +1,7 @@
 ﻿using Common.ViewModels;
 using Model.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,74 +9,71 @@ using System.Threading.Tasks;
 
 namespace Data.DAL
 {
-    public class OCvVisitDAL
+    public class OCompanyOpinionDAL
     {
-        public static List<OCvVisitVMR> ReadByCompanyId(long id)
+        public static List<OCompanyOpinionVMR> ReadByCompanyId(long id)
         {
             using (var db = MyDbConnection.Create())
             {
                 return ReadByCompanyId(db, id);
             }
         }
-        public static List<OCvVisitVMR> ReadByCompanyId(MyDbConnection db, long id)
+        public static List<OCompanyOpinionVMR> ReadByCompanyId(MyDbConnection db, long id)
         {
 
-            return db.Set<OCvVisit>().Where(x => x.Id == id).Select(x => new OCvVisitVMR
+            return db.Set<OCompanyOpinion>().Where(x => x.Id == id).Select(x => new OCompanyOpinionVMR
             {
                 Id = x.Id,
-                VisitType = x.VisitType,
                 Description = x.Description,
-                SearchText = x.SearchText,
-                Birthdate = x.Birthdate,
-                OPersonId = x.OPersonId,
-                OCompanyId = x.OCompanyId
+                Stars = x.Stars,
+                Complaints = x.Complaints,
+                OCompanyId = x.OCompanyId,
+                OPersonId = x.OPersonId
             }).ToList();
         }
 
-        public static OCvVisitVMR ReadOne(long id)
+        public static OCompanyOpinionVMR ReadOne(long id)
         {
             using (var db = MyDbConnection.Create())
             {
                 return ReadOne(db, id);
             }
         }
-
-        public static OCvVisitVMR ReadOne(MyDbConnection db, long id)
+        public static OCompanyOpinionVMR ReadOne(MyDbConnection db, long id)
         {
-            return db.Set<OCvVisitVMR>().Where(x => x.Id == id).Select(x => new OCvVisitVMR
+                
+            return db.Set<OCompanyOpinion>().Where(x => x.Id == id).Select(x => new OCompanyOpinionVMR
             {
                 Id = x.Id,
-                VisitType = x.VisitType,
                 Description = x.Description,
-                SearchText = x.SearchText,
-                Birthdate = x.Birthdate,
-                OPersonId = x.OPersonId,
-                OCompanyId = x.OCompanyId
+                Stars = x.Stars,
+                Complaints = x.Complaints,
+                OCompanyId = x.OCompanyId,
+                OPersonId = x.OPersonId
             }).FirstOrDefault();
         }
 
-        public static long Create(OCvVisit item)
+        public static long Create(OCompanyOpinion item)
         {
             using (var db = MyDbConnection.Create())
             {
-                db.Set<OCvVisit>().Add(item);
+                db.Set<OCompanyOpinion>().Add(item);
                 db.SaveChanges();
             }
             return item.Id;
         }
 
-        public static void Update(OCvVisit item)
+        public static void Update(OCompanyOpinion item)
         {
             using (var db = MyDbConnection.Create())
             {
-                var updateItem = db.Set<OCvVisit>().Find(item.Id);
+                var updateItem = db.Set<OCompanyOpinion>().Find(item.Id);
 
-                updateItem.VisitType = item.VisitType;
                 updateItem.Description = item.Description;
-                updateItem.SearchText = item.SearchText;
-                updateItem.Birthdate = item.Birthdate;
-                updateItem.OPersonId = item.OPersonId;
+                updateItem.Stars = item.Stars;
+                updateItem.Complaints = item.Complaints;
                 updateItem.OCompanyId = item.OCompanyId;
+                updateItem.OPersonId = item.OPersonId;
 
                 db.Entry(updateItem).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
@@ -86,7 +84,7 @@ namespace Data.DAL
         {
             using (var db = MyDbConnection.Create())
             {
-                var item = db.Set<OCvVisit>().Find(Id);
+                var item = db.Set<OCompanyOpinion>().Find(Id);
 
                 db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();

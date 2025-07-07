@@ -38,6 +38,7 @@ namespace Common.ViewModels
         public string CompanyBgImgPath { get; set; }
         public string MiniText { get; set; }
 
+        // ESTO DEBERÍA SER UN OBJETO OCompanyInfoVMR, NO UNA LISTA, YA QUE SOLO HAY UNA INFORMACIÓN POR CADA COMPANY !!!CAMBIAR!!!
         public List<OCompanyInfoVMR> OCompanyInfo { get; set; }
         public List<OCompanyJobOfferVMR> OCompanyJobOffer { get; set; }
         public List<OCompanyOpinionVMR> OCompanyOpinion { get; set; }

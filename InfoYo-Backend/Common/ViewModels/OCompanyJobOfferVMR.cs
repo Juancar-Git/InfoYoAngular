@@ -20,8 +20,12 @@ namespace Common.ViewModels
         public Nullable<decimal> Salary { get; set; }
         public int MinExperienceYears { get; set; }
         public string MinRequirements { get; set; }
+        public long OCompanyId { get; set; }
+        public long OJobCategoryId { get; set; }
+        public long OMinStudyId { get; set; }
+        public long OWorkDayTypeId { get; set; }
+        public long OContractTypeId { get; set; }
 
-        public OCompanyVMR OCompany { get; set; }
         public OContractTypeVMR OContractType { get; set; }
         public OJobCategoryVMR OJobCategory { get; set; }
         public OMinStudyVMR OMinStudy { get; set; }

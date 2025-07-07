@@ -13,10 +13,10 @@ namespace Common.ViewModels
         public string Description { get; set; }
         public int Stars { get; set; }
         public int Complaints { get; set; }
-
+        public long OCompanyId { get; set; }
+        public long OPersonId { get; set; }
 
         public List<OCnyComplaintOpinionVMR> OCnyComplaintOpinion { get; set; }
-        public virtual OCompanyVMR OCompany { get; set; }
         public virtual OPersonVMR OPerson { get; set; }
     }
 }

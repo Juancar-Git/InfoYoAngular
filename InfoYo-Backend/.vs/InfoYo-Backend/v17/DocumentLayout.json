@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\ocompanydal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\ocompanydal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\ocompanyinfodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\ocompanyinfodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\ocompanyopiniondal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\ocompanyopiniondal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\ocvvisitdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\ocvvisitdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\ocompanyjobofferdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\ocompanyjobofferdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\auserdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\auserdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OCvVisitDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCvVisitDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\OCvVisitDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCvVisitDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\OCvVisitDAL.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T14:16:55.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OCompanyJobOfferDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyJobOfferDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\OCompanyJobOfferDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyJobOfferDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\OCompanyJobOfferDAL.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T14:14:47.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OCompanyOpinionDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyOpinionDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\OCompanyOpinionDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyOpinionDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\OCompanyOpinionDAL.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAAA0AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T13:40:29.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OCompanyInfoDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyInfoDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\OCompanyInfoDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyInfoDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\OCompanyInfoDAL.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwB8AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T12:19:37.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OCompanyDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\OCompanyDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\OCompanyDAL.cs",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAIwKsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T07:05:12.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AUserDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\AUserDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\AUserDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\AUserDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\AUserDAL.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAAFcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T09:10:52.412Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

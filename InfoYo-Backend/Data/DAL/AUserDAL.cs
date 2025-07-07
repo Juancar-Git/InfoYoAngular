@@ -86,7 +86,6 @@ namespace Data.DAL
             {
                 var itemUpdate = db.Set<AUser>().Find(item.Id);
 
-                itemUpdate.Id = item.Id;
                 itemUpdate.Email = item.Email;
                 itemUpdate.PasswordHash = item.PasswordHash;
 

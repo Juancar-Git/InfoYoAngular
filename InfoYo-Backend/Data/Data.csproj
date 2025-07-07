@@ -56,7 +56,7 @@
     <Compile Include="DAL\OCompanyDAL.cs" />
     <Compile Include="DAL\OCompanyInfoDAL.cs" />
     <Compile Include="DAL\OCompanyJobOfferDAL.cs" />
-    <Compile Include="DAL\OCompanyOptionDAL.cs" />
+    <Compile Include="DAL\OCompanyOpinionDAL.cs" />
     <Compile Include="DAL\OComplaintReasonDAL.cs" />
     <Compile Include="DAL\OContractTypeDAL.cs" />
     <Compile Include="DAL\OCountryDAL.cs" />

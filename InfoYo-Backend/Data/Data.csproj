@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AUserDAL.cs" />
-    <Compile Include="DAL\OCnyComplaintOptionDAL.cs" />
+    <Compile Include="DAL\OCnyComplaintOpinionDAL.cs" />
     <Compile Include="DAL\OCompanyDAL.cs" />
     <Compile Include="DAL\OCompanyInfoDAL.cs" />
     <Compile Include="DAL\OCompanyJobOfferDAL.cs" />

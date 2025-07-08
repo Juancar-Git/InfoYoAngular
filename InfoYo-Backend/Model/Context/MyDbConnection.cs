@@ -21,5 +21,18 @@ namespace Model.Models
         {
             return new MyDbConnection("name:DbConnection");
         }
+
+        //Fluent API
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<OCnyComplaintOpinion>()
+                .HasKey(x => new { x.OCompanyOpinionId, x.OPersonId });
+
+            modelBuilder.Entity<OJobOfferPerson>()
+                .HasKey(x => new { x.OPersonId, x.OJobOfferId });
+            
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Data.DAL
         public static List<OCompanyJobOfferVMR> ReadByCompanyId(MyDbConnection db, long id)
         {
 
-            return db.Set<OCompanyJobOffer>().Where(x => x.Id == id).Select(x => new OCompanyJobOfferVMR
+            return db.Set<OCompanyJobOffer>().Where(x => x.OCompanyId == id).Select(x => new OCompanyJobOfferVMR
             {
                 Id = x.Id,
                 Title = x.Title,
@@ -44,31 +44,31 @@ namespace Data.DAL
 
         public static OCompanyJobOfferVMR ReadOne(long id)
         {
+            OCompanyJobOfferVMR result = null;
+
             using (var db = MyDbConnection.Create())
             {
-                return ReadOne(db, id);
+                result = db.Set<OCompanyJobOfferVMR>().Where(x => x.Id == id).Select(x => new OCompanyJobOfferVMR
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Description = x.Description,
+                    CreationDate = x.CreationDate,
+                    PublicationDate = x.PublicationDate,
+                    Country = x.Country,
+                    Province = x.Province,
+                    Town = x.Town,
+                    LocationType = x.LocationType,
+                    Salary = x.Salary,
+                    MinExperienceYears = x.MinExperienceYears,
+                    MinRequirements = x.MinRequirements,
+                    OCompanyId = x.OCompanyId,
+                    OWorkDayTypeId = x.OWorkDayTypeId,
+                    OContractTypeId = x.OContractTypeId
+                }).FirstOrDefault();
             }
-        }
-        public static OCompanyJobOfferVMR ReadOne(MyDbConnection db, long id)
-        {
-            return db.Set<OCompanyJobOfferVMR>().Where(x => x.Id == id).Select(x => new OCompanyJobOfferVMR
-            {
-                Id = x.Id,
-                Title = x.Title,
-                Description = x.Description,
-                CreationDate = x.CreationDate,
-                PublicationDate = x.PublicationDate,
-                Country = x.Country,
-                Province = x.Province,
-                Town = x.Town,
-                LocationType = x.LocationType,
-                Salary = x.Salary,
-                MinExperienceYears = x.MinExperienceYears,
-                MinRequirements = x.MinRequirements,
-                OCompanyId = x.OCompanyId,
-                OWorkDayTypeId = x.OWorkDayTypeId,
-                OContractTypeId = x.OContractTypeId
-            }).FirstOrDefault();
+
+            return result;
         }
 
         public static long Create(OCompanyJobOffer item)
@@ -86,6 +86,7 @@ namespace Data.DAL
             using (var db = MyDbConnection.Create())
             {
                 var updateItem = db.Set<OCompanyJobOffer>().Find(item.Id);
+                if (updateItem == null) return;
 
                 updateItem.Title = item.Title;
                 updateItem.Description = item.Description;
@@ -107,15 +108,21 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                var item = db.Set<OCompanyJobOffer>().Find(Id);
-
-                db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
-                db.SaveChanges();
+                Delete(db, id);
             }
+        }
+
+        public static void Delete(MyDbConnection db, long Id)
+        {
+            var item = db.Set<OCompanyJobOffer>().Find(Id);
+            if (item == null) return;
+
+            db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+            db.SaveChanges();
         }
     }
 }

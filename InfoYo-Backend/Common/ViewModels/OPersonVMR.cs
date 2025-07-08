@@ -30,12 +30,12 @@ namespace Common.ViewModels
         public bool Closed { get; set; }
 
         // Propiedad de navegación (AUser)
-        public string AUserName { get; set; }
+        public string AUserEmail { get; set; }
 
         // Colecciones relacionadas
-        public List<OCnyComplaintOpinionVMR> ComplaintOpinions { get; set; } = new List<OCnyComplaintOpinionVMR>();
-        public List<OCompanyOpinionVMR> CompanyOpinions { get; set; } = new List<OCompanyOpinionVMR>();
-        public List<OCvVisitVMR> CvVisits { get; set; } = new List<OCvVisitVMR>();
-        public List<OJobOfferPersonVMR> JobOfferPersons { get; set; } = new List<OJobOfferPersonVMR>();
+        public List<OCnyComplaintOpinionVMR> OCnyComplaintOpinion { get; set; } = new List<OCnyComplaintOpinionVMR>();
+        public List<OCompanyOpinionVMR> OCompanyOpinion { get; set; } = new List<OCompanyOpinionVMR>();
+        public List<OCvVisitVMR> OCvVisit { get; set; } = new List<OCvVisitVMR>();
+        public List<OJobOfferPersonVMR> OJobOfferPerson { get; set; } = new List<OJobOfferPersonVMR>();
     }
 }

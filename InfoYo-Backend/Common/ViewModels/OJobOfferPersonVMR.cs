@@ -8,5 +8,9 @@ namespace Common.ViewModels
 {
     public class OJobOfferPersonVMR
     {
+        public long OPersonId { get; set; }
+        public long OJobOfferId { get; set; }
+        public System.DateTime ApplicationDate { get; set; }
+        public string Status { get; set; }
     }
 }

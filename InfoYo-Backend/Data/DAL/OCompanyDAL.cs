@@ -117,6 +117,7 @@ namespace Data.DAL
             using(var db = MyDbConnection.Create())
             {
                 var itemUpdate = db.Set<OCompany>().Find(item.Id);
+                if (itemUpdate == null) return;
 
                 itemUpdate.CompanyName = item.CompanyName;
                 itemUpdate.RegisteredName = item.RegisteredName;
@@ -157,50 +158,25 @@ namespace Data.DAL
             using(var db = MyDbConnection.Create())
             {
                 var item = db.Set<OCompany>().Find(Id);
+                if (item == null) return;
 
-                /*
-                 * -- NO TENGO CLARO SI HAY QUE ELIMINARLO DESDE AQUI O DESDE CADA CLASE DAL, YA QUE ESTOS A SU VEZ TIENEN OBJETOS QUE ELIMINAR
-                 * 
+                //Delete OCompanyInfo List
                 var queryOCompanyInfo = db.Set<OCompanyInfo>().Where(x => x.OCompanyId == Id);
-                if (queryOCompanyInfo != null)
-                {
-                    foreach (var itemQ in queryOCompanyInfo.ToList())
-                    {
-                        db.Entry(itemQ).State = System.Data.Entity.EntityState.Deleted;
-                        db.SaveChanges();
-                    }
-                } 
+                foreach (var itemQ in queryOCompanyInfo){OCompanyInfoDAL.Delete(db, itemQ.Id);}
 
+                //Delete OCompanyJobOffer List
                 var queryOCompanyJobOffer = db.Set<OCompanyJobOffer>().Where(x => x.OCompanyId == Id);
-                if (queryOCompanyJobOffer != null)
-                {
-                    foreach (var itemQ in queryOCompanyJobOffer.ToList())
-                    {
-                        db.Entry(itemQ).State = System.Data.Entity.EntityState.Deleted;
-                        db.SaveChanges();
-                    }
-                }
+                foreach (var itemQ in queryOCompanyJobOffer){OCompanyJobOfferDAL.Delete(db, itemQ.Id);}
 
+                //Delete OCompanyOpinion List
                 var queryOCompanyOpinion = db.Set<OCompanyOpinion>().Where(x => x.OCompanyId == Id);
-                if (queryOCompanyOpinion != null)
-                {
-                    foreach (var itemQ in queryOCompanyOpinion.ToList())
-                    {
-                        db.Entry(itemQ).State = System.Data.Entity.EntityState.Deleted;
-                        db.SaveChanges();
-                    }
-                }
+                foreach (var itemQ in queryOCompanyOpinion){OCompanyOpinionDAL.Delete(db, itemQ.Id);}
 
+                //Delete OCvVisit List
                 var queryOCvVisit = db.Set<OCvVisit>().Where(x => x.OCompanyId == Id);
-                if (queryOCvVisit != null)
-                {
-                    foreach (var itemQ in queryOCvVisit.ToList())
-                    {
-                        db.Entry(itemQ).State = System.Data.Entity.EntityState.Deleted;
-                        db.SaveChanges();
-                    }
-                }
-                */
+                foreach (var itemQ in queryOCvVisit){OCvVisitDAL.Delete(db, itemQ.Id);}
+
+                
                 db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
             }

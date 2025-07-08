@@ -21,8 +21,7 @@ namespace Data.DAL
         }
         public static List<OCompanyInfoVMR> ReadByCompanyId(MyDbConnection db, long id)
         {
-
-            return db.Set<OCompanyInfo>().Where(x => x.Id == id).Select(x => new OCompanyInfoVMR
+            return db.Set<OCompanyInfo>().Where(x => x.OCompanyId == id).Select(x => new OCompanyInfoVMR
             {
                 Id = x.Id,
                 Description = x.Description,
@@ -36,23 +35,21 @@ namespace Data.DAL
         //ES UNA RELACIÓN DE UNO A UNO POR LO QUE EN EL OTRO LADO NO DEBERÍA HABER UNA LISTA --> CAMBIAR
         public static OCompanyInfoVMR ReadOne(long companyId)
         {
+            OCompanyInfoVMR result = null;
+
             using (var db = MyDbConnection.Create())
             {
-                return ReadOne(db, companyId);
+                result = db.Set<OCompanyInfoVMR>().Where(x => x.OCompanyId == companyId).Select(x => new OCompanyInfoVMR
+                {
+                    Id = x.Id,
+                    Description = x.Description,
+                    YtVideoUrl = x.YtVideoUrl,
+                    FirstImgUrl = x.FirstImgUrl,
+                    SecondImgUrl = x.SecondImgUrl,
+                    OCompanyId = x.OCompanyId
+                }).FirstOrDefault();
             }
-        }
-
-        public static OCompanyInfoVMR ReadOne(MyDbConnection db, long companyId)
-        {
-            return db.Set<OCompanyInfoVMR>().Where(x => x.OCompanyId == companyId).Select(x => new OCompanyInfoVMR
-            {
-                Id = x.Id,
-                Description = x.Description,
-                YtVideoUrl = x.YtVideoUrl,
-                FirstImgUrl = x.FirstImgUrl,
-                SecondImgUrl = x.SecondImgUrl,
-                OCompanyId = x.OCompanyId
-            }).FirstOrDefault();
+            return result;
         }
 
         public static long Create(OCompanyInfo item)
@@ -70,6 +67,7 @@ namespace Data.DAL
             using (var db = MyDbConnection.Create())
             {
                 var updateItem = db.Set<OCompanyInfo>().Find(item.Id);
+                if (updateItem == null) return;
 
                 updateItem.Description = item.Description;
                 updateItem.YtVideoUrl = item.YtVideoUrl;
@@ -82,15 +80,21 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                var item = db.Set<OCompanyInfo>().Find(Id);
-
-                db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
-                db.SaveChanges();
+                Delete(db, id);
             }
+        }
+
+        public static void Delete(MyDbConnection db, long Id)
+        {
+            var item = db.Set<OCompanyInfo>().Find(Id);
+            if(item == null) return;
+
+            db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+            db.SaveChanges();
         }
     }
 }

@@ -22,7 +22,5 @@ namespace Model.Models
         public long OPersonId { get; set; }
         public long OCompanyId { get; set; }
     
-        public virtual OCompany OCompany { get; set; }
-        public virtual OPerson OPerson { get; set; }
     }
 }

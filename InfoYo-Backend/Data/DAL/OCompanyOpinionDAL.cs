@@ -20,8 +20,27 @@ namespace Data.DAL
         }
         public static List<OCompanyOpinionVMR> ReadByCompanyId(MyDbConnection db, long id)
         {
+            return db.Set<OCompanyOpinion>().Where(x => x.OCompanyId == id).Select(x => new OCompanyOpinionVMR
+            {
+                Id = x.Id,
+                Description = x.Description,
+                Stars = x.Stars,
+                Complaints = x.Complaints,
+                OCompanyId = x.OCompanyId,
+                OPersonId = x.OPersonId
+            }).ToList();
+        }
 
-            return db.Set<OCompanyOpinion>().Where(x => x.Id == id).Select(x => new OCompanyOpinionVMR
+        public static List<OCompanyOpinionVMR> ReadByPersonId(long id)
+        {
+            using (var db = MyDbConnection.Create())
+            {
+                return ReadByPersonId(db, id);
+            }
+        }
+        public static List<OCompanyOpinionVMR> ReadByPersonId(MyDbConnection db, long id)
+        {
+            return db.Set<OCompanyOpinion>().Where(x => x.OPersonId == id).Select(x => new OCompanyOpinionVMR
             {
                 Id = x.Id,
                 Description = x.Description,
@@ -34,23 +53,22 @@ namespace Data.DAL
 
         public static OCompanyOpinionVMR ReadOne(long id)
         {
+            OCompanyOpinionVMR result = null;
+
             using (var db = MyDbConnection.Create())
             {
-                return ReadOne(db, id);
+                result = db.Set<OCompanyOpinion>().Where(x => x.Id == id).Select(x => new OCompanyOpinionVMR
+                {
+                    Id = x.Id,
+                    Description = x.Description,
+                    Stars = x.Stars,
+                    Complaints = x.Complaints,
+                    OCompanyId = x.OCompanyId,
+                    OPersonId = x.OPersonId
+                }).FirstOrDefault();
             }
-        }
-        public static OCompanyOpinionVMR ReadOne(MyDbConnection db, long id)
-        {
-                
-            return db.Set<OCompanyOpinion>().Where(x => x.Id == id).Select(x => new OCompanyOpinionVMR
-            {
-                Id = x.Id,
-                Description = x.Description,
-                Stars = x.Stars,
-                Complaints = x.Complaints,
-                OCompanyId = x.OCompanyId,
-                OPersonId = x.OPersonId
-            }).FirstOrDefault();
+
+            return result;
         }
 
         public static long Create(OCompanyOpinion item)
@@ -68,6 +86,7 @@ namespace Data.DAL
             using (var db = MyDbConnection.Create())
             {
                 var updateItem = db.Set<OCompanyOpinion>().Find(item.Id);
+                if (updateItem == null) return;
 
                 updateItem.Description = item.Description;
                 updateItem.Stars = item.Stars;
@@ -80,15 +99,21 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                var item = db.Set<OCompanyOpinion>().Find(Id);
-
-                db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
-                db.SaveChanges();
+                Delete(db, id);
             }
+        }
+
+        public static void Delete(MyDbConnection db, long Id)
+        {
+            var item = db.Set<OCompanyOpinion>().Find(Id);
+            if (item == null) return;
+
+            db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+            db.SaveChanges();
         }
     }
 }

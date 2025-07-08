@@ -69,6 +69,23 @@ namespace Data.DAL
         }
         */
 
+        public static string ReadEmail(long Id)
+        {
+            AUserVMR result = new AUserVMR();
+
+            using (var db = MyDbConnection.Create())
+            {
+                result = db.Set<AUser>().Where(x => x.Id == Id).Select(x => new AUserVMR
+                {
+                    Id = x.Id,
+                    Email = x.Email,
+                }).FirstOrDefault();
+
+            }
+
+            return result.Email;
+        }
+
         public static long Create(AUser item)
         {
             using(var db = MyDbConnection.Create())
@@ -85,6 +102,7 @@ namespace Data.DAL
             using(var db = MyDbConnection.Create())
             {
                 var itemUpdate = db.Set<AUser>().Find(item.Id);
+                if (itemUpdate == null) return;
 
                 itemUpdate.Email = item.Email;
                 itemUpdate.PasswordHash = item.PasswordHash;
@@ -100,6 +118,7 @@ namespace Data.DAL
             using(var db = MyDbConnection.Create())
             {
                 var item = db.Set<AUser>().Find(Id);
+                if (item == null) return;
 
                 db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();

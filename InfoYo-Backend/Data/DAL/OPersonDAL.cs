@@ -71,6 +71,7 @@ namespace Data.DAL
         public static OPersonVMR ReadOne(long Id)
         {
             OPersonVMR result = new OPersonVMR();
+            long aUserId;
 
             using(var db = MyDbConnection.Create())
             {
@@ -98,6 +99,13 @@ namespace Data.DAL
                     Closed = x.Closed
                 }).FirstOrDefault();
 
+                aUserId = db.Set<OPerson>().Where(x => x.Id == Id).Select(x => x.AUserId).FirstOrDefault();
+
+                result.AUserEmail = AUserDAL.ReadEmail(aUserId);
+                result.OCnyComplaintOpinion = OCnyComplaintOpinionDAL.ReadByPersonId(db, result.Id);
+                result.OCompanyOpinion = OCompanyOpinionDAL.ReadByPersonId(db, result.Id); ;
+                result.OCvVisit = OCvVisitDAL.ReadByPersonId(db, result.Id);
+                result.OJobOfferPerson = OJobOfferPersonDAL.ReadByPersonId(db, result.Id);
             }
 
             return result;
@@ -120,8 +128,8 @@ namespace Data.DAL
             using (var db = MyDbConnection.Create())
             {
                 var itemUpdate = db.Set<OPerson>().Find(item.Id);
+                if (itemUpdate == null) return;
 
-                itemUpdate.Id = item.Id;
                 itemUpdate.Name = item.Name;
                 itemUpdate.FirstSurname = item.FirstSurname;
                 itemUpdate.SecondSurname = item.SecondSurname;
@@ -153,6 +161,12 @@ namespace Data.DAL
             using (var db = MyDbConnection.Create())
             {
                 var item = db.Set<OPerson>().Find(Id);
+                if (item == null) return;
+
+                //BORRAR LISTAS QUE CONTIENE
+                //BORRAR LISTAS QUE CONTIENE
+                //BORRAR LISTAS QUE CONTIENE
+                //BORRAR LISTAS QUE CONTIENE
 
                 db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();

@@ -20,7 +20,29 @@ namespace Data.DAL
         public static List<OCvVisitVMR> ReadByCompanyId(MyDbConnection db, long id)
         {
 
-            return db.Set<OCvVisit>().Where(x => x.Id == id).Select(x => new OCvVisitVMR
+            return db.Set<OCvVisit>().Where(x => x.OCompanyId == id).Select(x => new OCvVisitVMR
+            {
+                Id = x.Id,
+                VisitType = x.VisitType,
+                Description = x.Description,
+                SearchText = x.SearchText,
+                Birthdate = x.Birthdate,
+                OPersonId = x.OPersonId,
+                OCompanyId = x.OCompanyId
+            }).ToList();
+        }
+
+        public static List<OCvVisitVMR> ReadByPersonId(long id)
+        {
+            using (var db = MyDbConnection.Create())
+            {
+                return ReadByPersonId(db, id);
+            }
+        }
+        public static List<OCvVisitVMR> ReadByPersonId(MyDbConnection db, long id)
+        {
+
+            return db.Set<OCvVisit>().Where(x => x.OPersonId == id).Select(x => new OCvVisitVMR
             {
                 Id = x.Id,
                 VisitType = x.VisitType,
@@ -34,24 +56,23 @@ namespace Data.DAL
 
         public static OCvVisitVMR ReadOne(long id)
         {
+            OCvVisitVMR result = null;
+
             using (var db = MyDbConnection.Create())
             {
-                return ReadOne(db, id);
+                result = db.Set<OCvVisitVMR>().Where(x => x.Id == id).Select(x => new OCvVisitVMR
+                {
+                    Id = x.Id,
+                    VisitType = x.VisitType,
+                    Description = x.Description,
+                    SearchText = x.SearchText,
+                    Birthdate = x.Birthdate,
+                    OPersonId = x.OPersonId,
+                    OCompanyId = x.OCompanyId
+                }).FirstOrDefault();
             }
-        }
 
-        public static OCvVisitVMR ReadOne(MyDbConnection db, long id)
-        {
-            return db.Set<OCvVisitVMR>().Where(x => x.Id == id).Select(x => new OCvVisitVMR
-            {
-                Id = x.Id,
-                VisitType = x.VisitType,
-                Description = x.Description,
-                SearchText = x.SearchText,
-                Birthdate = x.Birthdate,
-                OPersonId = x.OPersonId,
-                OCompanyId = x.OCompanyId
-            }).FirstOrDefault();
+            return result;
         }
 
         public static long Create(OCvVisit item)
@@ -69,6 +90,7 @@ namespace Data.DAL
             using (var db = MyDbConnection.Create())
             {
                 var updateItem = db.Set<OCvVisit>().Find(item.Id);
+                if (updateItem == null) return;
 
                 updateItem.VisitType = item.VisitType;
                 updateItem.Description = item.Description;
@@ -82,15 +104,21 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                var item = db.Set<OCvVisit>().Find(Id);
-
-                db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
-                db.SaveChanges();
+                Delete(db, id);
             }
+        }
+
+        public static void Delete(MyDbConnection db, long Id)
+        {
+            var item = db.Set<OCvVisit>().Find(Id);
+            if (item == null) return;
+
+            db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+            db.SaveChanges();
         }
     }
 }

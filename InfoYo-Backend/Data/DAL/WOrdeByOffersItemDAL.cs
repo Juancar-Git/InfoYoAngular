@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.DAL
 {
-    public class OComplaintReasonDAL
+    public class WOrdeByOffersItemDAL
     {
     }
 }

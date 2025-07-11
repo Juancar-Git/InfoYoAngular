@@ -43,8 +43,6 @@ namespace Data.DAL
                     Closed = x.Closed
                 });
 
-
-
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     query = query.Where(x => 
@@ -163,11 +161,23 @@ namespace Data.DAL
                 var item = db.Set<OPerson>().Find(Id);
                 if (item == null) return;
 
-                //BORRAR LISTAS QUE CONTIENE
-                //BORRAR LISTAS QUE CONTIENE
-                //BORRAR LISTAS QUE CONTIENE
-                //BORRAR LISTAS QUE CONTIENE
+                //Delete OCompanyInfo List
+                var queryOCompanyInfo = db.Set<OCnyComplaintOpinion>().Where(x => x.OPersonId == Id);
+                foreach (var itemQ in queryOCompanyInfo) { OCnyComplaintOpinionDAL.Delete(db, itemQ.OCompanyOpinionId, itemQ.OPersonId); }
 
+                //Delete OCompanyOpinion List
+                var queryOCompanyOpinion = db.Set<OCompanyOpinion>().Where(x => x.OPersonId == Id);
+                foreach (var itemQ in queryOCompanyOpinion) { OCompanyOpinionDAL.Delete(db, itemQ.Id); }
+
+                //Delete OCvVisit List
+                var queryOCvVisit = db.Set<OCvVisit>().Where(x => x.OPersonId == Id);
+                foreach (var itemQ in queryOCvVisit) { OCvVisitDAL.Delete(db, itemQ.Id); }
+
+                //Delete OCompanyJobOffer List
+                var queryOCompanyJobOffer = db.Set<OJobOfferPerson>().Where(x => x.OPersonId == Id);
+                foreach (var itemQ in queryOCompanyJobOffer) { OJobOfferPersonDAL.Delete(db, itemQ.OPersonId, itemQ.OJobOfferId); }
+
+                //Delete OPerson Object
                 db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
             }

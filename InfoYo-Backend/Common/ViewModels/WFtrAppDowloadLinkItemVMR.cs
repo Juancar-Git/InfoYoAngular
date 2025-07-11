@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    internal class WFtrAppDowloadLinkItemVMR
+    public class WFtrAppDowloadLinkItemVMR
     {
         public long Id { get; set; }
         public string Name { get; set; }

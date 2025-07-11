@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace Data.DAL
 {
-    public class OJobCategoryDAL
+    public class OCnyComplaintReasonDAL
     {
-        public static List<OJobCategoryVMR> ReadAll(long Id)
+
+        public static List<OCnyComplaintReasonVMR> ReadAll(long Id)
         {
-            List<OJobCategoryVMR> result = null;
+            List<OCnyComplaintReasonVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OJobCategory>().Where(x => x.Id == Id).Select(x => new OJobCategoryVMR
+                result = db.Set<OCnyComplaintReason>().Where(x => x.Id == Id).Select(x => new OCnyComplaintReasonVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -26,13 +27,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static OJobCategoryVMR ReadOne(long Id)
+        public static OCnyComplaintReasonVMR ReadOne(long Id)
         {
-            OJobCategoryVMR result = null;
+            OCnyComplaintReasonVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OJobCategory>().Where(x => x.Id == Id).Select(x => new OJobCategoryVMR
+                result = db.Set<OCnyComplaintReason>().Where(x => x.Id == Id).Select(x => new OCnyComplaintReasonVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -42,21 +43,21 @@ namespace Data.DAL
             return result;
         }
 
-        public static long Create(OJobCategory item)
+        public static long Create(OCnyComplaintReason item)
         {
             using (var db = MyDbConnection.Create())
             {
-                db.Set<OJobCategory>().Add(item);
+                db.Set<OCnyComplaintReason>().Add(item);
                 db.SaveChanges();
             }
             return item.Id;
         }
 
-        public static void Update(OJobCategory item)
+        public static void Update(OCnyComplaintReason item)
         {
             using (var db = MyDbConnection.Create())
             {
-                var updateItem = db.Set<OJobCategory>().Find(item.Id);
+                var updateItem = db.Set<OCnyComplaintReason>().Find(item.Id);
                 if (updateItem == null) return;
 
                 updateItem.Name = item.Name;
@@ -76,7 +77,7 @@ namespace Data.DAL
 
         public static void Delete(MyDbConnection db, long Id)
         {
-            var item = db.Set<OJobCategory>().Find(Id);
+            var item = db.Set<OCnyComplaintReason>().Find(Id);
             if (item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

@@ -44,6 +44,8 @@ namespace Data.DAL
                     Active = x.Active,
                     OCnyComplaintReasonId = x.OCnyComplaintReasonId
                 }).FirstOrDefault();
+
+                result.OCnyComplaintReason = OCnyComplaintReasonDAL.ReadOne(result.OCnyComplaintReasonId);
             }
 
             return result;

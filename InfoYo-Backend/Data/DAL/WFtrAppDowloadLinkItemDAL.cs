@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WFtrAppDowloadLinkItemDAL
     {
-        public static List<WFtrAppDowloadLinkItemVMR> ReadAll(long Id)
+        public static List<WFtrAppDowloadLinkItemVMR> ReadAll()
         {
             List<WFtrAppDowloadLinkItemVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WFtrAppDowloadLinkItem>().Where(x => x.Id == Id).Select(x => new WFtrAppDowloadLinkItemVMR
+                result = db.Set<WFtrAppDowloadLinkItem>().Select(x => new WFtrAppDowloadLinkItemVMR
                 {
                     Id = x.Id,
                     Name = x.Name,

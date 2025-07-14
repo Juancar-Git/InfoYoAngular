@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\wjobspagewithfiltdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\wjobspagewithfiltdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E9549F19-154C-4E37-9D99-DE46C37EE4E8}|Logic\\Logic.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\logic\\bll\\auserbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9549F19-154C-4E37-9D99-DE46C37EE4E8}|Logic\\Logic.csproj|solutionrelative:logic\\bll\\auserbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\common\\viewmodels\\wjobspagewithfiltvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|solutionrelative:common\\viewmodels\\wjobspagewithfiltvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\wjobspagenofiltdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\wjobspagenofiltdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\auserdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\auserdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WJobsPageWithFiltDAL.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WJobsPageWithFiltDAL.cs",
-              "RelativeDocumentMoniker": "Data\\DAL\\WJobsPageWithFiltDAL.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WJobsPageWithFiltDAL.cs",
-              "RelativeToolTip": "Data\\DAL\\WJobsPageWithFiltDAL.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAuwBwAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T15:17:06.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "WJobsPageWithFiltVMR.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
-              "RelativeDocumentMoniker": "Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
-              "RelativeToolTip": "Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Title": "AUserDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\AUserDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\AUserDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\AUserDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\AUserDAL.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAgwGQAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T15:17:13.1Z",
+              "WhenOpened": "2025-07-14T13:58:23.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WJobsPageNoFiltDAL.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WJobsPageNoFiltDAL.cs",
-              "RelativeDocumentMoniker": "Data\\DAL\\WJobsPageNoFiltDAL.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WJobsPageNoFiltDAL.cs",
-              "RelativeToolTip": "Data\\DAL\\WJobsPageNoFiltDAL.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "DocumentIndex": 0,
+              "Title": "AUserBLL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Logic\\BLL\\AUserBLL.cs",
+              "RelativeDocumentMoniker": "Logic\\BLL\\AUserBLL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Logic\\BLL\\AUserBLL.cs",
+              "RelativeToolTip": "Logic\\BLL\\AUserBLL.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAuwC0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T15:05:26.8Z",
+              "WhenOpened": "2025-07-14T13:58:12.434Z",
               "EditorCaption": ""
             }
           ]

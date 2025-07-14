@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WFtrPartnersSectItemDAL
     {
-        public static List<WFtrPartnersSectItemVMR> ReadAll(long Id)
+        public static List<WFtrPartnersSectItemVMR> ReadAll()
         {
             List<WFtrPartnersSectItemVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WFtrPartnersSectItem>().Where(x => x.Id == Id).Select(x => new WFtrPartnersSectItemVMR
+                result = db.Set<WFtrPartnersSectItem>().Select(x => new WFtrPartnersSectItemVMR
                 {
                     Id = x.Id,
                     Name = x.Name,

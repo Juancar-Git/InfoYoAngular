@@ -69,6 +69,7 @@ namespace Data.DAL
         }
         */
 
+        //Solo útil en capa de datos.
         public static string ReadEmail(long Id)
         {
             AUserVMR result = new AUserVMR();

@@ -41,6 +41,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AUserBLL.cs" />
+    <Compile Include="BLL\OCnyComplaintOpinionBLL.cs" />
+    <Compile Include="BLL\OCnyComplaintReasonBLL.cs" />
+    <Compile Include="BLL\OCompanyBLL.cs" />
+    <Compile Include="BLL\OCompanyInfoBLL.cs" />
+    <Compile Include="BLL\OCompanyJobOfferBLL.cs" />
+    <Compile Include="BLL\OCompanyOpinionBLL.cs" />
+    <Compile Include="BLL\OContractTypeBLL.cs" />
+    <Compile Include="BLL\OCountryBLL.cs" />
+    <Compile Include="BLL\OCvVisitBLL.cs" />
+    <Compile Include="BLL\OJobCategoryBLL.cs" />
+    <Compile Include="BLL\OJobOfferPersonBLL.cs" />
+    <Compile Include="BLL\OMinStudyBLL.cs" />
+    <Compile Include="BLL\OPersonBLL.cs" />
+    <Compile Include="BLL\OPublicityDataBLL.cs" />
+    <Compile Include="BLL\OWorkDayTypeBLL.cs" />
+    <Compile Include="BLL\WCandidateLogInBLL.cs" />
+    <Compile Include="BLL\WCompanyPageBLL.cs" />
+    <Compile Include="BLL\WFtrAppDowloadLinkItemBLL.cs" />
+    <Compile Include="BLL\WFtrLinksSectionColBLL.cs" />
+    <Compile Include="BLL\WFtrLinksSectionColItemBLL.cs" />
+    <Compile Include="BLL\WFtrPartnersSectBLL.cs" />
+    <Compile Include="BLL\WFtrPartnersSectItemBLL.cs" />
+    <Compile Include="BLL\WFtrSocialMediaSectBLL.cs" />
+    <Compile Include="BLL\WFtrSocialMediaSectItemBLL.cs" />
+    <Compile Include="BLL\WGenderBLL.cs" />
+    <Compile Include="BLL\WJobsPageNoFiltBLL.cs" />
+    <Compile Include="BLL\WJobsPageWithFiltBLL.cs" />
+    <Compile Include="BLL\WLogDropDownMenuLinkBLL.cs" />
+    <Compile Include="BLL\WLogHeaderBLL.cs" />
+    <Compile Include="BLL\WLogNavBarLinkBLL.cs" />
+    <Compile Include="BLL\WMoreOptionsItemsBLL.cs" />
+    <Compile Include="BLL\WMyCvPageBLL.cs" />
+    <Compile Include="BLL\WMyCvSectBLL.cs" />
+    <Compile Include="BLL\WMyCvSectOptionBLL.cs" />
+    <Compile Include="BLL\WMyOffersPageBLL.cs" />
+    <Compile Include="BLL\WNoLogCitiesItemBLL.cs" />
+    <Compile Include="BLL\WNoLogCitiesSectionBLL.cs" />
+    <Compile Include="BLL\WNoLogCompanyItemBLL.cs" />
+    <Compile Include="BLL\WNoLogCompanyPublicityItemBLL.cs" />
+    <Compile Include="BLL\WNoLogCompanySectionBLL.cs" />
+    <Compile Include="BLL\WNoLogFiltersItemBLL.cs" />
+    <Compile Include="BLL\WNoLogFiltersSectionBLL.cs" />
+    <Compile Include="BLL\WNoLogHeaderBLL.cs" />
+    <Compile Include="BLL\WNoLogNavBarLinkBLL.cs" />
+    <Compile Include="BLL\WNoLogSectorItemBLL.cs" />
+    <Compile Include="BLL\WNoLogSectorSectionBLL.cs" />
+    <Compile Include="BLL\WOrdeByOffersItemBLL.cs" />
+    <Compile Include="BLL\WPersonalDataPageBLL.cs" />
+    <Compile Include="BLL\WProfileVisitsPageBLL.cs" />
+    <Compile Include="BLL\WSideFilterItemBLL.cs" />
+    <Compile Include="BLL\WSideFilterTypeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +103,10 @@
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{83c246d3-3b40-4997-b41f-1fc347a0ad27}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{24A4261B-66EF-49F6-B179-0BA90C9564B3}</Project>
+      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Rest\Rest.csproj">
       <Project>{bdfef307-a1a7-4b2c-8b22-3cf3185ff1bb}</Project>

@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WFtrSocialMediaSectItemDAL
     {
-        public static List<WFtrSocialMediaSectItemVMR> ReadAll(long Id)
+        public static List<WFtrSocialMediaSectItemVMR> ReadAll()
         {
             List<WFtrSocialMediaSectItemVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WFtrSocialMediaSectItem>().Where(x => x.Id == Id).Select(x => new WFtrSocialMediaSectItemVMR
+                result = db.Set<WFtrSocialMediaSectItem>().Select(x => new WFtrSocialMediaSectItemVMR
                 {
                     Id = x.Id,
                     Name = x.Name,

@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WMyCvPageDAL
     {
-        public static WMyCvPageVMR ReadOne(long Id)
+        public static WMyCvPageVMR ReadOne(long id)
         {
             WMyCvPageVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WMyCvPage>().Where(x => x.Id == Id).Select(x => new WMyCvPageVMR
+                result = db.Set<WMyCvPage>().Where(x => x.Id == id).Select(x => new WMyCvPageVMR
                 {
                     Id = x.Id,
                     Title = x.Title,

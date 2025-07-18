@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OJobCategoryDAL
     {
-        public static List<OJobCategoryVMR> ReadAll(long Id)
+        public static List<OJobCategoryVMR> ReadAll(long id)
         {
             List<OJobCategoryVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OJobCategory>().Where(x => x.Id == Id).Select(x => new OJobCategoryVMR
+                result = db.Set<OJobCategory>().Where(x => x.Id == id).Select(x => new OJobCategoryVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -26,13 +26,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static OJobCategoryVMR ReadOne(long Id)
+        public static OJobCategoryVMR ReadOne(long id)
         {
             OJobCategoryVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OJobCategory>().Where(x => x.Id == Id).Select(x => new OJobCategoryVMR
+                result = db.Set<OJobCategory>().Where(x => x.Id == id).Select(x => new OJobCategoryVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -66,17 +66,17 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                Delete(db, Id);
+                Delete(db, id);
             }
         }
 
-        public static void Delete(MyDbConnection db, long Id)
+        public static void Delete(MyDbConnection db, long id)
         {
-            var item = db.Set<OJobCategory>().Find(Id);
+            var item = db.Set<OJobCategory>().Find(id);
             if (item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

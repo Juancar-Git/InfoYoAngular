@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WMyOffersPageDAL
     {
-        public static WMyOffersPageVMR ReadOne(long Id)
+        public static WMyOffersPageVMR ReadOne(long id)
         {
             WMyOffersPageVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WMyOffersPage>().Where(x => x.Id == Id).Select(x => new WMyOffersPageVMR
+                result = db.Set<WMyOffersPage>().Where(x => x.Id == id).Select(x => new WMyOffersPageVMR
                 {
                     Id = x.Id,
                     HeadTitle = x.HeadTitle,

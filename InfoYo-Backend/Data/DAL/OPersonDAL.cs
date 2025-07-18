@@ -66,14 +66,14 @@ namespace Data.DAL
         }
         
 
-        public static OPersonVMR ReadOne(long Id)
+        public static OPersonVMR ReadOne(long id)
         {
             OPersonVMR result = new OPersonVMR();
             long aUserId;
 
             using(var db = MyDbConnection.Create())
             {
-                result = db.Set<OPerson>().Where(x => x.Id == Id).Select(x => new OPersonVMR
+                result = db.Set<OPerson>().Where(x => x.Id == id).Select(x => new OPersonVMR
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -97,7 +97,7 @@ namespace Data.DAL
                     Closed = x.Closed
                 }).FirstOrDefault();
 
-                aUserId = db.Set<OPerson>().Where(x => x.Id == Id).Select(x => x.AUserId).FirstOrDefault();
+                aUserId = db.Set<OPerson>().Where(x => x.Id == id).Select(x => x.AUserId).FirstOrDefault();
 
                 result.AUserEmail = AUserDAL.ReadEmail(aUserId);
                 result.OCnyComplaintOpinion = OCnyComplaintOpinionDAL.ReadByPersonId(db, result.Id);
@@ -154,27 +154,27 @@ namespace Data.DAL
 
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                var item = db.Set<OPerson>().Find(Id);
+                var item = db.Set<OPerson>().Find(id);
                 if (item == null) return;
 
                 //Delete OCompanyInfo List
-                var queryOCompanyInfo = db.Set<OCnyComplaintOpinion>().Where(x => x.OPersonId == Id);
+                var queryOCompanyInfo = db.Set<OCnyComplaintOpinion>().Where(x => x.OPersonId == id);
                 foreach (var itemQ in queryOCompanyInfo) { OCnyComplaintOpinionDAL.Delete(db, itemQ.OCompanyOpinionId, itemQ.OPersonId); }
 
                 //Delete OCompanyOpinion List
-                var queryOCompanyOpinion = db.Set<OCompanyOpinion>().Where(x => x.OPersonId == Id);
+                var queryOCompanyOpinion = db.Set<OCompanyOpinion>().Where(x => x.OPersonId == id);
                 foreach (var itemQ in queryOCompanyOpinion) { OCompanyOpinionDAL.Delete(db, itemQ.Id); }
 
                 //Delete OCvVisit List
-                var queryOCvVisit = db.Set<OCvVisit>().Where(x => x.OPersonId == Id);
+                var queryOCvVisit = db.Set<OCvVisit>().Where(x => x.OPersonId == id);
                 foreach (var itemQ in queryOCvVisit) { OCvVisitDAL.Delete(db, itemQ.Id); }
 
                 //Delete OCompanyJobOffer List
-                var queryOCompanyJobOffer = db.Set<OJobOfferPerson>().Where(x => x.OPersonId == Id);
+                var queryOCompanyJobOffer = db.Set<OJobOfferPerson>().Where(x => x.OPersonId == id);
                 foreach (var itemQ in queryOCompanyJobOffer) { OJobOfferPersonDAL.Delete(db, itemQ.OPersonId, itemQ.OJobOfferId); }
 
                 //Delete OPerson Object

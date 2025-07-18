@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OPublicityDataDAL
     {
-        public static List<OPublicityDataVMR> ReadAll(long Id)
+        public static List<OPublicityDataVMR> ReadAll(long id)
         {
             List<OPublicityDataVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OPublicityData>().Where(x => x.Id == Id).Select(x => new OPublicityDataVMR
+                result = db.Set<OPublicityData>().Where(x => x.Id == id).Select(x => new OPublicityDataVMR
                 {
                     Id = x.Id,
                     PublicityBgImgPath = x.PublicityBgImgPath,
@@ -27,13 +27,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static OPublicityDataVMR ReadOne(long Id)
+        public static OPublicityDataVMR ReadOne(long id)
         {
             OPublicityDataVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OPublicityData>().Where(x => x.Id == Id).Select(x => new OPublicityDataVMR
+                result = db.Set<OPublicityData>().Where(x => x.Id == id).Select(x => new OPublicityDataVMR
                 {
                     Id = x.Id,
                     PublicityBgImgPath = x.PublicityBgImgPath,
@@ -69,17 +69,17 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                Delete(db, Id);
+                Delete(db, id);
             }
         }
 
-        public static void Delete(MyDbConnection db, long Id)
+        public static void Delete(MyDbConnection db, long id)
         {
-            var item = db.Set<OPublicityData>().Find(Id);
+            var item = db.Set<OPublicityData>().Find(id);
             if (item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

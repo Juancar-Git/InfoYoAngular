@@ -26,13 +26,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WFtrLinksSectionColVMR ReadOne(long Id)
+        public static WFtrLinksSectionColVMR ReadOne(long id)
         {
             WFtrLinksSectionColVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WFtrLinksSectionCol>().Where(x => x.Id == Id).Select(x => new WFtrLinksSectionColVMR
+                result = db.Set<WFtrLinksSectionCol>().Where(x => x.Id == id).Select(x => new WFtrLinksSectionColVMR
                 {
                     Id = x.Id,
                     Title = x.Title

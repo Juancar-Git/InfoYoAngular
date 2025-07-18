@@ -112,9 +112,9 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(MyDbConnection db, long Id)
+        public static void Delete(MyDbConnection db, long id)
         {
-            var item = db.Set<OCvVisit>().Find(Id);
+            var item = db.Set<OCvVisit>().Find(id);
             if (item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

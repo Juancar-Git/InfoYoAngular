@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WCandidateLogInDAL
     {
-        public static WCandidateLogInVMR ReadOne(long Id)
+        public static WCandidateLogInVMR ReadOne(long id)
         {
             WCandidateLogInVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WCandidateLogIn>().Where(x => x.Id == Id).Select(x => new WCandidateLogInVMR
+                result = db.Set<WCandidateLogIn>().Where(x => x.Id == id).Select(x => new WCandidateLogInVMR
                 {
                     Id = x.Id,
                     LogInTitle = x.LogInTitle,

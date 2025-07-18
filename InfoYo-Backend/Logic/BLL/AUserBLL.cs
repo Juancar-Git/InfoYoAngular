@@ -15,25 +15,19 @@ namespace Logic.BLL
         /*
         public static PaginatedList<AUserVMR> ReadAll(int quantity, int page, string searchText)
         {
-            PaginatedList<AUserVMR> result = AUserDAL.ReadAll();            
-               
-            return result;
+            return AUserDAL.ReadAll();
         }
         
 
-        public static AUserVMR ReadOne(long Id)
+        public static AUserVMR ReadOne(long id)
         {
-            AUserVMR result = AUserDAL.ReadOne(Id);
-
-            return result;
+            return AUserDAL.ReadOne(id);
         }
         */
 
         public static long Create(AUser item)
         {
-            long id = AUserDAL.Create(item);
-
-            return item.Id;
+            return AUserDAL.Create(item);
         }
 
         public static void Update(AUserVMR item)
@@ -41,9 +35,9 @@ namespace Logic.BLL
             AUserDAL.Update(item);
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
-            AUserDAL.Delete(Id);
+            AUserDAL.Delete(id);
         }
     }
 }

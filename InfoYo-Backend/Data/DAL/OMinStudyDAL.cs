@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OMinStudyDAL
     {
-        public static List<OMinStudyVMR> ReadAll(long Id)
+        public static List<OMinStudyVMR> ReadAll(long id)
         {
             List<OMinStudyVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OMinStudy>().Where(x => x.Id == Id).Select(x => new OMinStudyVMR
+                result = db.Set<OMinStudy>().Where(x => x.Id == id).Select(x => new OMinStudyVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -26,13 +26,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static OMinStudyVMR ReadOne(long Id)
+        public static OMinStudyVMR ReadOne(long id)
         {
             OMinStudyVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OMinStudy>().Where(x => x.Id == Id).Select(x => new OMinStudyVMR
+                result = db.Set<OMinStudy>().Where(x => x.Id == id).Select(x => new OMinStudyVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -66,17 +66,17 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                Delete(db, Id);
+                Delete(db, id);
             }
         }
 
-        public static void Delete(MyDbConnection db, long Id)
+        public static void Delete(MyDbConnection db, long id)
         {
-            var item = db.Set<OMinStudy>().Find(Id);
+            var item = db.Set<OMinStudy>().Find(id);
             if (item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

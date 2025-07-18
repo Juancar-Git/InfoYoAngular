@@ -27,13 +27,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WNoLogNavBarLinkVMR ReadOne(long Id)
+        public static WNoLogNavBarLinkVMR ReadOne(long id)
         {
             WNoLogNavBarLinkVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WNoLogNavBarLink>().Where(x => x.Id == Id).Select(x => new WNoLogNavBarLinkVMR
+                result = db.Set<WNoLogNavBarLink>().Where(x => x.Id == id).Select(x => new WNoLogNavBarLinkVMR
                 {
                     Id = x.Id,
                     Name = x.Name,

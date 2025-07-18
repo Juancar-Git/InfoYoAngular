@@ -33,13 +33,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WMyCvSectVMR ReadOne(long Id)
+        public static WMyCvSectVMR ReadOne(long id)
         {
             WMyCvSectVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WMyCvSect>().Where(x => x.Id == Id).Select(x => new WMyCvSectVMR
+                result = db.Set<WMyCvSect>().Where(x => x.Id == id).Select(x => new WMyCvSectVMR
                 {
                     Id = x.Id,
                     FilterKey = x.FilterKey,

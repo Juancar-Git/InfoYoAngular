@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OWorkDayTypeDAL
     {
-        public static List<OWorkDayTypeVMR> ReadAll(long Id)
+        public static List<OWorkDayTypeVMR> ReadAll(long id)
         {
             List<OWorkDayTypeVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OWorkDayType>().Where(x => x.Id == Id).Select(x => new OWorkDayTypeVMR
+                result = db.Set<OWorkDayType>().Where(x => x.Id == id).Select(x => new OWorkDayTypeVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -26,13 +26,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static OWorkDayTypeVMR ReadOne(long Id)
+        public static OWorkDayTypeVMR ReadOne(long id)
         {
             OWorkDayTypeVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OWorkDayType>().Where(x => x.Id == Id).Select(x => new OWorkDayTypeVMR
+                result = db.Set<OWorkDayType>().Where(x => x.Id == id).Select(x => new OWorkDayTypeVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -66,17 +66,17 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                Delete(db, Id);
+                Delete(db, id);
             }
         }
 
-        public static void Delete(MyDbConnection db, long Id)
+        public static void Delete(MyDbConnection db, long id)
         {
-            var item = db.Set<OWorkDayType>().Find(Id);
+            var item = db.Set<OWorkDayType>().Find(id);
             if (item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

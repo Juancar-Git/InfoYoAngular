@@ -29,13 +29,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WFtrAppDowloadLinkItemVMR ReadOne(long Id)
+        public static WFtrAppDowloadLinkItemVMR ReadOne(long id)
         {
             WFtrAppDowloadLinkItemVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WFtrAppDowloadLinkItem>().Where(x => x.Id == Id).Select(x => new WFtrAppDowloadLinkItemVMR
+                result = db.Set<WFtrAppDowloadLinkItem>().Where(x => x.Id == id).Select(x => new WFtrAppDowloadLinkItemVMR
                 {
                     Id = x.Id,
                     Name = x.Name,

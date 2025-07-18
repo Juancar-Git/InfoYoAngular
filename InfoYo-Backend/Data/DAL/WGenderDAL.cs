@@ -26,13 +26,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WGenderVMR ReadOne(long Id)
+        public static WGenderVMR ReadOne(long id)
         {
             WGenderVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WGender>().Where(x => x.Id == Id).Select(x => new WGenderVMR
+                result = db.Set<WGender>().Where(x => x.Id == id).Select(x => new WGenderVMR
                 {
                     Id = x.Id,
                     Name = x.Name

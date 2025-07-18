@@ -11,6 +11,6 @@ namespace Common.ViewModels
         public long Id { get; set; }
         public string Title { get; set; }
 
-        public List<WFtrLinksSectionColItemVMR> WFtrLinksSectionColItem { get; set; } = List<WFtrLinksSectionColItemVMR>();
+        public List<WFtrLinksSectionColItemVMR> WFtrLinksSectionColItem { get; set; } = new List<WFtrLinksSectionColItemVMR>();
     }
 }

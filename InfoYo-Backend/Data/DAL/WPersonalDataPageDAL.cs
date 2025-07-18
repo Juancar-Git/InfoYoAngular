@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WPersonalDataPageDAL
     {
-        public static WPersonalDataPageVMR ReadOne(long Id)
+        public static WPersonalDataPageVMR ReadOne(long id)
         {
             WPersonalDataPageVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WPersonalDataPage>().Where(x => x.Id == Id).Select(x => new WPersonalDataPageVMR
+                result = db.Set<WPersonalDataPage>().Where(x => x.Id == id).Select(x => new WPersonalDataPageVMR
                 {
                     Id = x.Id,
                     HeadTitle = x.HeadTitle,

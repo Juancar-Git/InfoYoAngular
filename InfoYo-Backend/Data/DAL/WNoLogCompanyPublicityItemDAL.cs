@@ -30,13 +30,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WNoLogCompanyPublicityItemVMR ReadOne(long Id)
+        public static WNoLogCompanyPublicityItemVMR ReadOne(long id)
         {
             WNoLogCompanyPublicityItemVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WNoLogCompanyPublicityItem>().Where(x => x.Id == Id).Select(x => new WNoLogCompanyPublicityItemVMR
+                result = db.Set<WNoLogCompanyPublicityItem>().Where(x => x.Id == id).Select(x => new WNoLogCompanyPublicityItemVMR
                 {
                     Id = x.Id,
                     Title = x.Title,

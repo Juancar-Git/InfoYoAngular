@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WJobsPageWithFiltDAL
     {
-        public static WJobsPageWithFiltVMR ReadOne(long Id)
+        public static WJobsPageWithFiltVMR ReadOne(long id)
         {
             WJobsPageWithFiltVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WJobsPageWithFilt>().Where(x => x.Id == Id).Select(x => new WJobsPageWithFiltVMR
+                result = db.Set<WJobsPageWithFilt>().Where(x => x.Id == id).Select(x => new WJobsPageWithFiltVMR
                 {
                     Id = x.Id,
                     TitleSearchTextField = x.TitleSearchTextField,

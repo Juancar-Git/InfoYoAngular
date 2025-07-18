@@ -47,13 +47,13 @@ namespace Data.DAL
         }
         
 
-        public static AUserVMR ReadOne(long Id)
+        public static AUserVMR ReadOne(long id)
         {
             AUserVMR result = new AUserVMR();
 
             using(var db = MyDbConnection.Create())
             {
-                result = db.Set<AUser>().Where(x => x.Id == Id).Select(x => new AUserVMR
+                result = db.Set<AUser>().Where(x => x.Id == id).Select(x => new AUserVMR
                 {
                     Id = x.Id,
                     Email = x.Email,
@@ -70,13 +70,13 @@ namespace Data.DAL
         */
 
         //Solo útil en capa de datos.
-        public static string ReadEmail(long Id)
+        public static string ReadEmail(long id)
         {
             AUserVMR result = new AUserVMR();
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<AUser>().Where(x => x.Id == Id).Select(x => new AUserVMR
+                result = db.Set<AUser>().Where(x => x.Id == id).Select(x => new AUserVMR
                 {
                     Id = x.Id,
                     Email = x.Email,
@@ -114,11 +114,11 @@ namespace Data.DAL
 
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using(var db = MyDbConnection.Create())
             {
-                var item = db.Set<AUser>().Find(Id);
+                var item = db.Set<AUser>().Find(id);
                 if (item == null) return;
 
                 db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

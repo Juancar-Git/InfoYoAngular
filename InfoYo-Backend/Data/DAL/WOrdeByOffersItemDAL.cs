@@ -26,13 +26,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WOrdeByOffersItemVMR ReadOne(long Id)
+        public static WOrdeByOffersItemVMR ReadOne(long id)
         {
             WOrdeByOffersItemVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WOrdeByOffersItem>().Where(x => x.Id == Id).Select(x => new WOrdeByOffersItemVMR
+                result = db.Set<WOrdeByOffersItem>().Where(x => x.Id == id).Select(x => new WOrdeByOffersItemVMR
                 {
                     Id = x.Id,
                     Name = x.Name

@@ -28,13 +28,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WSideFilterItemVMR ReadOne(long Id)
+        public static WSideFilterItemVMR ReadOne(long id)
         {
             WSideFilterItemVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WSideFilterItem>().Where(x => x.Id == Id).Select(x => new WSideFilterItemVMR
+                result = db.Set<WSideFilterItem>().Where(x => x.Id == id).Select(x => new WSideFilterItemVMR
                 {
                     Id = x.Id,
                     ItemValue = x.ItemValue,

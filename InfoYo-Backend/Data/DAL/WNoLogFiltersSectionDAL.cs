@@ -27,13 +27,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WNoLogFiltersSectionVMR ReadOne(long Id)
+        public static WNoLogFiltersSectionVMR ReadOne(long id)
         {
             WNoLogFiltersSectionVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WNoLogFiltersSection>().Where(x => x.Id == Id).Select(x => new WNoLogFiltersSectionVMR
+                result = db.Set<WNoLogFiltersSection>().Where(x => x.Id == id).Select(x => new WNoLogFiltersSectionVMR
                 {
                     Id = x.Id,
                     Title = x.Title,

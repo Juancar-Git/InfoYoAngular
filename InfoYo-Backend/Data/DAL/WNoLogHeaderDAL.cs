@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class WNoLogHeaderDAL
     {
-        public static WNoLogHeaderVMR ReadOne(long Id)
+        public static WNoLogHeaderVMR ReadOne(long id)
         {
             WNoLogHeaderVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WNoLogHeader>().Where(x => x.Id == Id).Select(x => new WNoLogHeaderVMR
+                result = db.Set<WNoLogHeader>().Where(x => x.Id == id).Select(x => new WNoLogHeaderVMR
                 {
                     Id = x.Id,
                     HeadTitle = x.HeadTitle,

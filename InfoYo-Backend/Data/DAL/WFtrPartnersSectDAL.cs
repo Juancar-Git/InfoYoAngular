@@ -27,13 +27,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WFtrPartnersSectVMR ReadOne(long Id)
+        public static WFtrPartnersSectVMR ReadOne(long id)
         {
             WFtrPartnersSectVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WFtrPartnersSect>().Where(x => x.Id == Id).Select(x => new WFtrPartnersSectVMR
+                result = db.Set<WFtrPartnersSect>().Where(x => x.Id == id).Select(x => new WFtrPartnersSectVMR
                 {
                     Id = x.Id,
                     Title = x.Title,

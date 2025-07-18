@@ -29,13 +29,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WNoLogCitiesItemVMR ReadOne(long Id)
+        public static WNoLogCitiesItemVMR ReadOne(long id)
         {
             WNoLogCitiesItemVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WNoLogCitiesItem>().Where(x => x.Id == Id).Select(x => new WNoLogCitiesItemVMR
+                result = db.Set<WNoLogCitiesItem>().Where(x => x.Id == id).Select(x => new WNoLogCitiesItemVMR
                 {
                     Id = x.Id,
                     Title = x.Title,

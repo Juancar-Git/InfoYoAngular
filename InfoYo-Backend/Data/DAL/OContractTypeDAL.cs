@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OContractTypeDAL
     {
-        public static List<OContractTypeVMR> ReadAll(long Id)
+        public static List<OContractTypeVMR> ReadAll(long id)
         {
             List<OContractTypeVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OContractType>().Where(x => x.Id == Id).Select(x => new OContractTypeVMR
+                result = db.Set<OContractType>().Where(x => x.Id == id).Select(x => new OContractTypeVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -26,13 +26,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static OContractTypeVMR ReadOne(long Id)
+        public static OContractTypeVMR ReadOne(long id)
         {
             OContractTypeVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OContractType>().Where(x => x.Id == Id).Select(x => new OContractTypeVMR
+                result = db.Set<OContractType>().Where(x => x.Id == id).Select(x => new OContractTypeVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -66,17 +66,17 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long Id)
+        public static void Delete(long id)
         {
             using (var db = MyDbConnection.Create())
             {
-                Delete(db, Id);
+                Delete(db, id);
             }
         }
 
-        public static void Delete(MyDbConnection db, long Id)
+        public static void Delete(MyDbConnection db, long id)
         {
-            var item = db.Set<OContractType>().Find(Id);
+            var item = db.Set<OContractType>().Find(id);
             if (item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

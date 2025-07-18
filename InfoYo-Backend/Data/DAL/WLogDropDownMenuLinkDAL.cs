@@ -27,13 +27,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WLogDropDownMenuLinkVMR ReadOne(long Id)
+        public static WLogDropDownMenuLinkVMR ReadOne(long id)
         {
             WLogDropDownMenuLinkVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WLogDropDownMenuLink>().Where(x => x.Id == Id).Select(x => new WLogDropDownMenuLinkVMR
+                result = db.Set<WLogDropDownMenuLink>().Where(x => x.Id == id).Select(x => new WLogDropDownMenuLinkVMR
                 {
                     Id = x.Id,
                     Name = x.Name,

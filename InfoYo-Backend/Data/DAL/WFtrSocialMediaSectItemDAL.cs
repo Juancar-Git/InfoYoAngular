@@ -29,13 +29,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WFtrSocialMediaSectItemVMR ReadOne(long Id)
+        public static WFtrSocialMediaSectItemVMR ReadOne(long id)
         {
             WFtrSocialMediaSectItemVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WFtrSocialMediaSectItem>().Where(x => x.Id == Id).Select(x => new WFtrSocialMediaSectItemVMR
+                result = db.Set<WFtrSocialMediaSectItem>().Where(x => x.Id == id).Select(x => new WFtrSocialMediaSectItemVMR
                 {
                     Id = x.Id,
                     Name = x.Name,

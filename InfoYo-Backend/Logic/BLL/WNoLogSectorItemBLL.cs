@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Common.ViewModels;
+using Data.DAL;
+using Model.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +11,14 @@ namespace Logic.BLL
 {
     public class WNoLogSectorItemBLL
     {
+        public static List<WNoLogSectorItemVMR> ReadAll()
+        {
+            return WNoLogSectorItemDAL.ReadAll();
+        }
+
+        public static WNoLogSectorItemVMR ReadOne(long id)
+        {
+            return WNoLogSectorItemDAL.ReadOne(id);
+        }
     }
 }

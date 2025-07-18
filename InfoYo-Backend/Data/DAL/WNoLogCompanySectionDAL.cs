@@ -30,13 +30,13 @@ namespace Data.DAL
             return result;
         }
 
-        public static WNoLogCompanySectionVMR ReadOne(long Id)
+        public static WNoLogCompanySectionVMR ReadOne(long id)
         {
             WNoLogCompanySectionVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<WNoLogCompanySection>().Where(x => x.Id == Id).Select(x => new WNoLogCompanySectionVMR
+                result = db.Set<WNoLogCompanySection>().Where(x => x.Id == id).Select(x => new WNoLogCompanySectionVMR
                 {
                     Id = x.Id,
                     Title = x.Title,

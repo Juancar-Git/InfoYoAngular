@@ -30,7 +30,7 @@ namespace Logic.BLL
             return OCompanyInfoDAL.Create(item);
         }
 
-        public static void Update(OCompanyInfo item)
+        public static void Update(OCompanyInfoVMR item)
         {
             OCompanyInfoDAL.Update(item);
         }

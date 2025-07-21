@@ -16,24 +16,24 @@ namespace Logic.BLL
             return OJobOfferPersonDAL.ReadByPersonId(id);
         }
 
-        public static OJobOfferPersonVMR ReadOne(long OPersonId, long OjobOfferId)
+        public static OJobOfferPersonVMR ReadOne(long OPersonId, long OJobOfferId)
         {
-            return OJobOfferPersonDAL.ReadOne(OPersonId, OjobOfferId);
+            return OJobOfferPersonDAL.ReadOne(OPersonId, OJobOfferId);
         }
 
-        public static long Create(OJobOfferPerson item)
+        public static (long OPersonId, long OJobOfferId) Create(OJobOfferPerson item)
         {
             return OJobOfferPersonDAL.Create(item);
         }
 
-        public static void Update(OJobOfferPerson item)
+        public static void Update(OJobOfferPersonVMR item)
         {
             OJobOfferPersonDAL.Update(item);
         }
 
-        public static void Delete(long OPersonId, long OjobOfferId)
+        public static void Delete(long OPersonId, long OJobOfferId)
         {
-            OJobOfferPersonDAL.Delete(OPersonId, OjobOfferId);
+            OJobOfferPersonDAL.Delete(OPersonId, OJobOfferId);
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OCountry item)
+        public static void Update(OCountryVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

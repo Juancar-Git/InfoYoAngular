@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OPublicityDataDAL
     {
-        public static List<OPublicityDataVMR> ReadAll(long id)
+        public static List<OPublicityDataVMR> ReadAll()
         {
             List<OPublicityDataVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OPublicityData>().Where(x => x.Id == id).Select(x => new OPublicityDataVMR
+                result = db.Set<OPublicityData>().Select(x => new OPublicityDataVMR
                 {
                     Id = x.Id,
                     PublicityBgImgPath = x.PublicityBgImgPath,
@@ -54,7 +54,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OPublicityData item)
+        public static void Update(OPublicityDataVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

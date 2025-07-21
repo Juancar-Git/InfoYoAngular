@@ -11,9 +11,9 @@ namespace Logic.BLL
 {
     public class OJobCategoryBLL
     {
-        public static List<OJobCategoryVMR> ReadAll(long id)
+        public static List<OJobCategoryVMR> ReadAll()
         {
-           return OJobCategoryDAL.ReadAll(id);
+           return OJobCategoryDAL.ReadAll();
         }
 
         public static OJobCategoryVMR ReadOne(long id)
@@ -26,7 +26,7 @@ namespace Logic.BLL
             return OJobCategoryDAL.Create(item);
         }
 
-        public static void Update(OJobCategory item)
+        public static void Update(OJobCategoryVMR item)
         {
             OJobCategoryDAL.Update(item);
         }

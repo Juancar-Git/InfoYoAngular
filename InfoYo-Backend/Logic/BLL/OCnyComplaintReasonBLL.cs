@@ -11,9 +11,9 @@ namespace Logic.BLL
 {
     public class OCnyComplaintReasonBLL
     {
-        public static List<OCnyComplaintReasonVMR> ReadAll(long id)
+        public static List<OCnyComplaintReasonVMR> ReadAll()
         {
-            return OCnyComplaintReasonDAL.ReadAll(id);
+            return OCnyComplaintReasonDAL.ReadAll();
         }
 
         public static OCnyComplaintReasonVMR ReadOne(long id)
@@ -26,9 +26,9 @@ namespace Logic.BLL
             return OCnyComplaintReasonDAL.Create(item);
         }
 
-        public static void Update(OCnyComplaintReason item)
+        public static void Update(OCnyComplaintReasonVMR item)
         {
-            OCnyComplaintReasonDAL.Create(item);
+            OCnyComplaintReasonDAL.Update(item);
         }
 
         public static void Delete(long id)

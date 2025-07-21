@@ -10,7 +10,7 @@ namespace Data.DAL
 {
     public class OCompanyDAL
     {
-        public static PaginatedList<OCompanyVMR> ReadAll()
+        public static PaginatedList<OCompanyVMR> ReadAll(int quantity, int page, string searchText)
         {
             PaginatedList<OCompanyVMR> result = new PaginatedList<OCompanyVMR> ();
 
@@ -48,6 +48,19 @@ namespace Data.DAL
                     CompanyBgImgPath = x.CompanyBgImgPath,
                     MiniText = x.MiniText
                 });
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    query = query.Where(x => x.CompanyName.Contains(searchText) || x.RegisteredName.Contains(searchText) || x.NIF.Contains(searchText) || x.MainEmail.Contains(searchText));
+                }
+
+                result.totalQuantity = query.Count();
+                result.elements = query
+                    .OrderBy(x => x.Id)
+                    .Skip(page - quantity)
+                    .Take(quantity)
+                    .ToList();
+
             }
 
             return result;

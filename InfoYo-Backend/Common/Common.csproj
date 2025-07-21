@@ -59,6 +59,7 @@
     <Compile Include="ViewModels\OPublicityDataVMR.cs" />
     <Compile Include="ViewModels\OWorkDayTypeVMR.cs" />
     <Compile Include="ViewModels\PaginatedList.cs" />
+    <Compile Include="ViewModels\ResponseVMR.cs" />
     <Compile Include="ViewModels\WCandidateLogInVMR.cs" />
     <Compile Include="ViewModels\WCompanyPageVMR.cs" />
     <Compile Include="ViewModels\WFtrAppDowloadLinkItemVMR.cs" />

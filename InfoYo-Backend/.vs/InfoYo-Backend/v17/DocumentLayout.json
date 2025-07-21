@@ -1,62 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\ocompanydal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\ocompanydal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\common\\viewmodels\\wftrlinkssectioncolvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|solutionrelative:common\\viewmodels\\wftrlinkssectioncolvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedHeight": 112,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OCompanyDAL.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyDAL.cs",
-              "RelativeDocumentMoniker": "Data\\DAL\\OCompanyDAL.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\OCompanyDAL.cs",
-              "RelativeToolTip": "Data\\DAL\\OCompanyDAL.cs",
-              "ViewState": "AQIAAK8AAAAAAAAAAADwv5sAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T14:44:44.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WFtrLinksSectionColVMR.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WFtrLinksSectionColVMR.cs",
-              "RelativeDocumentMoniker": "Common\\ViewModels\\WFtrLinksSectionColVMR.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WFtrLinksSectionColVMR.cs",
-              "RelativeToolTip": "Common\\ViewModels\\WFtrLinksSectionColVMR.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAswA0AAABcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T14:43:44.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

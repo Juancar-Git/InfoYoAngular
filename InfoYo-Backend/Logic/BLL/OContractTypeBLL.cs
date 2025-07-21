@@ -11,9 +11,9 @@ namespace Logic.BLL
 {
     public class OContractTypeBLL
     {
-        public static List<OContractTypeVMR> ReadAll(long id)
+        public static List<OContractTypeVMR> ReadAll()
         {
-            return OContractTypeDAL.ReadAll(id);
+            return OContractTypeDAL.ReadAll();
         }
 
         public static OContractTypeVMR ReadOne(long id)
@@ -26,7 +26,7 @@ namespace Logic.BLL
             return OContractTypeDAL.Create(item);
         }
 
-        public static void Update(OContractType item)
+        public static void Update(OContractTypeVMR item)
         {
             OContractTypeDAL.Update(item);
         }

@@ -27,7 +27,7 @@ namespace Logic.BLL
             return OCountryDAL.Create(item);
         }
 
-        public static void Update(OCountry item)
+        public static void Update(OCountryVMR item)
         {
             OCountryDAL.Update(item);
         }

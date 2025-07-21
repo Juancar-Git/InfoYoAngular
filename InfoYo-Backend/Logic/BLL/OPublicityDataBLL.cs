@@ -11,9 +11,9 @@ namespace Logic.BLL
 {
     public class OPublicityDataBLL
     {
-        public static List<OPublicityDataVMR> ReadAll(long id)
+        public static List<OPublicityDataVMR> ReadAll()
         {
-            return OPublicityDataDAL.ReadAll(id);
+            return OPublicityDataDAL.ReadAll();
         }
 
         public static OPublicityDataVMR ReadOne(long id)
@@ -26,7 +26,7 @@ namespace Logic.BLL
             return OPublicityDataDAL.Create(item);
         }
 
-        public static void Update(OPublicityData item)
+        public static void Update(OPublicityDataVMR item)
         {
             OPublicityDataDAL.Update(item);
         }

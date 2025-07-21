@@ -27,7 +27,7 @@ namespace Logic.BLL
             return OCompanyJobOfferDAL.Create(item);
         }
 
-        public static void Update(OCompanyJobOffer item)
+        public static void Update(OCompanyJobOfferVMR item)
         {
             OCompanyJobOfferDAL.Update(item);
         }

@@ -29,13 +29,13 @@ namespace Data.DAL
             }).ToList();
         }
 
-        public static OJobOfferPersonVMR ReadOne(long OPersonId, long OjobOfferId)
+        public static OJobOfferPersonVMR ReadOne(long OPersonId, long OJobOfferId)
         {
             OJobOfferPersonVMR result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OJobOfferPerson>().Where(x => x.OPersonId == OPersonId && x.OJobOfferId == OjobOfferId).Select(x => new OJobOfferPersonVMR
+                result = db.Set<OJobOfferPerson>().Where(x => x.OPersonId == OPersonId && x.OJobOfferId == OJobOfferId).Select(x => new OJobOfferPersonVMR
                 {
                     OPersonId = x.OPersonId,
                     OJobOfferId = x.OJobOfferId,
@@ -47,17 +47,17 @@ namespace Data.DAL
             return result;
         }
 
-        public static long Create(OJobOfferPerson item)
+        public static (long OPersonId, long OJobOfferId) Create(OJobOfferPerson item)
         {
             using (var db = MyDbConnection.Create())
             {
                 db.Set<OJobOfferPerson>().Add(item);
                 db.SaveChanges();
             }
-            return item.OPersonId;
+            return (item.OPersonId, item.OJobOfferId);
         }
 
-        public static void Update(OJobOfferPerson item)
+        public static void Update(OJobOfferPersonVMR item)
         {
             using (var db = MyDbConnection.Create())
             {
@@ -72,17 +72,17 @@ namespace Data.DAL
             }
         }
 
-        public static void Delete(long OPersonId, long OjobOfferId)
+        public static void Delete(long OPersonId, long OJobOfferId)
         {
             using (var db = MyDbConnection.Create())
             {
-                Delete(db, OPersonId, OjobOfferId);
+                Delete(db, OPersonId, OJobOfferId);
             }
         }
 
-        public static void Delete(MyDbConnection db, long OPersonId, long OjobOfferId)
+        public static void Delete(MyDbConnection db, long OPersonId, long OJobOfferId)
         {
-            var item = db.Set<OJobOfferPerson>().Find(OPersonId, OjobOfferId);
+            var item = db.Set<OJobOfferPerson>().Find(OPersonId, OJobOfferId);
             if(item == null) return;
 
             db.Entry(item).State = System.Data.Entity.EntityState.Deleted;

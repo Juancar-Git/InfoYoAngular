@@ -26,7 +26,7 @@ namespace Logic.BLL
             return OCnyComplaintOpinionDAL.Create(item);
         }
 
-        public static void Update(OCnyComplaintOpinion item)
+        public static void Update(OCnyComplaintOpinionVMR item)
         {
             OCnyComplaintOpinionDAL.Update(item);
         }

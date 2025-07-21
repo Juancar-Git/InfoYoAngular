@@ -61,7 +61,7 @@ namespace Data.DAL
             return (item.OCompanyOpinionId, item.OPersonId);
         }
 
-        public static void Update(OCnyComplaintOpinion item)
+        public static void Update(OCnyComplaintOpinionVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

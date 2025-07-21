@@ -85,7 +85,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OCvVisit item)
+        public static void Update(OCvVisitVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

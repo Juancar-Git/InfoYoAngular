@@ -11,9 +11,9 @@ namespace Logic.BLL
 {
     public class OCompanyBLL
     {
-        public static PaginatedList<OCompanyVMR> ReadAll()
+        public static PaginatedList<OCompanyVMR> ReadAll(int quantity, int page, string searchText)
         {
-           return OCompanyDAL.ReadAll();
+           return OCompanyDAL.ReadAll(quantity, page, searchText);
         }
 
         public static OCompanyVMR ReadOne(long id)

@@ -31,7 +31,7 @@ namespace Logic.BLL
             return OCvVisitDAL.Create(item);
         }
 
-        public static void Update(OCvVisit item)
+        public static void Update(OCvVisitVMR item)
         {
             OCvVisitDAL.Update(item);
         }

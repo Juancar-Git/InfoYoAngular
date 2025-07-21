@@ -11,9 +11,9 @@ namespace Logic.BLL
 {
     public class OWorkDayTypeBLL
     {
-        public static List<OWorkDayTypeVMR> ReadAll(long id)
+        public static List<OWorkDayTypeVMR> ReadAll()
         {
-            return OWorkDayTypeDAL.ReadAll(id);
+            return OWorkDayTypeDAL.ReadAll();
         }
 
         public static OWorkDayTypeVMR ReadOne(long id)
@@ -26,7 +26,7 @@ namespace Logic.BLL
             return OWorkDayTypeDAL.Create(item);
         }
 
-        public static void Update(OWorkDayType item)
+        public static void Update(OWorkDayTypeVMR item)
         {
             OWorkDayTypeDAL.Update(item);
         }

@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OWorkDayTypeDAL
     {
-        public static List<OWorkDayTypeVMR> ReadAll(long id)
+        public static List<OWorkDayTypeVMR> ReadAll()
         {
             List<OWorkDayTypeVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OWorkDayType>().Where(x => x.Id == id).Select(x => new OWorkDayTypeVMR
+                result = db.Set<OWorkDayType>().Select(x => new OWorkDayTypeVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -52,7 +52,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OWorkDayType item)
+        public static void Update(OWorkDayTypeVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

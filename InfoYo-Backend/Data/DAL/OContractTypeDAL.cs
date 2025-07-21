@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OContractTypeDAL
     {
-        public static List<OContractTypeVMR> ReadAll(long id)
+        public static List<OContractTypeVMR> ReadAll()
         {
             List<OContractTypeVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OContractType>().Where(x => x.Id == id).Select(x => new OContractTypeVMR
+                result = db.Set<OContractType>().Select(x => new OContractTypeVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -52,7 +52,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OContractType item)
+        public static void Update(OContractTypeVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

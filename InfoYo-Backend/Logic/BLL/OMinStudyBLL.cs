@@ -11,9 +11,9 @@ namespace Logic.BLL
 {
     public class OMinStudyBLL
     {
-        public static List<OMinStudyVMR> ReadAll(long id)
+        public static List<OMinStudyVMR> ReadAll()
         {
-            return OMinStudyDAL.ReadAll(id);
+            return OMinStudyDAL.ReadAll();
         }
 
         public static OMinStudyVMR ReadOne(long id)
@@ -26,7 +26,7 @@ namespace Logic.BLL
             return OMinStudyDAL.Create(item);
         }
 
-        public static void Update(OMinStudy item)
+        public static void Update(OMinStudyVMR item)
         {
             OMinStudyDAL.Update(item);
         }

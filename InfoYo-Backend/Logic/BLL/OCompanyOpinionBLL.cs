@@ -31,7 +31,7 @@ namespace Logic.BLL
             return OCompanyOpinionDAL.Create(item);
         }
 
-        public static void Update(OCompanyOpinion item)
+        public static void Update(OCompanyOpinionVMR item)
         {
             OCompanyOpinionDAL.Update(item);
         }

@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OJobCategoryDAL
     {
-        public static List<OJobCategoryVMR> ReadAll(long id)
+        public static List<OJobCategoryVMR> ReadAll()
         {
             List<OJobCategoryVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OJobCategory>().Where(x => x.Id == id).Select(x => new OJobCategoryVMR
+                result = db.Set<OJobCategory>().Select(x => new OJobCategoryVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -52,7 +52,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OJobCategory item)
+        public static void Update(OJobCategoryVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

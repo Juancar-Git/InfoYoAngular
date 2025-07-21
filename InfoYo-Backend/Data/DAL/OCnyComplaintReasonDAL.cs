@@ -11,13 +11,13 @@ namespace Data.DAL
     public class OCnyComplaintReasonDAL
     {
 
-        public static List<OCnyComplaintReasonVMR> ReadAll(long id)
+        public static List<OCnyComplaintReasonVMR> ReadAll()
         {
             List<OCnyComplaintReasonVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OCnyComplaintReason>().Where(x => x.Id == id).Select(x => new OCnyComplaintReasonVMR
+                result = db.Set<OCnyComplaintReason>().Select(x => new OCnyComplaintReasonVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -53,7 +53,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OCnyComplaintReason item)
+        public static void Update(OCnyComplaintReasonVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

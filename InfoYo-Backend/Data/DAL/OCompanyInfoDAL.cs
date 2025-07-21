@@ -62,7 +62,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OCompanyInfo item)
+        public static void Update(OCompanyInfoVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

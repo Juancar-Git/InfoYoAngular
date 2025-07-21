@@ -10,13 +10,13 @@ namespace Data.DAL
 {
     public class OMinStudyDAL
     {
-        public static List<OMinStudyVMR> ReadAll(long id)
+        public static List<OMinStudyVMR> ReadAll()
         {
             List<OMinStudyVMR> result = null;
 
             using (var db = MyDbConnection.Create())
             {
-                result = db.Set<OMinStudy>().Where(x => x.Id == id).Select(x => new OMinStudyVMR
+                result = db.Set<OMinStudy>().Select(x => new OMinStudyVMR
                 {
                     Id = x.Id,
                     Name = x.Name
@@ -52,7 +52,7 @@ namespace Data.DAL
             return item.Id;
         }
 
-        public static void Update(OMinStudy item)
+        public static void Update(OMinStudyVMR item)
         {
             using (var db = MyDbConnection.Create())
             {

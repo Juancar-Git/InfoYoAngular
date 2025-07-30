@@ -8,19 +8,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrivateHeaderComponent } from './modules/layout/private/private-header/private-header.component';
 
 import { GlobalModule } from './modules/global/global.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    PrivateHeaderComponent,
+    FooterComponent
+    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    GlobalModule
+    GlobalModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

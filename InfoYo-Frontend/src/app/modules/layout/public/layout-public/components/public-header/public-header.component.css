@@ -1,3 +1,32 @@
-.example-spacer {
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* evita que se rompa a la siguiente línea */
+}
+
+mat-toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-toolbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 1; /* permite que se encoja si es necesario */
+  overflow: hidden;
+}
+
+.main-icon-img {
+  width: 120px;   /* prueba con un valor razonable */
+  height: auto;
+  max-height: 40px; /* no excedas el alto del toolbar */
+  object-fit: contain;
+  display: block;
+}
+
+.spacer {
   flex: 1 1 auto;
 }

@@ -9,7 +9,7 @@ import { LayoutPublicModule } from '../layout/public/layout-public/layout-public
 
 @NgModule({
   declarations: [
-    MenuGlobalComponent
+    MenuGlobalComponent,
   ],
   imports: [
     CommonModule,

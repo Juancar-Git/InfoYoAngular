@@ -1,17 +1,58 @@
-<div class="container bg-color-primary">
-  <mat-toolbar>
-    <nav>
-      <a mat-button routerLink="/home" routerLinkActive="active-link">
-        <img src="assets/images/infojobs-word.png" alt="InfoJobs logo" class="main-icon-img"/>
-      </a>
-      <a mat-button routerLink="/home" routerLinkActive="active-link">Buscar empleo</a>
-      <a mat-button routerLink="/about" routerLinkActive="active-link">Buscar empresas</a>
-      <a mat-button routerLink="/contact" routerLinkActive="active-link">Salarios</a>
-      <a mat-button routerLink="/contact" routerLinkActive="active-link">Formación</a>
-    </nav> 
-    <span class="spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>contacts_product</mat-icon>
-    </button>
-  </mat-toolbar>
+<div class="container-header bg-image-header">
+  <div class="container">
+    <mat-toolbar *ngIf="isSmallScreen">
+      <button (click)="activateTrigger()" mat-icon-button aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar *ngIf="!isSmallScreen">
+      <nav>
+        <a mat-button routerLink="/home" routerLinkActive="active-link">
+          <img src="assets/images/infojobs-word.png" alt="InfoJobs logo" class="main-icon-img" />
+        </a>
+        <a mat-button routerLink="/home" routerLinkActive="active-link">Buscar empleo</a>
+        <a mat-button routerLink="/about" routerLinkActive="active-link">Buscar empresas</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active-link">Salarios</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active-link">Formación</a>
+      </nav>
+      <span class="spacer"></span>
+      <div class="button-container">
+        <button mat-stroked-button color="primary" class="custom-button bg-white">
+          Acceso a empresa
+        </button>
+        <button mat-raised-button color="accent" class="custom-button">
+          Acceso a candidatos
+        </button>
+      </div>
+    </mat-toolbar>
+  </div>
+
+  <div class="container form-container">
+    <h1 class="title">Siempre mejor</h1>
+    <form class="row search-offers">
+      <div class="col-12 col-lg-6 row">
+        <mat-label>Busco ofertas de...</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Puesto, palabra o palabra clave"/>
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-lg-4 row">
+        <mat-label>en...</mat-label>
+        <mat-form-field appearance="outline">
+          <mat-select>
+            <mat-form-field class="w-100">
+              <input matInput />
+              <mat-icon matSuffix disabled>search</mat-icon>
+            </mat-form-field>
+            <mat-option>Toda España</mat-option>
+            <mat-option>El extranjero</mat-option>
+            <mat-option>Madrid</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-lg-2 search-button-container">
+        <button mat-raised-button color="primary" class="search-button">BUSCAR</button>
+      </div>
+    </form>
+  </div>
 </div>

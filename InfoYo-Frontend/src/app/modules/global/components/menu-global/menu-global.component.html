@@ -1,2 +1,26 @@
-<app-public-header></app-public-header>
-<p>menu-global works!</p>
+<mat-sidenav-container class="app-sidenav-container">
+  <mat-sidenav #sidenav opened="false" mode="side">
+    <mat-toolbar class="toobar-container sidenav-flex">
+      <nav class="sidenav-flex">
+        <a mat-button routerLink="/home" routerLinkActive="active-link">Buscar empleo</a>
+        <a mat-button routerLink="/about" routerLinkActive="active-link">Buscar empresas</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active-link">Salarios</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active-link">Formación</a>
+      </nav>
+      <span class="spacer"></span>
+      <div class="sidenav-flex">
+        <button mat-stroked-button color="primary" class="custom-button bg-white">
+          Acceso a empresa
+        </button>
+        <button mat-raised-button color="accent" class="custom-button">
+          Acceso a candidatos
+        </button>
+      </div>
+    </mat-toolbar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="app-sidenav-content">
+    <app-public-header (triggerEvent)="sidenav.toggle()"></app-public-header>
+    <p>menu-global works!</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

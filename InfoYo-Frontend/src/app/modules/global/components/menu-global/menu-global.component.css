@@ -1,0 +1,27 @@
+.app-sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.app-sidenav-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.sidenav-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.toobar-container{
+    height: 100%;
+    padding: 1rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

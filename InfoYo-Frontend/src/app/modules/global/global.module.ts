@@ -4,6 +4,7 @@ import { MenuGlobalComponent } from './components/menu-global/menu-global.compon
 
 import { LayoutPublicModule } from '../layout/public/layout-public/layout-public.module';
 import { MaterialModule } from './material.module';
+import { HomeModule } from '../public/home/home.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MaterialModule } from './material.module';
     MaterialModule,
     
     LayoutPublicModule,
+    HomeModule
 
   ],
   exports: [

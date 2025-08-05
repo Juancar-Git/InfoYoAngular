@@ -85,7 +85,7 @@ mat-label{
 }
 
 .bg-image-header{
-  background-image: url('/assets/images/bg-home-full-tv.jpg');
+  background-image: url('/assets/images/home/header/bg-home-full-tv.jpg');
   background-size: cover;
   background-position: center;
 }

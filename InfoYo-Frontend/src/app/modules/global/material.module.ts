@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule, 
     MatInputModule,
     MatSelectModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule
 
   ],
   exports:[
@@ -35,7 +37,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule, 
     MatInputModule,
     MatSelectModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule
 
   ]
 })

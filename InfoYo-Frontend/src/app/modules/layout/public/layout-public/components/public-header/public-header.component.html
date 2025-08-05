@@ -1,4 +1,4 @@
-<div class="container-header bg-image-header">
+<header class="container-header bg-image-header">
   <div class="container">
     <mat-toolbar *ngIf="isSmallScreen">
       <button (click)="activateTrigger()" mat-icon-button aria-label="Menu">
@@ -8,7 +8,7 @@
     <mat-toolbar *ngIf="!isSmallScreen">
       <nav>
         <a mat-button routerLink="/home" routerLinkActive="active-link">
-          <img src="assets/images/infojobs-word.png" alt="InfoJobs logo" class="main-icon-img" />
+          <img src="assets/images/home/header/infojobs-word.png" alt="InfoJobs logo" class="main-icon-img" />
         </a>
         <a mat-button routerLink="/home" routerLinkActive="active-link">Buscar empleo</a>
         <a mat-button routerLink="/about" routerLinkActive="active-link">Buscar empresas</a>
@@ -55,4 +55,4 @@
       </div>
     </form>
   </div>
-</div>
+</header>

@@ -1,5 +1,5 @@
 <mat-sidenav-container class="app-sidenav-container">
-  <mat-sidenav #sidenav opened="false" mode="side">
+  <mat-sidenav #sidenav opened="false" mode="over">
     <mat-toolbar class="toobar-container sidenav-flex">
       <nav class="sidenav-flex">
         <a mat-button routerLink="/home" routerLinkActive="active-link">Buscar empleo</a>
@@ -21,6 +21,6 @@
 
   <mat-sidenav-content class="app-sidenav-content">
     <app-public-header (triggerEvent)="sidenav.toggle()"></app-public-header>
-    <p>menu-global works!</p>
+    <app-public-home-index></app-public-home-index>
   </mat-sidenav-content>
 </mat-sidenav-container>

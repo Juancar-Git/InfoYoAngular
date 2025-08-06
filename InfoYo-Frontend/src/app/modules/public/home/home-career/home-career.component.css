@@ -1,3 +1,7 @@
+section{
+    margin-bottom: 4rem;
+}
+
 .title-container{
     display: flex;
     flex-direction: row;
@@ -69,11 +73,15 @@
     color: white;
 }
 
+.learn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 .learn-card{
     display: flex;
     flex-direction: row;
-    padding: 2rem !important;
 }
 
 .learn-first{
@@ -90,4 +98,5 @@
 .learn-card-content{
     display: flex;
     flex-direction: column;
+    padding: 2rem !important;
 }

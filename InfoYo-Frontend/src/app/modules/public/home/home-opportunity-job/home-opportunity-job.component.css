@@ -1,0 +1,33 @@
+section{
+    margin-bottom: 2rem;
+}
+
+.title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card{
+    box-shadow: none !important;
+}
+
+div:hover .card:hover{
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3) !important;
+    transition: box-shadow 1s ease;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.card-container:hover .card-content-text{
+    text-decoration: underline;
+}

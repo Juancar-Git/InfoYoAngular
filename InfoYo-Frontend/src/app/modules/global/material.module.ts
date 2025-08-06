@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatSelectModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
 
   ],
   exports:[
@@ -38,7 +40,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatSelectModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
 
   ]
 })

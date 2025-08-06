@@ -53,6 +53,10 @@ section{
     margin-bottom: 8px;
 }
 
+.card-company-title{
+    font-size: 15px !important;
+}
+
 .more-companies-btn-container{
     width: 100%;
     margin-top: 3rem;
@@ -73,15 +77,18 @@ section{
     color: white;
 }
 
-.learn-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 .learn-card{
     display: flex;
     flex-direction: row;
+    height: 100%;
+}
+
+.learn-card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem !important;
+    color: #073287;
 }
 
 .learn-first{
@@ -94,9 +101,4 @@ section{
 
 .learn-card-title{
     text-transform: uppercase;
-}
-.learn-card-content{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem !important;
 }

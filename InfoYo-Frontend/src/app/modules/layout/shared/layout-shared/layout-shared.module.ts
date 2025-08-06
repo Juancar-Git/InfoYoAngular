@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PublicHeaderComponent } from './components/public-header/public-header.component';
-
+import { SharedFooterComponent } from './components/shared-footer/shared-footer.component';
 import { MaterialModule } from 'src/app/modules/global/material.module';
+
 
 
 @NgModule({
   declarations: [
-    PublicHeaderComponent,
-
+    SharedFooterComponent
   ],
   imports: [
     CommonModule,
     MaterialModule
-    
   ],
   exports: [
-    PublicHeaderComponent,
+    SharedFooterComponent
   ]
 })
-export class LayoutPublicModule { }
+export class LayoutSharedModule { }

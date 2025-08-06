@@ -4,11 +4,11 @@ Copy of the InfoJobs website using Angular, Bootstrap, C#.NET, and SQL Server te
 ## Capturas de pantalla
 
 ### Public Home Header
-![Página principal](images/screenshot1.JPG)
+![Página principal](images/screenshot1.1.JPG)
 
 
 ### Public Home Responsive
-![Página principal responsive](images/screenshot2.JPG)
+![Página principal responsive](images/screenshot2.1.JPG)
 
 
 ### Public Home 1

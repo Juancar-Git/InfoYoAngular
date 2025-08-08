@@ -2,6 +2,12 @@ section{
     margin-bottom: 4rem;
 }
 
+@media (max-width: 767.98px) {
+    .container-md {
+      padding: 16px 24px !important;
+    }
+}
+
 .title-container{
     display: flex;
     flex-direction: row;

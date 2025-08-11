@@ -1,4 +1,5 @@
-<header class="container-header bg-image-header">
+<header class="container-header bg-image-header"
+  [ngStyle]="{'background-image': 'url(' + homeHeader.HeadBgImgPath + ')'}">
   <div class="container-md">
     <mat-toolbar *ngIf="isSmallScreen">
       <button (click)="activateTrigger()" mat-icon-button aria-label="Menu">
@@ -10,34 +11,33 @@
         <a mat-button routerLink="/home" routerLinkActive="active-link">
           <img src="assets/images/home/header/infojobs-word.png" alt="InfoJobs logo" class="main-icon-img" />
         </a>
-        <a mat-button routerLink="/home" routerLinkActive="active-link">Buscar empleo</a>
-        <a mat-button routerLink="/about" routerLinkActive="active-link">Buscar empresas</a>
-        <a mat-button routerLink="/contact" routerLinkActive="active-link">Salarios</a>
-        <a mat-button routerLink="/contact" routerLinkActive="active-link">Formación</a>
+        <div *ngFor="let item of homeNavBarItems">
+          <a mat-button [routerLink]="item.LinkUrl" routerLinkActive="active-link">{{item.Name}}</a>
+        </div>
       </nav>
       <span class="spacer"></span>
       <div class="button-container">
         <button mat-stroked-button color="primary" class="custom-button bg-white">
-          Acceso a empresa
+          {{homeHeader.CompanyAccessBtn}}
         </button>
         <button mat-raised-button color="accent" class="custom-button">
-          Acceso a candidatos
+          {{homeHeader.CandidateAccessBtn}}
         </button>
       </div>
     </mat-toolbar>
   </div>
 
   <div class="container-md form-container">
-    <h1 class="title">Siempre mejor</h1>
+    <h1 class="title">{{homeHeader.BlockFilterTitle}}</h1>
     <form class="row search-offers">
       <div class="col-12 col-lg-6 row">
-        <mat-label>Busco ofertas de...</mat-label>
+        <mat-label>{{homeHeader.SeachFilterTitle}}</mat-label>
         <mat-form-field appearance="outline">
-          <input matInput placeholder="Puesto, palabra o palabra clave"/>
+          <input matInput placeholder="Puesto, palabra o palabra clave" />
         </mat-form-field>
       </div>
       <div class="col-12 col-lg-4 row">
-        <mat-label>en...</mat-label>
+        <mat-label>{{homeHeader.LocationFilterTitle}}</mat-label>
         <mat-form-field appearance="outline">
           <mat-select>
             <mat-form-field class="w-100">
@@ -51,7 +51,7 @@
         </mat-form-field>
       </div>
       <div class="col-12 col-lg-2 search-button-container">
-        <button mat-raised-button color="primary" class="search-button">BUSCAR</button>
+        <button mat-raised-button color="primary" class="search-button">{{homeHeader.SearchBtn}}</button>
       </div>
     </form>
   </div>

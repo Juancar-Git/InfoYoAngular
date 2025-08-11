@@ -13,6 +13,9 @@ namespace WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class WNoLogHeaderController : ApiController
     {
+        /*
+            Example src = http://localhost:8803/api/wnologheader/1
+         */
         [HttpGet]
         public IHttpActionResult ReadOne(long id)
         {

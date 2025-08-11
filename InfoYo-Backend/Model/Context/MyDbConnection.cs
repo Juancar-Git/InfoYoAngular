@@ -19,7 +19,7 @@ namespace Model.Models
 
         public static MyDbConnection Create()
         {
-            return new MyDbConnection("name:DbConnection");
+            return new MyDbConnection("name=DbConnection");
         }
 
         //Fluent API

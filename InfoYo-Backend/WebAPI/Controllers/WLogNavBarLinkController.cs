@@ -13,6 +13,9 @@ namespace WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class WLogNavBarLinkController : ApiController
     {
+        /*
+            Example src = http://localhost:8803/api/WNoLogNavBarLink/
+         */
         [HttpGet]
         public IHttpActionResult ReadAll()
         {
@@ -33,6 +36,9 @@ namespace WebAPI.Controllers
             return Content(response.code, response);
         }
 
+        /*
+            Example src = http://localhost:8803/api/WNoLogNavBarLink/1
+         */
         [HttpGet]
         public IHttpActionResult ReadOne(long id)
         {

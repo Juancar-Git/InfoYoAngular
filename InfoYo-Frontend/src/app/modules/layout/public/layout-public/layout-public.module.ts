@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
 
 import { MaterialModule } from 'src/app/modules/global/material.module';
@@ -12,7 +13,8 @@ import { MaterialModule } from 'src/app/modules/global/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
     
   ],
   exports: [

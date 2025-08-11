@@ -1,31 +1,80 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, } from '@angular/core';
+import { HttpHeaderService } from 'src/app/services/http.header.service';
 
 @Component({
   selector: 'app-public-header',
   templateUrl: './public-header.component.html',
-  styleUrls: ['./public-header.component.css']
+  styleUrls: ['./public-header.component.css'],
 })
-export class PublicHeaderComponent implements OnInit{
-
+export class PublicHeaderComponent implements OnInit {
   isSmallScreen = false;
   @Output() triggerEvent = new EventEmitter<void>();
 
-  constructor(){}
+  homeHeader: {
+    Id: number;
+    BlockFilterTitle: string;
+    CandidateAccessBtn: string;
+    CandidateAccessBtnUrl: string;
+    CompanyAccessBtn: string;
+    CompanyAccessBtnUrl: string;
+    HeadBgImgPath: string;
+    HeadTitle: string;
+    LocationFilterTitle: string;
+    SeachFilterTitle: string;
+    SearchBtn: string;
+    SearchBtnHoverDesc: string;
+    Title: string;
+  } = {
+    BlockFilterTitle: '',
+    CandidateAccessBtn: '',
+    CandidateAccessBtnUrl: '',
+    CompanyAccessBtn: '',
+    CompanyAccessBtnUrl: '',
+    HeadBgImgPath: '',
+    HeadTitle: '',
+    Id: 0,
+    LocationFilterTitle: '',
+    SeachFilterTitle: '',
+    SearchBtn: '',
+    SearchBtnHoverDesc: '',
+    Title: '',
+  };
+
+  homeNavBarItems: {Id: number, Name: string, LinkUrl: string} [] = [];
+
+  constructor(private httpHeaderService: HttpHeaderService) {}
 
   ngOnInit(): void {
     this.checkScreenSize();
+    this.ReadNoLogHome();
+    this.ReadNoLogNavBarHome();
   }
 
+  // Se puede hacer con Bootstrap, pero es interesante conocerlo para proyectos que no lo utilice
   @HostListener('window:resize', [])
-  onResize(){
+  onResize() {
     this.checkScreenSize();
   }
 
-  private checkScreenSize(){
+  private checkScreenSize() {
     this.isSmallScreen = window.innerWidth < 945;
   }
 
-  activateTrigger(){
+  activateTrigger() {
     this.triggerEvent.emit();
+  }
+
+  ReadNoLogHome() {
+    this.httpHeaderService.ReadNoLogHome(1)
+    .subscribe((response: any) => {
+      this.homeHeader = response.data;
+    });
+  }
+
+  ReadNoLogNavBarHome(){
+    this.httpHeaderService.ReadNoLogNavBarHome()
+    .subscribe((response: any) => {
+      this.homeNavBarItems = response.data;
+    })
   }
 }

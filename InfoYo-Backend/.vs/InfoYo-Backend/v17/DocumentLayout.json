@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\webapi\\controllers\\wlognavbarlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wlognavbarlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\webapi\\controllers\\wftrlinkssectioncolitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wftrlinkssectioncolitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\webapi\\controllers\\wnologheadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wnologheadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\webapi\\controllers\\wftrlinkssectioncolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wftrlinkssectioncolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\wftrlinkssectioncoldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\wftrlinkssectioncoldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\data\\dal\\wftrlinkssectioncolitemdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83C246D3-3B40-4997-B41F-1FC347A0AD27}|Data\\Data.csproj|solutionrelative:data\\dal\\wftrlinkssectioncolitemdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9549F19-154C-4E37-9D99-DE46C37EE4E8}|Logic\\Logic.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\logic\\bll\\wftrlinkssectioncolitembll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9549F19-154C-4E37-9D99-DE46C37EE4E8}|Logic\\Logic.csproj|solutionrelative:logic\\bll\\wftrlinkssectioncolitembll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WLogNavBarLinkController.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WLogNavBarLinkController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WLogNavBarLinkController.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WLogNavBarLinkController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\WLogNavBarLinkController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACcAAAAaAAAA",
+              "DocumentIndex": 3,
+              "Title": "WFtrLinksSectionColItemDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WFtrLinksSectionColItemDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\WFtrLinksSectionColItemDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WFtrLinksSectionColItemDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\WFtrLinksSectionColItemDAL.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwB8AAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T18:57:11.024Z",
+              "WhenOpened": "2025-08-13T15:52:06.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WFtrLinksSectionColItemController.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WFtrLinksSectionColItemController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WFtrLinksSectionColItemController.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WFtrLinksSectionColItemController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\WFtrLinksSectionColItemController.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAUwBIAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T13:31:54.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "WNoLogHeaderController.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogHeaderController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WNoLogHeaderController.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogHeaderController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\WNoLogHeaderController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAABCAAAA",
+              "Title": "WFtrLinksSectionColController.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WFtrLinksSectionColController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WFtrLinksSectionColController.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WFtrLinksSectionColController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\WFtrLinksSectionColController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T17:01:45.938Z",
+              "WhenOpened": "2025-08-13T13:31:53.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WFtrLinksSectionColDAL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WFtrLinksSectionColDAL.cs",
+              "RelativeDocumentMoniker": "Data\\DAL\\WFtrLinksSectionColDAL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Data\\DAL\\WFtrLinksSectionColDAL.cs",
+              "RelativeToolTip": "Data\\DAL\\WFtrLinksSectionColDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T15:46:47.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WFtrLinksSectionColItemBLL.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Logic\\BLL\\WFtrLinksSectionColItemBLL.cs",
+              "RelativeDocumentMoniker": "Logic\\BLL\\WFtrLinksSectionColItemBLL.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Logic\\BLL\\WFtrLinksSectionColItemBLL.cs",
+              "RelativeToolTip": "Logic\\BLL\\WFtrLinksSectionColItemBLL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T15:54:49.373Z",
               "EditorCaption": ""
             }
           ]

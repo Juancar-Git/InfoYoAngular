@@ -65,7 +65,7 @@ export class PublicHeaderComponent implements OnInit {
   }
 
   ReadNoLogHome() {
-    this.httpHeaderService.ReadNoLogHome(1)
+    this.httpHeaderService.ReadNoLogHomeHeader(1)
     .subscribe((response: any) => {
       this.homeHeader = response.data;
     });

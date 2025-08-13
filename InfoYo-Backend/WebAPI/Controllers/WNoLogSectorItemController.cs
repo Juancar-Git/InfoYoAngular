@@ -13,6 +13,9 @@ namespace WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class WNoLogSectorItemController : ApiController
     {
+        /*
+         * http://localhost:8803/api/WNoLogSectorItem/
+         */
         [HttpGet]
         public IHttpActionResult ReadAll()
         {
@@ -33,6 +36,9 @@ namespace WebAPI.Controllers
             return Content(response.code, response);
         }
 
+        /*
+         * http://localhost:8803/api/WNoLogSectorItem/1
+         */
         [HttpGet]
         public IHttpActionResult ReadOne(long id)
         {

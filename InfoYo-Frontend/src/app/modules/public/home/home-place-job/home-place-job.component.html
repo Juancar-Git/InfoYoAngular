@@ -1,38 +1,14 @@
 <section class="container-md">
     <div class="title-container">
-        <h2>Trabaja desde casa</h2>
-        <a href="https://www.google.com/?hl=es">+ ciudades</a>
+        <h2>{{placeSection.Title}}</h2>
+        <a href="https://www.google.com/?hl=es">{{placeSection.MoreCitiesBtn}}</a>
     </div>
     <div class="row g-3">
-        <div class="col-6 col-md-3 card-container">
+        <div class="col-6 col-md-3 card-container" *ngFor="let item of placeItems">
             <mat-card class="card">
-                <img mat-card-image src="assets/images/home/place/place1.jpg" alt="">
+                <img mat-card-image [src]="item.ItemBgImgPath" alt="">
                 <mat-card-content class="card-content">
-                    <a href="https://www.google.com/?hl=es" class="card-content-text">Madrid</a>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col-6 col-md-3 card-container">
-            <mat-card class="card">
-                <img mat-card-image src="assets/images/home/place/place2.jpg" alt="">
-                <mat-card-content class="card-content">
-                    <a href="https://www.google.com/?hl=es" class="card-content-text">Barcelona</a>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col-6 col-md-3 card-container">
-            <mat-card class="card">
-                <img mat-card-image src="assets/images/home/place/place3.jpg" alt="">
-                <mat-card-content class="card-content">
-                    <a href="https://www.google.com/?hl=es" class="card-content-text">Valencia</a>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col-6 col-md-3 card-container">
-            <mat-card class="card">
-                <img mat-card-image src="assets/images/home/place/place4.jpg" alt="">
-                <mat-card-content class="card-content">
-                    <a href="https://www.google.com/?hl=es" class="card-content-text">Bilbao</a>
+                    <a href="https://www.google.com/?hl=es" class="card-content-text">{{item.Title}}</a>
                 </mat-card-content>
             </mat-card>
         </div>

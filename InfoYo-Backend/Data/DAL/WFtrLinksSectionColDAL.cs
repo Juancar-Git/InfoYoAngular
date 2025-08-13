@@ -21,6 +21,12 @@ namespace Data.DAL
                     Id = x.Id,
                     Title = x.Title
                 }).ToList();
+
+                foreach (var item in result)
+                {
+                    item.WFtrLinksSectionColItem = WFtrLinksSectionColItemDAL.ReadByColId(item.Id);
+                }
+
             }
 
             return result;

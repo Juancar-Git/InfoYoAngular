@@ -1,105 +1,20 @@
 <section class="container-md">
     <div class="title-container">
-        <h2>Impulsa tu carrera trabajando en una empresa líder</h2>
+        <h2>{{careerSection.Title}}</h2>
     </div>
     <div class="row g-3">
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of careerItems">
             <mat-card class="card-container">
-                <img mat-card-image src="assets/images/home/career/career1.jpg" class="card-image">
+                <img mat-card-image [src]="item.ItemBgImgPath" class="card-image">
                 <div class="card-overlay">
                     <div class="row content-card-container">
-                        <img src="assets/images/home/career/avatar1.png" class="col-3 avatar-img" />
+                        <img [src]="item.ItemBtn" class="col-3 avatar-img" />
                         <div class="col-9">
-                            <mat-card-title class="card-company-title">MAPFRE</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                            <mat-card-title class="card-company-title">{{item.Title}}</mat-card-title>
+                            <mat-card-subtitle>{{careerSection.DefaultOffersQtyText}}</mat-card-subtitle>
                         </div>
                         <div class="card-hide-text">
-                            <p>Multinacional de consultoría, outsourcing e integración de sistemas en TI</p>
-                        </div>
-                    </div>
-                </div>
-            </mat-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <mat-card class="card-container">
-                <img mat-card-image src="assets/images/home/career/career2.jpg" class="card-image">
-                <div class="card-overlay">
-                    <div class="row content-card-container">
-                        <img src="assets/images/home/career/avatar2.png" class="col-3 avatar-img" />
-                        <div class="col-9">
-                            <mat-card-title class="card-company-title">Inetum</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </div>
-                        <div class="card-hide-text">
-                            <p>Multinacional de consultoría, outsourcing e integración de sistemas en TI</p>
-                        </div>
-                    </div>
-                </div>
-            </mat-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <mat-card class="card-container">
-                <img mat-card-image src="assets/images/home/career/career3.jpg" class="card-image">
-                <div class="card-overlay">
-                    <div class="row content-card-container">
-                        <img src="assets/images/home/career/avatar3.jpg" class="col-3 avatar-img" />
-                        <div class="col-9">
-                            <mat-card-title class="card-company-title">Lidl</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </div>
-                        <div class="card-hide-text">
-                            <p>Multinacional de consultoría, outsourcing e integración de sistemas en TI</p>
-                        </div>
-                    </div>
-                </div>
-            </mat-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <mat-card class="card-container">
-                <img mat-card-image src="assets/images/home/career/career4.jpg" class="card-image">
-                <div class="card-overlay">
-                    <div class="row content-card-container">
-                        <img src="assets/images/home/career/avatar4.png" class="col-3 avatar-img" />
-                        <div class="col-9">
-                            <mat-card-title class="card-company-title">Randstad Digital</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </div>
-                        <div class="card-hide-text">
-                            <p>Multinacional de consultoría, outsourcing e integración de sistemas en TI</p>
-                        </div>
-                    </div>
-                </div>
-            </mat-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <mat-card class="card-container">
-                <img mat-card-image src="assets/images/home/career/career5.jpg" class="card-image">
-                <div class="card-overlay">
-                    <div class="row content-card-container">
-                        <img src="assets/images/home/career/avatar5.png" class="col-3 avatar-img" />
-                        <div class="col-9">
-                            <mat-card-title class="card-company-title">Teleperformance</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </div>
-                        <div class="card-hide-text">
-                            <p>Multinacional de consultoría, outsourcing e integración de sistemas en TI</p>
-                        </div>
-                    </div>
-                </div>
-            </mat-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <mat-card class="card-container">
-                <img mat-card-image src="assets/images/home/career/career6.jpg" class="card-image">
-                <div class="card-overlay">
-                    <div class="row content-card-container">
-                        <img src="assets/images/home/career/avatar6.png" class="col-3 avatar-img" />
-                        <div class="col-9">
-                            <mat-card-title class="card-company-title">Securitas Direct</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </div>
-                        <div class="card-hide-text">
-                            <p>Multinacional de consultoría, outsourcing e integración de sistemas en TI</p>
+                            <p>{{item.Description}}</p>
                         </div>
                     </div>
                 </div>
@@ -110,31 +25,19 @@
     <div class="more-companies-btn-container">
         <button mat-stroked-button color="primary" class="more-mat-buton">
             <mat-icon>refresh</mat-icon>
-            MOSTRAR MAS EMPRESAS
+            {{careerSection.ShowMoreTextBtn}}
         </button>
     </div>
 
     <div class="row g-3 align-items-stretch">
-        <div class="col-12 col-md-6">
-            <mat-card class="learn-card learn-first h-100">
-                <img mat-card-image src="assets/images/home/career/learn1.png" class="col-4">
+        <div class="col-12 col-md-6" *ngFor="let item of careerLearnItems; let i = index">
+            <mat-card class="learn-card h-100" [ngClass]="learnCardClasses[i]">
+                <img mat-card-image [src]="item.ItemBgImgPath" class="col-4">
                 <mat-card-content class="col-8 learn-card-content">
-                    <p class="learn-card-title">¿Necesitas un coach laboral?</p>
-                    <p>Te damos consejos para mejorar tu carrera profesional</p>
+                    <p class="learn-card-title">{{item.Title}}</p>
+                    <p>{{item.Description}}</p>
                     <mat-card-actions>
-                        <button mat-raised-button color="primary">IR AL BLOG</button>
-                    </mat-card-actions>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col-12 col-md-6">
-            <mat-card class="learn-card learn-second h-100">
-                <img mat-card-image src="assets/images/home/career/learn2.png" class="col-4">
-                <mat-card-content class="col-8 learn-card-content">
-                    <p class="learn-card-title">Mejora tu perfil profesional</p>
-                    <p>Adquiere nuevos conocimientos con nuestros cursos de formación</p>
-                    <mat-card-actions>
-                        <button mat-stroked-button color="primary">VER CURSOS</button>
+                        <button mat-raised-button color="primary">{{item.ItemBtn}}</button>
                     </mat-card-actions>
                 </mat-card-content>
             </mat-card>

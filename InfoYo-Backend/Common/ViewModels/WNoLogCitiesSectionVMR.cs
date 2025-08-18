@@ -11,5 +11,7 @@ namespace Common.ViewModels
         public long Id { get; set; }
         public string Title { get; set; }
         public string MoreCitiesBtn { get; set; }
+
+        public List<WNoLogCitiesItemVMR> WNoLogCitiesItems { get; set; }
     }
 }

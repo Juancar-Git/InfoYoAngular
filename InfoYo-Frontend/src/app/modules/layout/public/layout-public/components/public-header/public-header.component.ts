@@ -1,16 +1,13 @@
 import { Component, EventEmitter, HostListener, OnInit, Output, } from '@angular/core';
 import { HttpHeaderService } from 'src/app/services/http.header.service';
 
-@Component({
-  selector: 'app-public-header',
-  templateUrl: './public-header.component.html',
-  styleUrls: ['./public-header.component.css'],
-})
-export class PublicHeaderComponent implements OnInit {
-  isSmallScreen = false;
-  @Output() triggerEvent = new EventEmitter<void>();
+interface WNoLogNavBarLinks{
+  Id: number;
+  Name: string; 
+  LinkUrl: string;
+};
 
-  homeHeader: {
+interface HomeHeader {
     Id: number;
     BlockFilterTitle: string;
     CandidateAccessBtn: string;
@@ -24,7 +21,22 @@ export class PublicHeaderComponent implements OnInit {
     SearchBtn: string;
     SearchBtnHoverDesc: string;
     Title: string;
-  } = {
+
+    WNoLogNavBarLinks: WNoLogNavBarLinks[];
+  }
+
+@Component({
+  selector: 'app-public-header',
+  templateUrl: './public-header.component.html',
+  styleUrls: ['./public-header.component.css'],
+})
+export class PublicHeaderComponent implements OnInit {
+  
+  isSmallScreen = false;
+  @Output() triggerEvent = new EventEmitter<void>();
+
+  homeHeader: HomeHeader = {
+    Id: 0,
     BlockFilterTitle: '',
     CandidateAccessBtn: '',
     CandidateAccessBtnUrl: '',
@@ -32,22 +44,22 @@ export class PublicHeaderComponent implements OnInit {
     CompanyAccessBtnUrl: '',
     HeadBgImgPath: '',
     HeadTitle: '',
-    Id: 0,
     LocationFilterTitle: '',
     SeachFilterTitle: '',
     SearchBtn: '',
     SearchBtnHoverDesc: '',
     Title: '',
+
+    WNoLogNavBarLinks: []
   };
-
-  homeNavBarItems: {Id: number, Name: string, LinkUrl: string} [] = [];
-
-  constructor(private httpHeaderService: HttpHeaderService) {}
+    
+  constructor(
+    private httpHeaderService: HttpHeaderService
+  ) {}
 
   ngOnInit(): void {
     this.checkScreenSize();
     this.ReadNoLogHome();
-    this.ReadNoLogNavBarHome();
   }
 
   // Se puede hacer con Bootstrap, pero es interesante conocerlo para proyectos que no lo utilice
@@ -69,12 +81,5 @@ export class PublicHeaderComponent implements OnInit {
     .subscribe((response: any) => {
       this.homeHeader = response.data;
     });
-  }
-
-  ReadNoLogNavBarHome(){
-    this.httpHeaderService.ReadNoLogNavBarHome()
-    .subscribe((response: any) => {
-      this.homeNavBarItems = response.data;
-    })
   }
 }

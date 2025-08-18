@@ -21,31 +21,11 @@ namespace Data.DAL
                     Id = x.Id,
                     Title = x.Title
                 }).ToList();
-
-                foreach (var item in result)
-                {
-                    item.WFtrLinksSectionColItem = WFtrLinksSectionColItemDAL.ReadByColId(item.Id);
-                }
-
             }
 
             return result;
         }
 
-        public static WFtrLinksSectionColVMR ReadOne(long id)
-        {
-            WFtrLinksSectionColVMR result = null;
 
-            using (var db = MyDbConnection.Create())
-            {
-                result = db.Set<WFtrLinksSectionCol>().Where(x => x.Id == id).Select(x => new WFtrLinksSectionColVMR
-                {
-                    Id = x.Id,
-                    Title = x.Title
-                }).FirstOrDefault();
-            }
-
-            return result;
-        }
     }
 }

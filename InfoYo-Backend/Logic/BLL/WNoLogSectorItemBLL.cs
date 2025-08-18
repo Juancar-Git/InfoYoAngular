@@ -15,10 +15,5 @@ namespace Logic.BLL
         {
             return WNoLogSectorItemDAL.ReadAll();
         }
-
-        public static WNoLogSectorItemVMR ReadOne(long id)
-        {
-            return WNoLogSectorItemDAL.ReadOne(id);
-        }
     }
 }

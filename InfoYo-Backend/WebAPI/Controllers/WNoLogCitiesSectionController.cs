@@ -14,29 +14,6 @@ namespace WebAPI.Controllers
     public class WNoLogCitiesSectionController : ApiController
     {
         /*
-         * http://localhost:8803/api/WNoLogCitiesSection/
-         */
-        [HttpGet]
-        public IHttpActionResult ReadAll()
-        {
-            var response = new ResponseVMR<List<WNoLogCitiesSectionVMR>>();
-
-            try
-            {
-                response.data = WNoLogCitiesSectionBLL.ReadAll();
-            }
-            catch (Exception e)
-            {
-                response.code = HttpStatusCode.InternalServerError;
-                response.data = null;
-                response.messages.Add(e.Message);
-                response.messages.Add(e.ToString());
-            }
-
-            return Content(response.code, response);
-        }
-
-        /*
          * http://localhost:8803/api/WNoLogCitiesSection/1
          */
         [HttpGet]

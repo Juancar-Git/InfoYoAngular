@@ -4,7 +4,7 @@
         <a href="https://www.google.com/?hl=es">{{findSection.MoreFiltersBtn}}</a>
     </div>
     <div class="row g-3">
-        <div class="col-6 col-md-3 card-container" *ngFor="let item of findItems">
+        <div class="col-6 col-md-3 card-container" *ngFor="let item of findSection.WNoLogFiltersItems">
             <mat-card class="card">
                 <img mat-card-image src="{{item.ItemBgImgPath}}" alt="">
                 <mat-card-content class="card-content">

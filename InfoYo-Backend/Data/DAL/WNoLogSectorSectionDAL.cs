@@ -10,23 +10,6 @@ namespace Data.DAL
 {
     public class WNoLogSectorSectionDAL
     {
-        public static List<WNoLogSectorSectionVMR> ReadAll()
-        {
-            List<WNoLogSectorSectionVMR> result = null;
-
-            using (var db = MyDbConnection.Create())
-            {
-                result = db.Set<WNoLogSectorSection>().Select(x => new WNoLogSectorSectionVMR
-                {
-                    Id = x.Id,
-                    Title = x.Title,
-                    MoreSectorsBtn = x.MoreSectorsBtn
-                }).ToList();
-            }
-
-            return result;
-        }
-
         public static WNoLogSectorSectionVMR ReadOne(long id)
         {
             WNoLogSectorSectionVMR result = null;

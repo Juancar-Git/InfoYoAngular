@@ -13,12 +13,16 @@ namespace Logic.BLL
     {
         public static List<WFtrLinksSectionColVMR> ReadAll()
         {
-            return WFtrLinksSectionColDAL.ReadAll();    
+            List<WFtrLinksSectionColVMR> result;
+
+            result = WFtrLinksSectionColDAL.ReadAll();
+            foreach (var item in result)
+            {
+                item.WFtrLinksSectionColItem = WFtrLinksSectionColItemBLL.ReadByColId(item.Id);
+            }
+
+            return result;    
         }
 
-        public static WFtrLinksSectionColVMR ReadOne(long id)
-        {
-            return WFtrLinksSectionColDAL.ReadOne(id);
-        }
     }
 }

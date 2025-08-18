@@ -14,5 +14,8 @@ namespace Common.ViewModels
         public string DefaultMiniIconImgPath { get; set; }
         public string DefaultMiniImgPath { get; set; }
         public string DefaultOffersQtyText { get; set; }
+
+        public List<WNoLogCompanyItemVMR> WNoLogCompanyItems { get; set; }
+        public List<WNoLogCompanyPublicityItemVMR> WNoLogCompanyPublicityItems { get; set; }
     }
 }

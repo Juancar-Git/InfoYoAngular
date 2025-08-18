@@ -11,14 +11,9 @@ namespace Logic.BLL
 {
     public class WFtrLinksSectionColItemBLL
     {
-        public static List<WFtrLinksSectionColItemVMR> ReadAll()
+        public static List<WFtrLinksSectionColItemVMR> ReadByColId(long colId)
         {
-            return WFtrLinksSectionColItemDAL.ReadAll();
-        }
-
-        public static WFtrLinksSectionColItemVMR ReadOne(long id)
-        {
-            return WFtrLinksSectionColItemDAL.ReadOne(id);
+            return WFtrLinksSectionColItemDAL.ReadByColId(colId);
         }
     }
 }

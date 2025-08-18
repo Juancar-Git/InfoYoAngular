@@ -14,9 +14,4 @@ export class HttpHeaderService{
     ReadNoLogHomeHeader(id: number){
         return this.httpClient.get('http://localhost:8803/api/wnologheader/' + id);
     }
-
-    ReadNoLogNavBarHome(){
-        return this.httpClient.get('http://localhost:8803/api/WNoLogNavBarLink/')
-    }
-
 }

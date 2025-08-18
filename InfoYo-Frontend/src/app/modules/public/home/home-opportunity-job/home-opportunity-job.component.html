@@ -4,7 +4,7 @@
         <a href="https://www.google.com/?hl=es">{{opportSection.MoreSectorsBtn}}</a>
     </div>
     <div class="row g-3">
-        <div class="col-6 col-md-3 card-container" *ngFor="let item of opportItems">
+        <div class="col-6 col-md-3 card-container" *ngFor="let item of opportSection.WNoLogSectorItems">
             <mat-card class="card">
                 <img mat-card-image [src]="item.ItemBgImgPath" alt="">
                 <mat-card-content class="card-content">

@@ -15,10 +15,5 @@ namespace Logic.BLL
         {
             return WNoLogNavBarLinkDAL.ReadAll();
         }
-
-        public static WNoLogNavBarLinkVMR ReadOne(long id)
-        {
-            return WNoLogNavBarLinkDAL.ReadOne(id);
-        }
     }
 }

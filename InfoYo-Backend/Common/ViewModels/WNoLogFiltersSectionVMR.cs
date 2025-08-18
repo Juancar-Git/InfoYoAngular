@@ -11,5 +11,8 @@ namespace Common.ViewModels
         public long Id { get; set; }
         public string Title { get; set; }
         public string MoreFiltersBtn { get; set; }
+
+
+        public List<WNoLogFiltersItemVMR> WNoLogFiltersItems { get; set; }
     }
 }

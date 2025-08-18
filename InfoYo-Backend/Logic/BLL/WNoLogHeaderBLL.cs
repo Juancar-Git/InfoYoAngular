@@ -13,7 +13,12 @@ namespace Logic.BLL
     {
         public static WNoLogHeaderVMR ReadOne(long id)
         {
-            return WNoLogHeaderDAL.ReadOne(id);
+            WNoLogHeaderVMR result;
+
+            result = WNoLogHeaderDAL.ReadOne(id);
+            result.WNoLogNavBarLinks = WNoLogNavBarLinkBLL.ReadAll();
+
+            return result;
         }
     }
 }

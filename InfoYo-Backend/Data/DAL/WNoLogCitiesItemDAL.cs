@@ -28,24 +28,5 @@ namespace Data.DAL
 
             return result;
         }
-
-        public static WNoLogCitiesItemVMR ReadOne(long id)
-        {
-            WNoLogCitiesItemVMR result = null;
-
-            using (var db = MyDbConnection.Create())
-            {
-                result = db.Set<WNoLogCitiesItem>().Where(x => x.Id == id).Select(x => new WNoLogCitiesItemVMR
-                {
-                    Id = x.Id,
-                    Title = x.Title,
-                    ItemBgImgPath = x.ItemBgImgPath,
-                    FilterName = x.FilterName,
-                    FilterValue = x.FilterValue
-                }).FirstOrDefault();
-            }
-
-            return result;
-        }
     }
 }

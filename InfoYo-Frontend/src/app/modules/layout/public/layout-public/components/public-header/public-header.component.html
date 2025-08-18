@@ -11,7 +11,7 @@
         <a mat-button routerLink="/home" routerLinkActive="active-link">
           <img src="assets/images/home/header/infojobs-word.png" alt="InfoJobs logo" class="main-icon-img" />
         </a>
-        <div *ngFor="let item of homeNavBarItems">
+        <div *ngFor="let item of homeHeader.WNoLogNavBarLinks">
           <a mat-button [routerLink]="item.LinkUrl" routerLinkActive="active-link">{{item.Name}}</a>
         </div>
       </nav>

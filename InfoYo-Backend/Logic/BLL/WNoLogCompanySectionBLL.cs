@@ -11,14 +11,14 @@ namespace Logic.BLL
 {
     public class WNoLogCompanySectionBLL
     {
-        public static List<WNoLogCompanySectionVMR> ReadAll()
-        {
-            return WNoLogCompanySectionDAL.ReadAll();
-        }
-
         public static WNoLogCompanySectionVMR ReadOne(long id)
         {
-            return WNoLogCompanySectionDAL.ReadOne(id);
+            WNoLogCompanySectionVMR result = WNoLogCompanySectionDAL.ReadOne(id);
+            
+            result.WNoLogCompanyItems = WNoLogCompanyItemBLL.ReadAll();
+            result.WNoLogCompanyPublicityItems = WNoLogCompanyPublicityItemBLL.ReadAll();
+            
+            return result;
         }
     }
 }

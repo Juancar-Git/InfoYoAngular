@@ -27,21 +27,5 @@ namespace Data.DAL
             return result;
         }
 
-        public static WNoLogNavBarLinkVMR ReadOne(long id)
-        {
-            WNoLogNavBarLinkVMR result = null;
-
-            using (var db = MyDbConnection.Create())
-            {
-                result = db.Set<WNoLogNavBarLink>().Where(x => x.Id == id).Select(x => new WNoLogNavBarLinkVMR
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    LinkUrl = x.LinkUrl
-                }).FirstOrDefault();
-            }
-
-            return result;
-        }
     }
 }

@@ -11,5 +11,7 @@ namespace Common.ViewModels
         public long Id { get; set; }
         public string Title { get; set; }
         public string MoreSectorsBtn { get; set; }
+
+        public List<WNoLogSectorItemVMR> WNoLogSectorItems { get; set; }
     }
 }

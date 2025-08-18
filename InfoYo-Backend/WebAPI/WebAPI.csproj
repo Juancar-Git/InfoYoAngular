@@ -137,7 +137,6 @@
     <Compile Include="Controllers\WCompanyPageController.cs" />
     <Compile Include="Controllers\WFtrAppDowloadLinkItemController.cs" />
     <Compile Include="Controllers\WFtrLinksSectionColController.cs" />
-    <Compile Include="Controllers\WFtrLinksSectionColItemController.cs" />
     <Compile Include="Controllers\WFtrPartnersSectController.cs" />
     <Compile Include="Controllers\WFtrPartnersSectItemController.cs" />
     <Compile Include="Controllers\WFtrSocialMediaSectController.cs" />
@@ -153,16 +152,10 @@
     <Compile Include="Controllers\WMyCvSectController.cs" />
     <Compile Include="Controllers\WMyCvSectOptionController.cs" />
     <Compile Include="Controllers\WMyOffersPageController.cs" />
-    <Compile Include="Controllers\WNoLogCitiesItemController.cs" />
     <Compile Include="Controllers\WNoLogCitiesSectionController.cs" />
-    <Compile Include="Controllers\WNoLogCompanyItemController.cs" />
-    <Compile Include="Controllers\WNoLogCompanyPublicityItemController.cs" />
     <Compile Include="Controllers\WNoLogCompanySectionController.cs" />
-    <Compile Include="Controllers\WNoLogFiltersItemController.cs" />
     <Compile Include="Controllers\WNoLogFiltersSectionController.cs" />
     <Compile Include="Controllers\WNoLogHeaderController.cs" />
-    <Compile Include="Controllers\WNoLogNavBarLinkController.cs" />
-    <Compile Include="Controllers\WNoLogSectorItemController.cs" />
     <Compile Include="Controllers\WNoLogSectorSectionController.cs" />
     <Compile Include="Controllers\WOrdeByOffersItemController.cs" />
     <Compile Include="Controllers\WPersonalDataPageController.cs" />

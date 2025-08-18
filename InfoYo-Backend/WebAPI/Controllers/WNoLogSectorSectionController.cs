@@ -14,31 +14,8 @@ namespace WebAPI.Controllers
     public class WNoLogSectorSectionController : ApiController
     {
         /*
-         * http://localhost:8803/api/WNoLogSectorSection/
-         */
-        [HttpGet]
-        public IHttpActionResult ReadAll()
-        {
-            var response = new ResponseVMR<List<WNoLogSectorSectionVMR>>();
-
-            try
-            {
-                response.data = WNoLogSectorSectionBLL.ReadAll();
-            }
-            catch (Exception e)
-            {
-                response.code = HttpStatusCode.InternalServerError;
-                response.data = null;
-                response.messages.Add(e.Message);
-                response.messages.Add(e.ToString());
-            }
-
-            return Content(response.code, response);
-        }
-
-        /*
          * http://localhost:8803/api/WNoLogSectorSection/1
-         */
+        */
         [HttpGet]
         public IHttpActionResult ReadOne(long id)
         {

@@ -21,5 +21,7 @@ namespace Common.ViewModels
         public string LocationFilterTitle { get; set; }
         public string SearchBtn { get; set; }
         public string SearchBtnHoverDesc { get; set; }
+
+        public List<WNoLogNavBarLinkVMR> WNoLogNavBarLinks { get; set; }
     }
 }

@@ -11,14 +11,14 @@ namespace Logic.BLL
 {
     public class WNoLogFiltersSectionBLL
     {
-        public static List<WNoLogFiltersSectionVMR> ReadAll()
-        {
-            return WNoLogFiltersSectionDAL.ReadAll();
-        }
-
         public static WNoLogFiltersSectionVMR ReadOne(long id)
         {
-            return WNoLogFiltersSectionDAL.ReadOne(id);
+            WNoLogFiltersSectionVMR result;
+
+            result = WNoLogFiltersSectionDAL.ReadOne(id);
+            result.WNoLogFiltersItems = WNoLogFiltersItemBLL.ReadAll();
+
+            return result;
         }
     }
 }

@@ -10,23 +10,6 @@ namespace Data.DAL
 {
     public class WNoLogFiltersSectionDAL
     {
-        public static List<WNoLogFiltersSectionVMR> ReadAll()
-        {
-            List<WNoLogFiltersSectionVMR> result = null;
-
-            using (var db = MyDbConnection.Create())
-            {
-                result = db.Set<WNoLogFiltersSection>().Select(x => new WNoLogFiltersSectionVMR
-                {
-                    Id = x.Id,
-                    Title = x.Title,
-                    MoreFiltersBtn = x.MoreFiltersBtn
-                }).ToList();
-            }
-
-            return result;
-        }
-
         public static WNoLogFiltersSectionVMR ReadOne(long id)
         {
             WNoLogFiltersSectionVMR result = null;

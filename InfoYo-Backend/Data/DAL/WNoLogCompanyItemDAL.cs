@@ -29,25 +29,5 @@ namespace Data.DAL
 
             return result;
         }
-
-        public static WNoLogCompanyItemVMR ReadOne(long id)
-        {
-            WNoLogCompanyItemVMR result = null;
-
-            using (var db = MyDbConnection.Create())
-            {
-                result = db.Set<WNoLogCompanyItem>().Where(x => x.Id == id).Select(x => new WNoLogCompanyItemVMR
-                {
-                    Id = x.Id,
-                    Title = x.Title,
-                    Description = x.Description,
-                    ItemBgImgPath = x.ItemBgImgPath,
-                    ItemBtn = x.ItemBtn,
-                    ItemBtnUrl = x.ItemBtnUrl
-                }).FirstOrDefault();
-            }
-
-            return result;
-        }
     }
 }

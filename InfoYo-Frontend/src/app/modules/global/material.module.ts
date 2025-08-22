@@ -11,6 +11,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [],
@@ -20,28 +21,28 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule,
     FormsModule, 
     MatFormFieldModule, 
     MatInputModule,
     MatSelectModule,
     MatSidenavModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule
 
   ],
   exports:[
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule,
     FormsModule, 
     MatFormFieldModule, 
     MatInputModule,
     MatSelectModule,
     MatSidenavModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule
 
   ]
 })

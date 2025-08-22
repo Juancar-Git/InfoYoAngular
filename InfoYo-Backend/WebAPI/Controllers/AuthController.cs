@@ -29,6 +29,7 @@ namespace WebAPI.Controllers
                 {
                     new Claim(ClaimTypes.Name, login.UserName)
                 }),
+                // La sesión expira en 15 minutos, en el caso de InfoJobs, si marcas la casilla expira en 45 días
                 Expires = DateTime.UtcNow.AddMinutes(15),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(keyBytes),

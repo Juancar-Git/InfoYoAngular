@@ -22,7 +22,7 @@
   <mat-sidenav-content class="app-sidenav-content">
     <app-public-header (triggerEvent)="sidenav.toggle()"></app-public-header>
     <main>
-      <app-public-home-index></app-public-home-index>
+      <router-outlet></router-outlet>
     </main>
     <app-shared-footer></app-shared-footer>
   </mat-sidenav-content>

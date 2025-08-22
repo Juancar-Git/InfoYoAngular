@@ -1,1 +1,77 @@
-<p>login-index works!</p>
+<div>
+    <div class="header-container">
+        <div class="container">
+            <nav>
+                <a mat-button routerLink="/home" routerLinkActive="active-link">
+                    <img src="assets/images/header/infojobs-word-white.png" alt="InfoJobs logo" class="main-icon-img" />
+                </a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form formGroup="login-form">
+                    <h1>Accede como candidato</h1>
+                    <mat-form-field class="w-100">
+                        <mat-label>Email</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <p>
+                        <a href="">Has olvidado tu contraseña?</a>
+                    </p>
+                    <button mat-raised-button color="primary">INICIA SESIÓN</button>
+                    <mat-checkbox checked class="example-margin">
+                        Mantener sesión abierta
+                        <a href="">Más info</a>
+                    </mat-checkbox>
+                    <p>
+                        ¿Eres una empresa?
+                        <a href="">Accede a tu cuenta</a>
+                    </p>
+                </form>
+            </div>
+            <div class="col-12 col-md-6">
+                <h1>¿Eres nuevo/a?</h1>
+                <div class="row">
+                    <div class="col-2">
+                        <mat-icon>article</mat-icon>
+                    </div>
+                    <div class="col-10">
+                        <p>Crea tu CV</p>
+                        <p>Muestra a las empresas todo tu talento</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <mat-icon>check_circle</mat-icon>
+                    </div>
+                    <div class="col-10">
+                        <p>Inscríbete en las ofertas que te gustan</p>
+                        <p>Y sigue tus candidaturas</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <mat-icon>forward_media</mat-icon>
+                    </div>
+                    <div class="col-10">
+                        <p>Mantén actualizado tu CV</p>
+                        <p>Y dobla las posibilidades de ser contactado por la empresa que quieres</p>
+                    </div>
+                </div>
+                <button mat-stroked-button color="primary">REGÍSTRATE</button>
+            </div>
+        </div>
+        <div>
+            <p>
+                <b>¿Necesitas ayuda?</b>
+                <a href="">Contáctanos aquí</a>
+            </p>
+        </div>
+    </div>
+</div>

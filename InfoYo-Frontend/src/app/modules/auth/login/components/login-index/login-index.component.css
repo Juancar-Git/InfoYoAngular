@@ -1,0 +1,11 @@
+.header-container{
+    background-color: #0b4dd0;
+}
+
+.main-icon-img {
+  width: 120px;   /* prueba con un valor razonable */
+  height: auto;
+  max-height: 40px; /* no excedas el alto del toolbar */
+  object-fit: contain;
+  display: block;
+}

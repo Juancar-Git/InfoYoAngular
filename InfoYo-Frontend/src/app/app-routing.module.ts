@@ -11,7 +11,6 @@ const routes: Routes = [
     component: MenuGlobalComponent,
     loadChildren: () => import('./routes.module').then(m => m.RoutesModule)
   }
-  
 ];
 
 @NgModule({

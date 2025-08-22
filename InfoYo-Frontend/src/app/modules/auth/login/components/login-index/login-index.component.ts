@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MaterialModule } from 'src/app/modules/global/material.module';
 import { HttpAuthService } from 'src/app/services/http.auth.service';
 
 @Component({
   selector: 'app-login-index',
   templateUrl: './login-index.component.html',
-  styleUrls: ['./login-index.component.css']
+  styleUrls: ['./login-index.component.css'],
+  standalone: true,
+  imports:[MaterialModule]
 })
 export class LoginIndexComponent {
    userName = '';

@@ -6,6 +6,7 @@ import { LayoutPublicModule } from '../layout/public/layout-public/layout-public
 import { MaterialModule } from './material.module';
 import { HomeModule } from '../public/home/home.module';
 import { LayoutSharedModule } from '../layout/shared/layout-shared/layout-shared.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { LayoutSharedModule } from '../layout/shared/layout-shared/layout-shared
   ],
   imports: [
     CommonModule,
+    RouterModule,
 
     MaterialModule,
     

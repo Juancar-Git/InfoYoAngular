@@ -51,6 +51,7 @@ mat-label{
   max-height: 40px; /* no excedas el alto del toolbar */
   object-fit: contain;
   display: block;
+  color: white;
 }
 
 .spacer {

@@ -37,7 +37,6 @@ export class SharedFooterComponent implements OnInit{
     this.httpFooterService.ReadLinkSectionColFooter()
     .subscribe((response: any) => {
       this.footerCols = response.data;
-      console.log(this.footerCols);
     })
   }
 }

@@ -5,7 +5,7 @@ import { NgModule } from "@angular/core";
 
 @NgModule({
     imports: [RouterModule.forChild([
-        ...globalRoutes,
+        ...globalRoutes
     ])]
 })
 export class RoutesModule { }

@@ -20,7 +20,10 @@
   </mat-sidenav>
 
   <mat-sidenav-content class="app-sidenav-content">
-    <app-public-header (triggerEvent)="sidenav.toggle()"></app-public-header>
+    <ng-container [ngSwitch]="headerType">
+      <app-public-header (triggerEvent)="sidenav.toggle()" *ngSwitchCase="'non-loged-home'"></app-public-header>
+      <app-simple-header *ngSwitchCase="'simple'"></app-simple-header>
+    </ng-container>
     <main>
       <router-outlet></router-outlet>
     </main>

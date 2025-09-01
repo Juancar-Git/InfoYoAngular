@@ -6,7 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
@@ -28,7 +28,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSidenavModule,
     MatCardModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule
 
   ],
   exports:[
@@ -42,7 +43,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSidenavModule,
     MatCardModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule
 
   ]
 })

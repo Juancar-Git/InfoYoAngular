@@ -6,8 +6,13 @@ export const globalRoutes: Routes = [
     {
         path: '',
         component: PublicHomeIndexComponent,
-        loadChildren: () => import('./global.module').then(m => m.GlobalModule)
+        loadChildren: () => import('./global.module').then(m => m.GlobalModule),
+        data: { header: 'non-loged-home'}
     },
-    {path:'login', component: LoginIndexComponent}
+    {
+        path:'login', 
+        component: LoginIndexComponent,
+        data: { header: 'simple'}
+    }
 
 ]

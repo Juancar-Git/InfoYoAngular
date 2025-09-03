@@ -1,0 +1,81 @@
+h1{
+  font-size: 42px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+.container-header{
+  margin: 0 auto;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .container-md {
+      padding: 16px 24px !important;
+    }
+}
+
+.toolbar-header{
+    background-color: rgba(0, 0, 255, 0);
+}
+
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; 
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+mat-toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-toolbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 1; /* permite que se encoja si es necesario */
+  overflow: hidden;
+}
+
+mat-label{
+  font-size: 1rem;
+}
+
+.main-icon-img {
+  width: 120px;   /* prueba con un valor razonable */
+  height: auto;
+  max-height: 40px; /* no excedas el alto del toolbar */
+  object-fit: contain;
+  display: block;
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem
+}
+
+.custom-button{
+  height: 32px;
+}
+
+.bg-white{
+  background-color: white !important;
+}
+
+.bg-image-header{
+  background-size: cover;
+  background-position: center;
+}

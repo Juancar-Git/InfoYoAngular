@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
 
 import { MaterialModule } from 'src/app/modules/global/material.module';
+import { PublicDefaultHeaderComponent } from './components/public-default-header/public-default-header.component';
 
 
 @NgModule({
   declarations: [
     PublicHeaderComponent,
+    PublicDefaultHeaderComponent,
 
   ],
   imports: [
@@ -19,6 +21,7 @@ import { MaterialModule } from 'src/app/modules/global/material.module';
   ],
   exports: [
     PublicHeaderComponent,
+    PublicDefaultHeaderComponent,
   ]
 })
 export class LayoutPublicModule { }

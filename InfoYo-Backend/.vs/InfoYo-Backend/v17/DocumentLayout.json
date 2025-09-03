@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|c:\\users\\carlos\\onedrive\\escritorio\\infoyo\\infoyoangular\\infoyo-backend\\common\\viewmodels\\wjobspagenofiltvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|solutionrelative:common\\viewmodels\\wjobspagenofiltvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\ausercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\ausercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\common\\viewmodels\\wjobspagewithfiltvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130B34FC-0533-496D-877F-4A26076B69DE}|Common\\Common.csproj|solutionrelative:common\\viewmodels\\wjobspagewithfiltvmr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\wnologcitiessectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wnologcitiessectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\wjobspagenofiltcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wjobspagenofiltcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\wnologsectorsectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wnologsectorsectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\wjobspagewithfiltcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wjobspagewithfiltcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9549F19-154C-4E37-9D99-DE46C37EE4E8}|Logic\\Logic.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\logic\\bll\\wnologsectorsectionbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9549F19-154C-4E37-9D99-DE46C37EE4E8}|Logic\\Logic.csproj|solutionrelative:logic\\bll\\wnologsectorsectionbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\wnologheadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wnologheadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\webapi\\controllers\\wordebyoffersitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{541E0A07-7B84-45A7-9B73-3D786A90B6EF}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\wordebyoffersitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,66 +46,77 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AUserController.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\AUserController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AUserController.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\AUserController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AUserController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAQwDgAAAANAAAA",
+              "DocumentIndex": 2,
+              "Title": "WJobsPageNoFiltController.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WJobsPageNoFiltController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WJobsPageNoFiltController.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WJobsPageNoFiltController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\WJobsPageNoFiltController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:17:38.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T02:47:55.808Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAlAAAA",
+              "Title": "WJobsPageNoFiltVMR.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WJobsPageNoFiltVMR.cs",
+              "RelativeDocumentMoniker": "Common\\ViewModels\\WJobsPageNoFiltVMR.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WJobsPageNoFiltVMR.cs",
+              "RelativeToolTip": "Common\\ViewModels\\WJobsPageNoFiltVMR.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wBkAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:06:27.706Z",
+              "WhenOpened": "2025-09-03T02:48:05.739Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WNoLogCitiesSectionController.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogCitiesSectionController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WNoLogCitiesSectionController.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogCitiesSectionController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\WNoLogCitiesSectionController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBAAAAALAAAA",
+              "DocumentIndex": 1,
+              "Title": "WJobsPageWithFiltVMR.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
+              "RelativeDocumentMoniker": "Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
+              "RelativeToolTip": "Common\\ViewModels\\WJobsPageWithFiltVMR.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T13:46:23.684Z",
+              "WhenOpened": "2025-09-03T02:47:31.237Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WOrdeByOffersItemController.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WOrdeByOffersItemController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WOrdeByOffersItemController.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WOrdeByOffersItemController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\WOrdeByOffersItemController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T05:31:48.09Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "WNoLogSectorSectionController.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogSectorSectionController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WNoLogSectorSectionController.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogSectorSectionController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\WNoLogSectorSectionController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABBAAAA",
+              "Title": "WJobsPageWithFiltController.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WJobsPageWithFiltController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WJobsPageWithFiltController.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WJobsPageWithFiltController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\WJobsPageWithFiltController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T13:29:20.135Z"
+              "WhenOpened": "2025-09-03T02:47:09.237Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "WNoLogSectorSectionBLL.cs",
-              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Logic\\BLL\\WNoLogSectorSectionBLL.cs",
-              "RelativeDocumentMoniker": "Logic\\BLL\\WNoLogSectorSectionBLL.cs",
-              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\Logic\\BLL\\WNoLogSectorSectionBLL.cs",
-              "RelativeToolTip": "Logic\\BLL\\WNoLogSectorSectionBLL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABFAAAA",
+              "Title": "WNoLogHeaderController.cs",
+              "DocumentMoniker": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogHeaderController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\WNoLogHeaderController.cs",
+              "ToolTip": "C:\\Users\\carlos\\OneDrive\\Escritorio\\InfoYo\\InfoYoAngular\\InfoYo-Backend\\WebAPI\\Controllers\\WNoLogHeaderController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\WNoLogHeaderController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T13:31:17.327Z"
+              "WhenOpened": "2025-09-02T05:27:24.745Z"
             }
           ]
         }

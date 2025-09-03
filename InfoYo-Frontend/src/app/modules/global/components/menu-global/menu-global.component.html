@@ -23,6 +23,7 @@
     <ng-container [ngSwitch]="headerType">
       <app-public-header (triggerEvent)="sidenav.toggle()" *ngSwitchCase="'non-loged-home'"></app-public-header>
       <app-simple-header *ngSwitchCase="'simple'"></app-simple-header>
+      <app-public-default-header (triggerEvent)="sidenav.toggle()" *ngSwitchCase="'non-loged-default'"></app-public-default-header>
     </ng-container>
     <main>
       <router-outlet></router-outlet>

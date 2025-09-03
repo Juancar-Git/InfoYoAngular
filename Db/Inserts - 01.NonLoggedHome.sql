@@ -34,7 +34,7 @@ BlockFilterTitle, SearchFilterTitle, LocationFilterTitle, SearchBtn, SearchBtnHo
 -- WNoLogNavBarLink
 
 INSERT INTO [web].[WNoLogNavBarLink](Name, LinkUrl) VALUES 
-('Buscar empleo','/empleos'),
+('Buscar empleo','/public-search-jobs'),
 ('Buscar empresas','/empresas'),
 ('Salarios','/salarios'),
 ('Formación','/formacion');

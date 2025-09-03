@@ -1,0 +1,28 @@
+<header class="container-header">
+    <div class="container-md">
+        <mat-toolbar class="d-flex d-md-none">
+            <button (click)="activateTrigger()" mat-icon-button aria-label="Menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-toolbar class="d-none d-md-flex">
+            <nav>
+                <a mat-button routerLink="/home" routerLinkActive="active-link">
+                    <img src="assets/images/home/header/infojobs-word.png" alt="InfoJobs logo" class="main-icon-img" />
+                </a>
+                <div *ngFor="let item of homeHeader.WNoLogNavBarLinks">
+                    <a mat-button [routerLink]="item.LinkUrl" routerLinkActive="active-link">{{item.Name}}</a>
+                </div>
+            </nav>
+            <span class="spacer"></span>
+            <div class="button-container">
+                <button mat-stroked-button color="primary" class="custom-button bg-white">
+                    {{homeHeader.CompanyAccessBtn}}
+                </button>
+                <button mat-raised-button routerLink="login" color="accent" class="custom-button">
+                    {{homeHeader.CandidateAccessBtn}}
+                </button>
+            </div>
+        </mat-toolbar>
+    </div>
+</header>

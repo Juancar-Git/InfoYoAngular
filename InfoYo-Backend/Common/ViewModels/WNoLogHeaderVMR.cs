@@ -17,7 +17,7 @@ namespace Common.ViewModels
         public string CandidateAccessBtn { get; set; }
         public string CandidateAccessBtnUrl { get; set; }
         public string BlockFilterTitle { get; set; }
-        public string SeachFilterTitle { get; set; }
+        public string SearchFilterTitle { get; set; }
         public string LocationFilterTitle { get; set; }
         public string SearchBtn { get; set; }
         public string SearchBtnHoverDesc { get; set; }

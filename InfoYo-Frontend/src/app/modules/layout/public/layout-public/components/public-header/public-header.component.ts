@@ -17,7 +17,7 @@ interface HomeHeader {
     HeadBgImgPath: string;
     HeadTitle: string;
     LocationFilterTitle: string;
-    SeachFilterTitle: string;
+    SearchFilterTitle: string;
     SearchBtn: string;
     SearchBtnHoverDesc: string;
     Title: string;
@@ -45,7 +45,7 @@ export class PublicHeaderComponent implements OnInit {
     HeadBgImgPath: '',
     HeadTitle: '',
     LocationFilterTitle: '',
-    SeachFilterTitle: '',
+    SearchFilterTitle: '',
     SearchBtn: '',
     SearchBtnHoverDesc: '',
     Title: '',

@@ -90,7 +90,7 @@ CREATE TABLE [web].[WNoLogHeader](
 	[CandidateAccessBtn] [VARCHAR](50) NOT NULL,
 	[CandidateAccessBtnUrl] [VARCHAR](MAX) NOT NULL,
 	[BlockFilterTitle] [VARCHAR](100) NOT NULL,
-	[SeachFilterTitle] [VARCHAR](100) NOT NULL,
+	[SearchFilterTitle] [VARCHAR](100) NOT NULL,
 	[LocationFilterTitle] [VARCHAR](100) NOT NULL,
 	[SearchBtn] [VARCHAR](50) NOT NULL,
 	[SearchBtnHoverDesc] [VARCHAR](100) NOT NULL,

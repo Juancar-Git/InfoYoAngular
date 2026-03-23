@@ -27,7 +27,7 @@ namespace Data.DAL
                     CandidateAccessBtn = x.CandidateAccessBtn,
                     CandidateAccessBtnUrl = x.CandidateAccessBtnUrl,
                     BlockFilterTitle = x.BlockFilterTitle,
-                    SeachFilterTitle = x.SeachFilterTitle,
+                    SearchFilterTitle = x.SearchFilterTitle,
                     LocationFilterTitle = x.LocationFilterTitle,
                     SearchBtn = x.SearchBtn,
                     SearchBtnHoverDesc = x.SearchBtnHoverDesc

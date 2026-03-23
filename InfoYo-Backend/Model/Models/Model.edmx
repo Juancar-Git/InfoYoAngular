@@ -536,7 +536,7 @@
           <Property Name="CandidateAccessBtn" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CandidateAccessBtnUrl" Type="varchar(max)" Nullable="false" />
           <Property Name="BlockFilterTitle" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="SeachFilterTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SearchFilterTitle" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="LocationFilterTitle" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="SearchBtn" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SearchBtnHoverDesc" Type="varchar" MaxLength="100" Nullable="false" />
@@ -1575,10 +1575,10 @@
           <Property Name="CandidateAccessBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CandidateAccessBtnUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BlockFilterTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SeachFilterTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LocationFilterTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SearchBtn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SearchBtnHoverDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SearchFilterTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="WNoLogNavBarLink">
           <Key>
@@ -2613,6 +2613,7 @@
           <EntitySetMapping Name="WNoLogHeader">
             <EntityTypeMapping TypeName="Model.WNoLogHeader">
               <MappingFragment StoreEntitySet="WNoLogHeader">
+                <ScalarProperty Name="SearchFilterTitle" ColumnName="SearchFilterTitle" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="HeadTitle" ColumnName="HeadTitle" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -2622,7 +2623,6 @@
                 <ScalarProperty Name="CandidateAccessBtn" ColumnName="CandidateAccessBtn" />
                 <ScalarProperty Name="CandidateAccessBtnUrl" ColumnName="CandidateAccessBtnUrl" />
                 <ScalarProperty Name="BlockFilterTitle" ColumnName="BlockFilterTitle" />
-                <ScalarProperty Name="SeachFilterTitle" ColumnName="SeachFilterTitle" />
                 <ScalarProperty Name="LocationFilterTitle" ColumnName="LocationFilterTitle" />
                 <ScalarProperty Name="SearchBtn" ColumnName="SearchBtn" />
                 <ScalarProperty Name="SearchBtnHoverDesc" ColumnName="SearchBtnHoverDesc" />

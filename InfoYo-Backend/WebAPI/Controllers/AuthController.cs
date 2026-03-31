@@ -10,9 +10,17 @@ using Microsoft.IdentityModel.Tokens;
 //En .NET Core es prácticamente igual
 namespace WebAPI.Controllers
 {
+    [AllowAnonymous]
     public class AuthController : ApiController
     {
         [HttpPost]
+        [Route("Signin")]
+        public IHttpActionResult SignIn(LoginModel login)
+        {
+
+        }
+            [HttpPost]
+        [Route("Login")]
         public IHttpActionResult Login(LoginModel login)
         {
             //Obtener de la base de datos de forma encryptada
